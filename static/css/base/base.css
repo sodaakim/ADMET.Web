@@ -1,0 +1,88 @@
+/* Font styles */
+h1, h2, h3, h4, h5 {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    color: #000; /* 검정색 */
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+h1.white { color : white; }
+
+h2 {
+
+    color: #000; /* 검정색 */
+    font-size: 1.3em;
+    margin-bottom: 12px;
+}
+h2.white { color : white; }
+
+
+h3 {
+    color: #000; /* 검정색 */
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+h3.white { color : white; }
+
+h4 {
+    color: #000; /* 검정색 */
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+h4.white { color : white; }
+
+
+h5 {
+    color: #777; /* 회색 */
+    font-size: 0.7em;
+    margin-bottom: 6px;
+}
+h5.white { color : white; }
+
+
+/* Root variables */
+:root {
+    /* Fonts */
+    --font-source-serif-pro: "Source Serif Pro", serif;
+    --font-inter: Inter, sans-serif;
+
+    /* Font sizes */
+    --font-size-base: 1em;
+    --font-size-lg: 1.13em;
+    --font-size-3xl: 1.38em;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-whitesmoke: #f3f3f4;
+    --color-steelblue: #395e9a;
+    --color-gray-100: #091f44;
+    --color-midnightblue: #010f43;
+
+    /* Gaps */
+    --gap-lgi: 1.19em;
+    --gap-41xl: 3.75em;
+    --gap-20xl: 2.44em;
+    --gap-4xl: 1.44em;
+    --gap-lg: 1.13em;
+
+    /* Paddings */
+    --padding-xl: 1.25em;
+    --padding-21xl: 2.5rem;
+    --padding-24xl: 2.69em;
+    --padding-6xs: 0.44em;
+    --padding-3xs: 0.63em;
+
+    /* Border radiuses */
+    --br-mini: 15px;
+    --br-8xs: 5px;
+
+    /* Z-index */
+    --z-index-header: 100;
+    --z-index-footer: 100;
+    --z-index-modal: 500;
+}
+

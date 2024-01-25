@@ -1,0 +1,74 @@
+/* Informatoin Section Styles */
+.analyze-section {
+    text-align: center;
+    padding: 3em 5em;
+    background: #E3E5EA;
+}
+
+.analyze-box {
+    display: block;
+    background: white;
+    padding: 1em 2em;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.5em;
+}
+
+.analyze-header h2{
+    font-weight: 800;
+    text-align: left;
+    padding: 1em;
+}
+
+#editor {
+    width: 100%;
+    min-width: 300px;
+    height: 400px;
+}
+
+@media (max-width: 768px) {
+    #editor {
+        height: 40vh;
+    }
+
+    .analyze-box {
+        margin: 3em 4em;
+    }
+}
+
+.input-and-controls {
+    display: flex;
+    width: 100%;
+}
+
+.smilesInput {
+    display: block;
+    flex-grow: 1;
+    margin-left: 1em;
+    width: 65em; /* Use 100% width for responsiveness */
+    height: 23em;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    padding: 1em;
+    line-height: 1.5; /* 텍스트 라인 높이 */
+    resize: none; /* 사용자가 크기 조절하는 것 방지 */
+}
+::placeholder {
+    color: #888;
+}
+
+@media (max-width: 1500px) {
+    .smilesInput {
+        width: 100%;
+    }
+}
+
+.convert-button {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemical Structure Editor</title>
+    <script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.js?modules=chemWidget,algorithm"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
+</head>
+<body>
+    <div id="editor" style="width: 500px; height: 500px;"></div>
+    <button onclick="convertToSMILES()">Convert to SMILES</button>
+    <p id="smilesString"></p>
+    <script>
+        var editor = new Kekule.Editor.Composer(document.getElementById('editor'));
+
+        function convertToSMILES() {
+            var chemObj = editor.getChemObj();
+            var smiles = Kekule.IO.saveFormatData(chemObj, 'smi');
+            document.getElementById('smilesString').innerHTML = 'SMILES: ' + smiles;
+        }
+    </script>
+</body>
+</html>

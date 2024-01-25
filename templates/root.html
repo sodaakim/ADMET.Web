@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/root.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <title>{% block title %}기본 제목{% endblock %}</title>
+    {% block script %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+    </header>
+    <nav>
+        <a class="logo" href="/">ADMET LAB</a>
+        <ul class="menu">
+            <li class="dropdown"><a href="#about">About</a>
+                <div class="dropdown-content">
+                    <a href="/about">about 1</a>
+                    <a href="/about/2">about 2</a>
+                </div>
+            </li>
+            <li class="dropdown"><a href="#services">Service</a>
+                <div class="dropdown-content">
+                    <a href="/analyze">analyze</a>
+                    <a href="/evaluation">evaluation</a>
+                </div>
+            </li>
+            <li class="dropdown"><a href="#resources">Resources</a>
+                <div class="dropdown-content">
+                    <a href="/resources">resources 1</a>
+                    <a href="/resources/2">resources 2</a>
+                    <a href="/resources/3">resources 3</a>
+                </div>
+            </li>
+            <li class="dropdown"><a href="#lab">Lab</a>
+                <div class="dropdown-content">
+                    <a href="/lab">lab 1</a>
+                    <a href="/lab/2">lab 2</a>
+                    <a href="/lab/3">lab 3</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="signup">
+            <li><a href="#signup">Sign up</a></li>
+        </ul>
+    </nav>
+
+    {% block main %}
+    <main>
+
+    </main>
+    {% endblock %}
+
+    {% block contents %}
+    <div>
+
+    </div>
+    {% endblock %}
+
+    <footer>
+        <div class="footer-content">
+            <div class="about-section">
+                <h3 class="white">About</h3>
+                <p>This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs.</p>
+            </div>
+            <div class="lab-info">
+                <h3 class="white">Dokyun Lab</h3>
+                <p>Department of Biomedical Engineering</p>
+                <p>School of integrative engineering Chung-Ang University</p>
+                <p>84 Heukseok-ro, Dongjak-gu, Seoul, Republic of Korea</p>
+            </div>
+            <div class="contact-info">
+                <h3 class="white">Contact Us</h3>
+                <p>Homepage : http://ssbio.cau.ac.kr</p>
+                <p>Email : blisszen@cau.ac.kr</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

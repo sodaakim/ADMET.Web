@@ -1,0 +1,313 @@
+
+
+body {
+  font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #6d6d6d; /* Soft gray for a gentle contrast against the background */
+    background: #f4f4f4; /* Neutral background to support pastel elements */
+}
+
+.container {
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffffff; /* White background maintained for content clarity */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Slightly darker shadow for more depth */
+}
+
+footer {
+    background-color: #2c3e50; /* 어두운 남색으로 변경 */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.admet-header h1, .admet-header h2 {
+    color: #2c3e50; /* 남색으로 변경 */
+    font-weight: 600; /* 글꼴 무게 증가 */
+}
+
+.input-area {
+    margin-top: 30px;
+}
+
+.smiles-input-container {
+    display: flex;
+    gap: 10px; /* 버튼과 입력 필드 사이의 간격 추가 */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.smiles-input-container input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* 글꼴 크기 증가 */
+    width: 100%;
+}
+
+.smiles-input-container button {
+    padding: 12px 20px;
+    background-color: #e4bad4; /* Pastel pink for buttons */
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for color and transformation */
+}
+
+.smiles-input-container button:hover {
+    background-color: #cfa6c0; /* A slightly darker pastel pink for hover */
+    transform: scale(1.05); /* Scale up the button on hover for a subtle effect */
+}
+
+#exampleButton {
+    background-color: #a390e4; /* Pastel purple for the example button */
+    margin-right: 5px;
+}
+
+
+.feature-selection {
+    display: block;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.property-feature-container {
+    flex: 1 0 20%; /* 5개 컬럼 레이아웃 유지 */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 그림자 효과 추가 */
+}
+
+.feature-selection input[type=checkbox] {
+    margin-right: 5px;
+}
+
+.feature-selection label {
+    margin-right: 15px;
+}
+
+.results-section {
+    padding: 20px 0;
+    display: flex; /* Display results side by side */
+    justify-content: space-between; /* Add space between image and graph */
+}
+
+.image-and-graph-container {
+    display: flex; /* Display image and graph side by side */
+}
+
+.image-container,
+.graph-container {
+    flex: 1; /* Share the available space equally */
+    margin-right: 10px; /* Add spacing between image and graph */
+}
+
+.hidden {
+    display: none;
+}
+
+.result-image-placeholder,
+.result-graph-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #eaeaea;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.result-image-placeholder span,
+.result-graph-placeholder span {
+    color: #ccc;
+    font-size: 20px;
+}
+
+#propertyFeaturesContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Allow wrapping if not enough space */
+    justify-content: flex-start; /* Keep items aligned to the start */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.property-feature-header {
+    margin-bottom: 10px;
+    font-size: 1.2em; /* 글꼴 크기 증가 */
+    font-weight: bold;
+}
+
+.property-feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.property-feature-item {
+    margin-bottom: 5px;
+}
+
+.input-and-controls {
+    display: flex; /* Establish flex container */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows children to wrap to next line if not enough space */
+    gap: 20px; /* Space between children */
+}
+
+.smiles-input-container {
+    flex-grow: 1; /* Allows this container to grow and fill the remaining space */
+}
+
+.feature-selection {
+    flex: 1 100%; /* Grow when possible, but take full width when wrapping */
+}
+
+.right-side-controls {
+    display: flex;
+    flex-direction: column; /* Stack the SMILES input and features selection vertically */
+}
+
+.result-item {
+    display: block; /* This will stack the .result-item divs vertically */
+    margin-bottom: 10px; /* Optional: adds space between the result items */
+}
+
+.results-section {
+    display: block; /* Change from flex to block if needed */
+}
+
+.image-and-graph-container {
+    display: block; /* Change from flex to block if needed */
+}
+
+.image-container,
+.graph-container {
+    display: block; /* Change from flex to block if needed */
+    margin-bottom: 10px; /* Add space between the result items */
+}
+
+header {
+    padding: 10px 0;
+    text-align: center;
+    color:#fff;
+    background: linear-gradient(-45deg, #a390e4, #e4bad4, #90aee4);
+    background-size: 400% 400%;
+    animation: colorChange 10s ease infinite;
+}
+
+@keyframes colorChange{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+header .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;  /* 언더라인 제거 */
+    color: inherit;         /* 링크의 기본 색상을 상속받음 */
+}
+
+header .logo a:hover {
+    color: inherit;         /* 마우스 오버 시 색상 변화 없음 */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.button-style {
+    background-color: #e4bad4; /* Pastel pink for a soft, inviting button style */
+    color: white; /* 흰색 텍스트 */
+    padding: 10px 20px; /* 상하 10px, 좌우 20px 패딩 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 테두리 */
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    font-size: 14px; /* 글꼴 크기 */
+    font-weight: bold; /* 글꼴 가중치 */
+    margin: 5px; /* 주변 여백 */
+    margin-bottom: 20px;
+    transition: background-color 0.3s; /* 배경색 변경 애니메이션 */
+}
+
+.button-style:hover {
+    background-color: #cfa6c0; /* A slightly darker shade for the hover state */
+}
+
+.select-all-wrapper {
+    margin-bottom: 10px; /* 여백 추가 */
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 각 카테고리 컨테이너 사이의 간격 */
+}
+
+.category-container {
+    border: 1px solid #ccc; /* 경계선 */
+    padding: 10px;
+}
+
+.category-header {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.results-list {
+    list-style-type: none; /* 목록 스타일 제거 */
+    padding: 0;
+}
+
+.result-item {
+    padding: 5px 0; /* 결과 항목의 패딩 */
+}
+
+.buttons-container {
+    margin-bottom: 20px; /* 결과 컨테이너와의 간격 */
+    text-align: right;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 요소들 사이의 간격 */
+}
+

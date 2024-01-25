@@ -1,0 +1,95 @@
+/* 기본 버튼 스타일 */
+.button {
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8em 1em;
+    margin: 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* example button */
+.example {
+    margin: 1em 0 1em 0;
+    background-color: #2c3b73;
+    color: white;
+}
+
+.example:hover {
+    background-color: #3d4f91;
+}
+
+.example:active {
+    background-color: white;
+    color: #2c3b73;
+}
+
+/* example button */
+.example2 {
+    margin: 1em 0 1em 0;
+    background-color: #A1A1A1;
+    color: white;
+}
+
+.example2:hover {
+    background-color: #A1A1A1;
+}
+
+.example2:active {
+    background-color: white;
+    color: #A1A1A1;
+}
+
+
+/* analyze button */
+.analyze {
+    margin: 1em 0 1em 1em;
+    background-color: #091F44;
+    color: white;
+}
+
+.analyze:hover {
+    background-color: #072235;
+}
+
+.analyze:active {
+    background-color: white;
+    color: #091F44;
+}
+
+/* convert */
+.convert {
+    background-color: #617484;
+    color: white;
+}
+
+.convert:hover {
+    background-color: #072235;
+}
+
+.convert:active {
+    background-color: white;
+    color: #091F44;
+}
+
+/*csv*/
+.csv {
+    background-color: #091F44;
+    height: 3em;
+    width: 12em;
+    color: white;
+    margin: 0;
+}
+
+.csv:hover {
+    background-color: #072235;
+}
+
+.csv:active {
+    background-color: white;
+    color: #091F44;
+}

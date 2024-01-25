@@ -1,0 +1,81 @@
+<!--extends (root.html) for base-->
+{% extends 'root.html' %}
+
+<!--(home.html) Title-->
+{% block title %}ADMET Lab{% endblock %}
+
+<!--(style) and (js codes)-->
+{% block script %}
+<!--icon              --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<!--home (intro)      --> <link rel="stylesheet" href="{{ url_for('static', filename='css/home/home_intro.css') }}">
+<!--home (information)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/home/home_information.css') }}">
+<!--asset (button)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
+<!--asset (card)      --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/card.css') }}">
+<!--base (base)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+{% endblock %}
+
+<!--home (main)-->
+{% block main %}
+<main>
+    <section id="intro-section">
+        <img class="background" src="public/bg.svg" alt="BG SVG">
+        <div class="intro-content">
+            <h1 class="white title">ADMET LAB</h1>
+            <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools necessary for analyzing complex pharmacokinetics and pharmacodynamics data, thereby accelerating the drug development process and reducing costs.</h3>
+            <hr>
+            <div class="input">
+                <input class="smilesInput" placeholder="Enter SMILES (e.g., C1=CC=CC=C1O)" type="text">
+            </div>
+            <div>
+                <button class="button example">Example</button>
+                <button class="button analyze">Analyze</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="info-section">
+        <div class="container A">
+            {% for card in cards[0:1] %}
+            <div class="card cardA">
+                <div class="card-image cardA">
+                    <img src="{{ card.image_path }}" alt="ADMET Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <i class="fas fa-user"></i>
+                        <h2>{{ card.title }}</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ card.description }}</h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="container B">
+            <div class="box">
+                <div class="box-header">
+                    <i class="fas fa-user"></i>
+                    <h2>Title</h2>
+                </div>
+                {% for card in cards[1:] %}
+                <div class="card cardB">
+                    <div class="card-image cardB">
+                        <img src="{{ card.image_path }}" alt="ADMET Diagram">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-user"></i>
+                            <h2>{{ card.title }}</h2>
+                        </div>
+                        <div class="card-body">
+                            <h3>{{ card.description }}</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

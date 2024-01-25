@@ -1,0 +1,37 @@
+.evaluation-section {
+    text-align: center;
+    padding: 2em;
+    background: #E3E5EA;
+}
+
+.result-container {
+    display: block;
+    background: white;
+    padding: 1em 2em;
+}
+
+.result-header {
+    display: flex;
+}
+
+.result-header h2 {
+    font-weight: 800;
+    text-align: left;
+    padding: 1em;
+    width: 100%;
+}
+
+.box-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.result-box {
+    border: 1px solid #000;
+    border-radius: 10px;
+    flex: 1;
+    height: 100em;
+    padding: 1em;
+    margin-bottom: 1em;
+}

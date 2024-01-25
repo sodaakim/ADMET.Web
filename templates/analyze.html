@@ -1,0 +1,86 @@
+<!--extends (root.html) for base-->
+{% extends 'root.html' %}
+
+<!--(home.html) Title-->
+{% block title %}ADMET Lab{% endblock %}
+
+<!--(style) and (js codes)-->
+{% block script %}
+<!--icon              --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<!--analyze (intro)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/analyze/analyze_intro.css') }}">
+<!--analyze (analyze_contents)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/analyze/analyze_contents.css') }}">
+<!--asset (button)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
+<!--asset (tip)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/tip.css') }}">
+<!--base (base)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+
+<!--analze (kekule)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/analyze/kekule.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
+<script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.js?modules=chemWidget,algorithm"></script>
+<script src="static/js/script.js"></script>
+
+{% endblock %}
+
+<!--home (main)-->
+{% block main %}
+<main>
+    <section id="intro-section">
+        <div class="intro-content">
+            <h1 class="white title">Analyze ADMET</h1>
+            <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools </h3>
+            <hr>
+            {% for step in steps %}
+            <div class="step-container">
+                <div class="step">
+                    <i class="fas fa-user"></i>
+                    <h2 class="white">{{ step.title }}</h2>
+                    <h4 class="white">{{ step.description }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tip-box">
+            <div class="tip-header">
+                <i class="fas fa-lightbulb"></i>
+                <span>Tips</span>
+            </div>
+            <p class="tip-content white">This tool supports researchers in identifying and...</p>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section>
+    <div class="analyze-section">
+        <div class="analyze-box">
+            <div class="analyze-header">
+                <h2>Analyze ADMET</h2>
+            </div>
+            <div class="input-and-controls">
+                <div id="editor" style="width: 500px; height: 500px;"></div>
+                <div class="input">
+                    <div class="convert-button">
+                        <button class="button convert">Convert to SMILES</button>
+                    </div>
+                    <script>
+                        var editor = new Kekule.Editor.Composer(document.getElementById('editor'));
+                        document.getElementById('button convert').addEventListener('click', function() {
+                            var chemObj = editor.getChemObj();
+                            var smiles = Kekule.IO.saveFormatData(chemObj, 'smi');
+                            document.getElementById('smilesInput').value = smiles;
+                            if (!smiles) {
+                                alert("No structure to convert. Please draw a molecule first.");
+                            }
+                        });
+                    </script>
+                    <textarea class="smilesInput" placeholder="Enter SMILES (e.g., C1=CC=CC=C1O)"></textarea>
+                    <div class="buttons">
+                        <button class="button example2">Example</button>
+                        <button class="button analyze">Analyze</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</main>
+{% endblock %}

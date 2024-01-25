@@ -1,0 +1,51 @@
+/* Intro Section Styles */
+
+#intro-section {
+    position: relative;
+    text-align: center;
+    padding: 4em 8em;
+    background: linear-gradient(to right, #86a8e7, #6A77AD, #6A77AD);
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.intro-content {
+    margin-right: auto;
+    max-width: 50em;
+    text-align: left;
+}
+
+.intro-content .title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1em;
+}
+
+.intro-content hr{
+    border: 0.5px solid white;
+    margin: 1em 0;
+
+}
+
+.intro-content .input {
+    display: flex;
+    align-items: center;
+}
+
+.intro-content .input .smilesInput {
+    flex-grow: 1;
+    padding: 1em;
+    height: 2.5em;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+

@@ -1,0 +1,37 @@
+.tip-box {
+    background-color: #4F5D7F;
+    border: 1px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 15em;
+    width: 30em;
+    margin: 1em auto;
+}
+
+.tip-header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #091F44;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 4em;
+    height: 1.6em;
+    padding: 0.5em 1em;
+    margin: -0.2em 1em;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.tip-header i {
+    margin-right: 0.5em;
+}
+
+.tip-content {
+    color: white;
+    text-align: left;
+    font-weight: 300;
+    padding: 2em 2em;
+}
+
