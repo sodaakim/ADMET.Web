@@ -1,7 +1,6 @@
 <!--extends (root.html) for base-->
 {% extends 'root.html' %}
 
-<!--(home.html) Title-->
 {% block title %}ADMET Lab{% endblock %}
 
 <!--(style) and (js codes)-->
@@ -10,8 +9,10 @@
 <!--base (base)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
 <!--asset (button)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
 <!--asset (tip)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/tip.css') }}">
-<!--analyze (intro)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/analyze/analyze_intro.css') }}">
-<!--analyze (analyze_contents)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/analyze/analyze_contents.css') }}">
+<!--screening (intro)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/screening/screening_intro.css') }}">
+<!--screening (screening_contents)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/screening/screening_contents.css') }}">
+<!--screening (screening_smiles)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/screening/screening_smiles.css') }}">
+
 
 <!--analze (kekule)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/kekule.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
@@ -74,8 +75,73 @@
                     </script>
                     <textarea class="smilesInput" placeholder="Enter SMILES (e.g., C1=CC=CC=C1O)"></textarea>
                     <div class="buttons">
-                        <button class="button example2">Example</button>
-                        <button class="button analyze">Analyze</button>
+                        <div class="button1">
+                            <button class="button example2">Example</button>
+                        </div>
+                        <div class="button2">
+                            <button class="button file">File (txt)</button>
+                        </div>
+                        <div class="button3">
+                            <button class="button analyze">Add smiles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="smiles-box">
+            <div class="smiles-header">
+                <div><h2>Select Smiles Cards</h2></div>
+                <div><button class="button analyze">Analyze ADMET</button></div>
+            </div>
+            <hr>
+            <div class="smiles-contents">
+                <div class="left">
+                    <div class="available-smiles">
+                        <div class="title">
+                            <h2>Available SMILES Cards</h2>
+                        </div>
+                        <ul class="card-box">
+                            {% for cardA in cardsA %}
+                            <li class="card">
+                                <div class="smiles-card">
+                                    <div class="smiles-image">{{ cardA.img }}</div>
+                                    <div class="card-contents">
+                                        <h4>smiles</h4>
+                                        <h4>{{ cardA.smiles }}</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="invalid-smiles">
+                        <div class="title">
+                            <div><h2>Invalid SMILES Cards</h2></div>
+                            <div><button class="button">Download as txt</button></div>
+                        </div>
+                        <ul class="card-box">
+                            {% for cardB in cardsI %}
+                            <li class="card">
+                                <div class="smiles-card">
+                                    <div class="smiles-image">{{ cardB.img }}</div>
+                                    <div class="card-contents">
+                                        <h4>smiles</h4>
+                                        <h4>{{ cardB.smiles }}</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="tip-box2">
+                        <div class="tip-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Tips</h4>
+                        </div>
+                        <p class="tip-content white">This tool supports researchers in identifying and This tool supports researchers in identifying and This tool supports researchers in identifying and...</p>
                     </div>
                 </div>
             </div>

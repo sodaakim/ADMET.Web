@@ -69,6 +69,11 @@
 }
 
 .buttons {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 75% 12% 13%;
+    align-items: center;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    justify-items: left;
 }

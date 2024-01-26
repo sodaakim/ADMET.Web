@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/root.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!--base (base.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/root.css') }}">
+    <!--(google font)  --> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>{% block title %}기본 제목{% endblock %}</title>
     {% block script %}{% endblock %}
 </head>
@@ -28,7 +28,7 @@
             </li>
             <li class="dropdown"><a href="#resources">Resources</a>
                 <div class="dropdown-content">
-                    <a href="/resources">resources 1</a>
+                    <a href="/screening">screening</a>
                     <a href="/resources/2">resources 2</a>
                     <a href="/resources/3">resources 3</a>
                 </div>

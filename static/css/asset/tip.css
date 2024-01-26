@@ -8,7 +8,7 @@
     margin: 1em auto;
 }
 
-.tip-header {
+.tip-box .tip-header {
     display: flex;
     text-align: center;
     align-items: center;
@@ -24,11 +24,11 @@
     font-size: 1em;
 }
 
-.tip-header i {
+.tip-box .tip-header i {
     margin-right: 0.5em;
 }
 
-.tip-content {
+.tip-box .tip-content {
     color: white;
     text-align: left;
     font-weight: 300;

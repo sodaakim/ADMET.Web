@@ -7,10 +7,10 @@
 <!--(style) and (js codes)-->
 {% block script %}
 <!--icon              --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<!--evaluation (intro)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_intro.css') }}">
-<!--evaluation (evaluation_contents)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_contents.css') }}">
-<!--asset (button)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
-<!--base (base)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+<!--base (base.css)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+<!--asset (button.css)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
+<!--evaluation (intro.css)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_intro.css') }}">
+<!--evaluation (evaluation_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_contents.css') }}">
 {% endblock %}
 
 <!--home (main)-->
@@ -46,15 +46,32 @@
             </div>
             <div class="result-box">
                 <div class="molecule-title">
+                    <div class="molecule-image">
+                        <img class="molecule" src="molecule_image_url" alt="molecule">
+                    </div>
+                    <div class="molecule-smiles">
+                        <h2>Smiles</h2>
+                        <h3 class="smiles">CC(C)OC(=O)C1=CC=CC=C1C(=O)N</h3>
+                    </div>
 
                 </div>
                 <div class="molecule-contents">
-                    <div class="contents-left">
-
-                    </div>
-                    <div class="contents-right">
-
-                    </div>
+                    <ul class="molecule-card">
+                    {% for property in properties %}
+                        <li class="card">
+                            <div class="property-card">
+                                <h2 class="card-title">{{ property.title }}</h2>
+                                {% for content in property.contents %}
+                                    <div class="card-content">
+                                        <div class="card-subtitle">{{ content.subtitle }}</div>
+                                        <div class="card-num">{{ content.num }}</div>
+                                        <div class="color-indicator" style="background-color: {{ content.color }};"></div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>

@@ -1,0 +1,141 @@
+.smiles-box {
+    display: block;
+    background: white;
+    padding: 1em 2em 2em 2em;
+    margin-top: 2.5em;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    gap: 0.5em;
+}
+
+.analyze-section hr {
+
+    border: 0.5px solid #D1D1D1;
+    margin: 1em 0;
+}
+
+.smiles-header {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smiles-header h2{
+    font-weight: 800;
+    text-align: left;
+    padding: 1em;
+}
+
+.smiles-contents {
+    display: flex;
+    /* border: 1px solid; */
+}
+
+.smiles-contents .title {
+    display: grid;
+    text-align: left;
+    margin-left: 2em;
+    height: 3.5em;
+}
+
+.invalid-smiles .title {
+    grid-template-columns: 75% 25%;
+}
+
+.left, .right {
+    /* border: 1px solid red; */
+    height: 80em;
+    width: 100%;
+}
+
+.right {
+    display: grid;
+    grid-template-rows: 70% 30%;
+    gap: 5em;
+}
+
+.card-box {
+    list-style: none;
+    border: 1px solid;
+    height: 100%;
+    border-radius: 10px;
+    margin: 1em 1.5em;
+    overflow:scroll;
+}
+
+.available-smiles .card-box {
+    height: 74em;
+}
+
+/* card */
+
+.card {
+    width: 100%;
+    padding: 1em 2em 1em 1em;
+    box-sizing: border-box;
+}
+
+.smiles-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.available-smiles .smiles-card {
+    background: #D9DBE2;
+}
+
+.invalid-smiles .smiles-card {
+    background: #F1DDDD;
+}
+
+.smiles-image {
+    background: white;
+    padding: 1em;
+    margin: 0.5em 2em 0.5em 0.5em;
+    min-height: 5em;
+    width: 100%;
+    max-width: 9em;
+}
+
+.card-contents {
+    text-align: left;
+}
+
+.card-contents h4 {
+    margin-top: 0.6em;
+}
+
+
+/* tip-box */
+.tip-box2 {
+    border: 1px solid;
+    border-radius: 10px;
+    height: 12.5em;
+    margin: 1em 1.5em;
+    padding: 2em;
+    text-align: left;
+}
+
+.tip-box2 .tip-header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 1.6em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.tip-box2 i {
+    margin: 1em;
+}
+
+.tip-box2 p {
+}
+

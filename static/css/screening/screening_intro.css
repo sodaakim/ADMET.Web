@@ -32,7 +32,6 @@
 .intro-content hr{
     border: 0.5px solid white;
     margin: 1em 0;
-
 }
 
 .step-container {
@@ -78,4 +77,8 @@
     background: #27375C;
     width: 100%;
     height: 0.5em;
+}
+
+.tip-box {
+    display: none;
 }
