@@ -1,0 +1,22 @@
+.evaluation-section {
+    text-align: center;
+    padding: 3em 5em;
+    background: #E3E5EA;
+}
+
+.result-option-box {
+    display: block;
+    background: white;
+    padding: 1em 2em 2em 2em;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    gap: 0.5em;
+}
+
+.result-option-header h2{
+    font-weight: 800;
+    text-align: left;
+    padding: 1em;
+}
+

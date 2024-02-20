@@ -29,7 +29,7 @@
 
 .result-box {
     flex: 1;
-    height: 130em;
+    height: 110em; /*검은색 선 박스 높이*/
     display: grid;
     gap: 1em;
     grid-template-rows: auto 1fr;
@@ -43,10 +43,9 @@
 .molecule-title {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 2em;
+    gap: 5em;
     grid-template-rows: minmax(13em, auto);
     align-items: start;
-    margin-bottom: 1em;
 }
 
 .molecule-image {
@@ -80,6 +79,7 @@ ul {
     background: #D9DBE2;
     border-radius: 15px;
     padding: 0 0.5em;
+    height: 100%
 }
 
 .molecule-card {
@@ -87,11 +87,11 @@ ul {
     flex-direction: column;
     flex-wrap: wrap;
     align-content: start;
-    max-height: 120em;
+    max-height: 95em; /*카드들 높이*/
 }
 
 .card {
-    width: 50%;
+    width: 33.3%; /*쪼개기*/
     padding: 20px 10px 0;
     box-sizing: border-box;
 }

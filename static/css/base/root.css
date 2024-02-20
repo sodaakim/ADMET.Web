@@ -73,7 +73,7 @@ nav {
     left: 50%; /* 중앙 정렬을 위해 왼쪽으로 50% 만큼 위치시킵니다. */
     transform: translateX(-50%) translateY(-10px); /* 위로 약간 올라가도록 설정합니다. */
     background-color: #212121;
-    width: 120px; /* 드롭다운 메뉴의 너비를 설정합니다. */
+    width: 150px; /* 드롭다운 메뉴의 너비를 설정합니다. */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 1;

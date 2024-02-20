@@ -1,9 +1,9 @@
-<!--홈 페이지입니다.-->
+<!--api_manual 페이지입니다.-->
 
 <!--extends (root.html) for base-->
 {% extends 'root.html' %}
 
-<!--(home.html) Title-->
+<!--(api_manual.html) Title-->
 {% block title %}ADMET Lab{% endblock %}
 
 <!--(style) and (js codes)-->
@@ -12,17 +12,17 @@
 <!--base (base.css)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
 <!--asset (button.css)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
 <!--asset (card.css)      --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/card.css') }}">
-<!--home (intro.css)      --> <link rel="stylesheet" href="{{ url_for('static', filename='css/home/home_intro.css') }}">
-<!--home (information.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/home/home_information.css') }}">
+<!--api_manual (intro.css)      --> <link rel="stylesheet" href="{{ url_for('static', filename='css/api_manual/api_manual_intro.css') }}">
+<!--api_manual (information.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/api_manual/api_manual_information.css') }}">
 {% endblock %}
 
-<!--home (main)-->
+<!--api_manual (main)-->
 {% block main %}
 <main>
     <section id="intro-section">
         <img class="background" src="public/bg.svg" alt="BG SVG">
         <div class="intro-content">
-            <h1 class="white title">ADMET LAB</h1>
+            <h1 class="white title">API Manual</h1>
             <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools necessary for analyzing complex pharmacokinetics and pharmacodynamics data, thereby accelerating the drug development process and reducing costs.</h3>
             <hr>
             <div class="input">

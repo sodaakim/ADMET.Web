@@ -1,0 +1,102 @@
+<!--결과 페이지 (smiles 하나)-->
+
+<!--extends (root.html) for base-->
+{% extends 'root.html' %}
+
+<!--(home.html) Title-->
+{% block title %}ADMET Lab{% endblock %}
+
+<!--(style) and (js codes)-->
+{% block script %}
+<!--icon              --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<!--base (base.css)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+<!--asset (button.css)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
+<!--result (result_intro.css)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_intro.css') }}">
+<!--result (result_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_contents.css') }}">
+<!--result (result_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_smiles.css') }}">
+<!--result (result_propertyCard.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_propertyCard.css') }}">
+<!--script property checkbox--> <script src="static/js/propertyCheckbox.js"></script>
+{% endblock %}
+
+<!--home (main)-->
+{% block main %}
+<main>
+    <section id="intro-section">
+        <div class="intro-content">
+            <h1 class="white title">Evaluation Results</h1>
+            <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools </h3>
+            <hr>
+            {% for step in steps %}
+            <div class="step-container">
+                <div class="step">
+                    <i class="fas fa-user"></i>
+                    <h2 class="white">{{ step.title }}</h2>
+                    <h4 class="white">{{ step.description }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section>
+    <div class="evaluation-section">
+        <div class="result-option-box">
+            <div class="result-option-header">
+                <h2>Evaluation Results</h2>
+            </div>
+            <div>
+                <h2>contents</h2>
+            </div>
+            <hr class="content-separator">
+            <div class="result-option-header">
+                <h2>Download Options</h2>
+            </div>
+            <div class="download-options" id="propertyFeaturesContainer">
+            {% for property in properties %}
+                <div class="property-feature-card category-color-tag" style="border-left: 4px solid {{ property.color }}">
+                    <div class="card-header">
+                        <button class="toggle-button">+</button>
+                        <div class="property-feature-card-header">
+                            {{ property.title }}
+                        </div>
+                        <div class="select-all-wrapper">
+                            <input type="checkbox" id="selectAll-{{ property.title | replace(' ', '-') }}" class="select-all-checkbox">
+                            <label for="selectAll-{{ property.title | replace(' ', '-') }}">Select All</label>
+                        </div>
+                    </div>
+                    <hr class="content-separator" style="display: none;"> <!-- 가로선을 처음에는 숨김 -->
+                    <div class="card-content" style="display: none;">
+                        <div class="property-feature-column">
+                            {% for content in property.contents[:((property.contents|length + 1) // 2)] %}
+                                <div class="property-feature-item">
+                                    <input type="checkbox" id="{{ property.title | replace(' ', '-') }}-{{ content.subtitle | replace(' ', '-') }}" value="{{ content.subtitle }}">
+                                    <label for="{{ property.title | replace(' ', '-') }}-{{ content.subtitle | replace(' ', '-') }}">{{ content.subtitle }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="property-feature-column">
+                            {% for content in property.contents[((property.contents|length + 1) // 2):] %}
+                                <div class="property-feature-item">
+                                    <input type="checkbox" id="{{ property.title | replace(' ', '-') }}-{{ content.subtitle | replace(' ', '-') }}" value="{{ content.subtitle }}">
+                                    <label for="{{ property.title | replace(' ', '-') }}-{{ content.subtitle | replace(' ', '-') }}">{{ content.subtitle }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="molecules-box">
+            <div class="molecules-header">
+                <div><h2><p>86</p>molecules Analyzed</h2></div>
+                <div><button class="button analyze">Analyze ADMET</button></div>
+            </div>
+        </div>
+    </div>
+    </section>
+</main>
+{% endblock %}

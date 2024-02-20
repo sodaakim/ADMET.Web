@@ -1,3 +1,5 @@
+<!--스마일스 여러개 분석(입력 페이지)-->
+
 <!--extends (root.html) for base-->
 {% extends 'root.html' %}
 
@@ -12,8 +14,6 @@
 <!--screening (intro)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/screening/screening_intro.css') }}">
 <!--screening (screening_contents)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/screening/screening_contents.css') }}">
 <!--screening (screening_smiles)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/screening/screening_smiles.css') }}">
-
-
 <!--analze (kekule)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/kekule.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
 <script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.js?modules=chemWidget,algorithm"></script>
@@ -54,17 +54,17 @@
     <div class="analyze-section">
         <div class="analyze-box">
             <div class="analyze-header">
-                <h2>Analyze ADMET</h2>
+                <h2>Add SMILES Cards</h2>
             </div>
             <div class="input-and-controls">
                 <div id="editor" style="width: 500px; height: 500px;"></div>
                 <div class="input">
                     <div class="convert-button">
-                        <button class="button convert">Convert to SMILES</button>
+                        <button id="convertToSmiles" class="button convert">Convert to SMILES</button>
                     </div>
                     <script>
                         var editor = new Kekule.Editor.Composer(document.getElementById('editor'));
-                        document.getElementById('button convert').addEventListener('click', function() {
+                        document.getElementById('convertToSmiles').addEventListener('click', function() {
                             var chemObj = editor.getChemObj();
                             var smiles = Kekule.IO.saveFormatData(chemObj, 'smi');
                             document.getElementById('smilesInput').value = smiles;
@@ -73,16 +73,16 @@
                             }
                         });
                     </script>
-                    <textarea class="smilesInput" placeholder="Enter SMILES (e.g., C1=CC=CC=C1O)"></textarea>
+                    <textarea id="smilesInput" class="smilesInput" placeholder="Enter SMILES (e.g., C1=CC=CC=C1O)"></textarea>
                     <div class="buttons">
                         <div class="button1">
-                            <button class="button example2">Example</button>
+                            <button id="exampleButton" class="button example2">Example</button>
                         </div>
                         <div class="button2">
                             <button class="button file">File (txt)</button>
                         </div>
                         <div class="button3">
-                            <button class="button analyze">Add smiles</button>
+                            <button class="button">Add smiles</button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
         <div class="smiles-box">
             <div class="smiles-header">
                 <div><h2>Select Smiles Cards</h2></div>
-                <div><button class="button analyze">Analyze ADMET</button></div>
+                <div><button class="button result">Analyze ADMET</button></div>
             </div>
             <hr>
             <div class="smiles-contents">

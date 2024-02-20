@@ -1,9 +1,13 @@
+<!--header와 footer 템플릿입니다. 모든 페이지가 root.html를 상속받습니다.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <!--base (base.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/root.css') }}">
     <!--(google font)  --> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!--asset (loading)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/loading.css') }}">
+    <!--loading script --> <script src="static/js/loading.js"></script>
     <title>{% block title %}기본 제목{% endblock %}</title>
     {% block script %}{% endblock %}
 </head>
@@ -14,43 +18,53 @@
     <nav>
         <a class="logo" href="/">ADMET LAB</a>
         <ul class="menu">
-            <li class="dropdown"><a href="#about">About</a>
+            <li class="dropdown"><a href="/introduce">About</a>
                 <div class="dropdown-content">
-                    <a href="/about">about 1</a>
-                    <a href="/about/2">about 2</a>
+                    <a href="/introduce">Intorduce</a>
+                    <a href="/service_manual">Service Manual</a>
+                    <a href="/documentation">Documentation</a>
                 </div>
             </li>
-            <li class="dropdown"><a href="#services">Service</a>
+            <li class="dropdown"><a href="/analyze">Service</a>
                 <div class="dropdown-content">
-                    <a href="/analyze">analyze</a>
-                    <a href="/evaluation">evaluation</a>
+                    <a href="/analyze">Analyze</a>
+                    <a href="/screening">Screening</a>
+                    <a href="/evaluation">Evaluation</a>
+                    <a href="/result">Result</a>
                 </div>
             </li>
-            <li class="dropdown"><a href="#resources">Resources</a>
+            <li class="dropdown"><a href="/reference">Reference</a>
                 <div class="dropdown-content">
-                    <a href="/screening">screening</a>
-                    <a href="/resources/2">resources 2</a>
-                    <a href="/resources/3">resources 3</a>
+                    <a href="/reference">Reference</a>
+                    <a href="/ssbio_lab">ssbio Lab</a>
                 </div>
             </li>
-            <li class="dropdown"><a href="#lab">Lab</a>
+            <li class="dropdown"><a href="/api_manual">API</a>
                 <div class="dropdown-content">
-                    <a href="/lab">lab 1</a>
-                    <a href="/lab/2">lab 2</a>
-                    <a href="/lab/3">lab 3</a>
+                    <a href="/api_manual">API Manual</a>
                 </div>
             </li>
         </ul>
         <ul class="signup">
-            <li><a href="#signup">Sign up</a></li>
+            <li><a href="/signup">Sign up</a></li>
         </ul>
     </nav>
 
-    {% block main %}
     <main>
-
-    </main>
+        <!--로딩 아이콘-->
+        <div id="loadingOverlay" style="display: none;">
+            <div>
+                <h2 class="white text">Please wait for the Evaluation.</h2>
+                <div class="loader">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    {% block main %}
     {% endblock %}
+    </main>
 
     {% block contents %}
     <div>

@@ -1,18 +1,8 @@
-window.onload = function() {
-    // Removed MarvinJS initialization
-};
 
-document.getElementById('exampleButton').addEventListener('click', function() {
-    document.getElementById('smilesInput').value = 'C1=CC=CC=C1O'; // Example SMILES
-});
-
-document.getElementById('analyzeButton').addEventListener('click', function() {
-    let smiles = document.getElementById('smilesInput').value;
-    if (smiles) {
-        performADMETPrediction(smiles);
-    } else {
-        alert("Please enter a SMILES string.");
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('exampleButton').addEventListener('click', function() {
+        document.getElementById('smilesInput').value = 'C1=CC=CC=C1O'; // Example SMILES
+    });
 });
 
 
@@ -260,10 +250,8 @@ function downloadPDF(selectedProperties) {
     doc.save("results.pdf");
 }
 
-
-
-
 window.onload = function() {
 
     createPropertyFeatures();
 };
+

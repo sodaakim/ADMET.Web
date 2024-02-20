@@ -1,0 +1,42 @@
+#intro-section {
+    display: flex;
+    position: relative;
+    text-align: center;
+    padding: 3em 8em;
+    background: #495A81;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.intro-content {
+    margin-right: auto;
+    max-width: 50em;
+    text-align: left;
+}
+
+.intro-content .title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.intro-content hr{
+    border: 0.5px solid white;
+    margin: 1em 0;
+
+}
+
+.line {
+    background: #27375C;
+    width: 100%;
+    height: 0.5em;
+}
