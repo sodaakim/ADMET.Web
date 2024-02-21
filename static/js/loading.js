@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.image_url) {
                 // 이미지 URL과 SMILES 문자열을 /evaluation 페이지로 리디렉션
                 window.location.href = `/evaluation?image_url=${encodeURIComponent(data.image_url)}&smiles=${encodeURIComponent(smiles)}`;
+                //window.location.href = `/evaluation?smiles=${encodeURIComponent(smiles)}`;
             } else {
                 alert('There was an error processing the SMILES string.');
             }
