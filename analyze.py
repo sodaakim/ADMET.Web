@@ -9,6 +9,15 @@ from flask import Blueprint
 # Blueprint 객체 생성
 analyze_route = Blueprint('analyze_route', __name__)
 
+def custom_round(value):
+    # 정수 부분이 10 이상인지 체크
+    if value // 10 >= 1:
+        # 정수 부분이 10 이상이면 소수점 둘째자리에서 반올림
+        return round(value, 2)
+    else:
+        # 정수 부분이 10 미만이면 소수점 셋째자리에서 반올림
+        return round(value, 3)
+
 @analyze_route.route('/analyze', methods=['GET', 'POST'])
 def analyze():
     if request.method == 'POST':
@@ -24,9 +33,9 @@ def analyze():
 
             # 분자 속성 계산
             mol_formula = rdMolDescriptors.CalcMolFormula(mol)
-            mol_weight = Descriptors.MolWt(mol)
-            mol_volume = Descriptors.MolMR(mol)  # Volume의 대략적 추정
-            density = mol_weight / mol_volume if mol_volume else 0  # Density 계산
+            mol_weight = custom_round(Descriptors.MolWt(mol))
+            mol_volume = custom_round(Descriptors.MolMR(mol))  # Volume의 대략적 추정
+            density = custom_round(mol_weight / mol_volume) if mol_volume else 0  # Density 계산
             num_heavy_atoms = rdMolDescriptors.CalcNumHeavyAtoms(mol)
             num_aromatic_heavy_atoms = len([atom for atom in mol.GetAtoms() if atom.GetIsAromatic()])
             formal_charge = Chem.GetFormalCharge(mol)

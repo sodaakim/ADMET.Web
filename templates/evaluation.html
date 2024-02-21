@@ -13,6 +13,8 @@
 <!--asset (button.css)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
 <!--evaluation (intro.css)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_intro.css') }}">
 <!--evaluation (evaluation_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_contents.css') }}">
+<!-- <script src="static/js/evaluation/evaluation_card.js"></script>-->
+    <script src="static/js/evaluation/evaluation_card.js"></script>
 {% endblock %}
 
 <!--home (main)-->
@@ -63,10 +65,19 @@
                         <li class="card">
                             <div class="property-card">
                                 <h2 class="card-title">{{ property.title }}</h2>
+                                <div class="card-content subtitle">
+                                    <div class="card-subtitle"><p>property</p></div>
+                                    <div class="card-num"><p>model1</p></div>
+                                    <div class="card-num"><p>model2</p></div>
+                                    <div class="card-num"><p>model3</p></div>
+                                    <div class="color-indicator" style="background-color: transparent;"></div>
+                                </div>
                                 {% for content in property.contents %}
                                     <div class="card-content">
                                         <div class="card-subtitle">{{ content.subtitle }}</div>
                                         <div class="card-num">{{ content.num }}</div>
+                                        <div class="card-num"><p>num2</p></div>
+                                        <div class="card-num"><p>num3</p></div>
                                         <div class="color-indicator" style="background-color: {{ content.color }};"></div>
                                     </div>
                                 {% endfor %}
