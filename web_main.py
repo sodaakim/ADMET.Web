@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 from flask_mail import Mail, Message
@@ -6,9 +7,10 @@ from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 #region main
 app = Flask(__name__)
 app.secret_key = 'secret_key'
+app.jinja_env.filters['zip'] = zip
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(host='0.0.0.0', port='8000')
 #endregion
 
 #region import other Python Code
@@ -34,6 +36,12 @@ from screening import screening_route
 app.register_blueprint(screening_route)
 #endregion
 
+"""
+@app.route('/')
+def home():
+    return 'homeeee'
+"""
+
 @app.route('/')
 def home():
     cards = [
@@ -51,6 +59,4 @@ def Kekule():
 @app.route('/example')
 def example():
     return render_template('example.html')
-
-
 
