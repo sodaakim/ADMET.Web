@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--evaluation (evaluation_pdf.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_pdf.css') }}">
+    <title>ADMET-LAB Evaluation Report</title>
+</head>
+<body>
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid black; background-color: #f2f2f2;">Molecule Name</th>
+            <td style="border: 1px solid black;">{{ molecule_name }}</td>
+        </tr>
+        <tr>
+            <th>SMILES Notation</th>
+            <td>{{ smiles_notation }}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td><img src="{{ molecule_image_url }}" alt="Molecule Image"></td>
+        </tr>
+    </table>
+
+    <h2>Properties</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Model 1</th>
+                <th>Model 2</th>
+                <th>Model 3</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for property in properties %}
+                {% for content in property.contents %}
+                    <tr>
+                        <td>{{ property.title }} - {{ content.subtitle }}</td>
+                        <td>{{ content.model1 }}</td>
+                        <td>{{ content.model2 }}</td>
+                        <td>{{ content.model3 }}</td>
+                        <td><div class="color-indicator" style="background-color: {{ content.color }}"></div></td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<!--
+    <h1>{{ molecule_name }}</h1>
+    <img src="{{ molecule_image_url }}" alt="Molecule Image" style="width: 100px; height: auto;">
+    <h2>SMILES: {{ smiles_notation }}</h2>
+    <ul style="list-style-type: none;">
+        {% for property in properties %}
+            <li class="card">
+                <div class="property-card">
+                    <h2 class="card-title">{{ property.title }}</h2>
+                    {% if loop.index != 1 %}
+                        <div class="card-content subtitle">
+                            <div class="card-subtitle"><p>Property</p></div>
+                            <div class="card-num"><p>Model1</p></div>
+                            <div class="card-num"><p>Model2</p></div>
+                            <div class="card-num"><p>Model3</p></div>
+                            <div class="color-indicator" style="background-color: transparent;"></div>
+                        </div>
+                    {% endif %}
+                    {% for content in property.contents %}
+                        <div class="card-content">
+                            <div class="card-subtitle">{{ content.subtitle }}</div>
+                            <div class="card-num">{{ content.model1 }}</div>
+                            <div class="card-num">{{ content.model2 }}</div>
+                            <div class="card-num">{{ content.model3 }}</div>
+                            <div class="color-indicator" style="background-color: {{ content.color }};"></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+    -->
+</html>

@@ -11,32 +11,29 @@ app.jinja_env.filters['zip'] = zip
 
 # region import other Python Code
 from analyze import analyze_route
-
 app.register_blueprint(analyze_route)
 
 from evaluation import evaluation_route
-
 app.register_blueprint(evaluation_route)
 
 from result import result_route
-
 app.register_blueprint(result_route)
 
 from about import about_route
-
 app.register_blueprint(about_route)
 
 from reference import reference_route
-
 app.register_blueprint(reference_route)
 
 from api import api_route
-
 app.register_blueprint(api_route)
 
 from screening import screening_route
-
 app.register_blueprint(screening_route)
+
+from download_pdf import download_pdf_route
+app.register_blueprint(download_pdf_route)
+
 # endregion
 
 """

@@ -15,6 +15,8 @@
 <!--evaluation (evaluation_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_contents.css') }}">
 <!-- <script src="static/js/evaluation/evaluation_card.js"></script>-->
     <script src="static/js/evaluation/evaluation_card.js"></script>
+    <script src="static/js/evaluation/download_pdf.js"></script>
+    <script src="static/js/evaluation/download_csv.js"></script>
 {% endblock %}
 
 <!--home (main)-->
@@ -45,7 +47,8 @@
             <div class="result-header">
                 <h2>Molecule Name</h2>
                 <div class="box-right">
-                    <button class="button csv">Download as CSV</button>
+                    <button id="download-csv" class="button csv">Download as CSV</button>
+                    <button id="download-pdf" class="button csv">Download as PDF</button>
                 </div>
             </div>
             <div class="result-box">
