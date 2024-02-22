@@ -70,7 +70,7 @@
 
 .buttons {
     display: grid;
-    grid-template-columns: 75% 12% 13%;
+    grid-template-columns: 65% 10% 12% 13%;
     align-items: center;
     width: 100%;
     margin:0;

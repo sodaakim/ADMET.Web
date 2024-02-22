@@ -28,6 +28,9 @@ app.register_blueprint(reference_route)
 from api import api_route
 app.register_blueprint(api_route)
 
+from signup import signup_route
+app.register_blueprint(signup_route)
+
 from screening import screening_route
 app.register_blueprint(screening_route)
 
