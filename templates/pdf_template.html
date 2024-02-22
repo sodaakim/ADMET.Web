@@ -2,28 +2,80 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!--evaluation (evaluation_pdf.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_pdf.css') }}">
     <title>ADMET-LAB Evaluation Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 전체적인 글꼴 설정 */
+            font-size: 14px; /* 전체적인 글자 크기 조정 */
+        }
+        /* 테이블 스타일 */
+        table {
+            width: 100%; /* 페이지에 꽉 차도록 설정 */
+            border-collapse: collapse; /* 테이블 테두리 분리 설정 */
+            margin-bottom: 20px; /* 테이블들 사이 간격 설정 */
+        }
+        /* 테이블 헤더 스타일 */
+        th {
+            border: 1px solid black;
+            background-color: #f2f2f2;
+            padding: 4px;
+            text-align: left;
+            font-size: 14px; /* 테이블 헤더의 글자 크기 */
+        }
+        /* 테이블 셀 스타일 */
+        td {
+            border: 1px solid black;
+            padding: 4px;
+            text-align: left;
+            font-size: 13px; /* 테이블 셀의 글자 크기 */
+        }
+
+
+        /* 이미지 스타일 */
+        img {
+            width: 200px; /* 이미지 너비 설정 */
+            height: auto; /* 이미지 높이 자동 조정 */
+        }
+        /* 색상 표시기 스타일 */
+        .color-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* 원 모양의 색상 표시기 */
+            border: 1px solid black;
+            display: flex; /* 센터 정렬을 위해 flex 사용 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+    </style>
 </head>
 <body>
-    <table style="width: 100%; border-collapse: collapse;">
+    <div>
+        <h2>ADMET LAB</h2>
+    </div>
+    <table>
         <tr>
-            <th style="border: 1px solid black; background-color: #f2f2f2;">Molecule Name</th>
-            <td style="border: 1px solid black;">{{ molecule_name }}</td>
+            <th>Molecule Name</th>
+            <td>{{ molecule_name }}</td>
         </tr>
         <tr>
             <th>SMILES Notation</th>
             <td>{{ smiles_notation }}</td>
         </tr>
         <tr>
-            <th>Image</th>
+            <th>Molecule Structure</th>
             <td><img src="{{ molecule_image_url }}" alt="Molecule Image"></td>
         </tr>
     </table>
 
     <h2>Properties</h2>
+
+    {% for property in properties %}
     <table>
         <thead>
+            <tr>
+                <th colspan="5">{{ property.title }}</th> <!-- colspan 추가 -->
+            </tr>
             <tr>
                 <th>Property</th>
                 <th>Model 1</th>
@@ -33,51 +85,18 @@
             </tr>
         </thead>
         <tbody>
-            {% for property in properties %}
-                {% for content in property.contents %}
-                    <tr>
-                        <td>{{ property.title }} - {{ content.subtitle }}</td>
-                        <td>{{ content.model1 }}</td>
-                        <td>{{ content.model2 }}</td>
-                        <td>{{ content.model3 }}</td>
-                        <td><div class="color-indicator" style="background-color: {{ content.color }}"></div></td>
-                    </tr>
-                {% endfor %}
+            {% for content in property.contents %}
+            <tr>
+                <td style="width: 50%;">{{ content.subtitle }}</td>
+                <td style="width: 15%;">{{ content.model1 }}</td>
+                <td style="width: 15%;">{{ content.model2 }}</td>
+                <td style="width: 15%;">{{ content.model3 }}</td>
+                <td style="width: 5%;"><div class="color-indicator" style="background-color: {{ content.color }}"></div></td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
+    {% endfor %}
+
 </body>
-<!--
-    <h1>{{ molecule_name }}</h1>
-    <img src="{{ molecule_image_url }}" alt="Molecule Image" style="width: 100px; height: auto;">
-    <h2>SMILES: {{ smiles_notation }}</h2>
-    <ul style="list-style-type: none;">
-        {% for property in properties %}
-            <li class="card">
-                <div class="property-card">
-                    <h2 class="card-title">{{ property.title }}</h2>
-                    {% if loop.index != 1 %}
-                        <div class="card-content subtitle">
-                            <div class="card-subtitle"><p>Property</p></div>
-                            <div class="card-num"><p>Model1</p></div>
-                            <div class="card-num"><p>Model2</p></div>
-                            <div class="card-num"><p>Model3</p></div>
-                            <div class="color-indicator" style="background-color: transparent;"></div>
-                        </div>
-                    {% endif %}
-                    {% for content in property.contents %}
-                        <div class="card-content">
-                            <div class="card-subtitle">{{ content.subtitle }}</div>
-                            <div class="card-num">{{ content.model1 }}</div>
-                            <div class="card-num">{{ content.model2 }}</div>
-                            <div class="card-num">{{ content.model3 }}</div>
-                            <div class="color-indicator" style="background-color: {{ content.color }};"></div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-    -->
 </html>

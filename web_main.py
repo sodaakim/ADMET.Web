@@ -69,6 +69,10 @@ def home():
 def Kekule():
     return render_template('box/kekule.html')
 
+@app.route('/pdf')
+def PDF():
+    return render_template('pdf_template.html')
+
 
 @app.route('/example')
 def example():

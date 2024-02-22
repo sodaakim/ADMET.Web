@@ -33,7 +33,7 @@ function extractPageData_pdf() {
         smiles_notation: document.querySelector('.molecule-smiles h3').textContent,
         properties: Array.from(document.querySelectorAll('.molecule-card .card')).map(card => ({
             title: card.querySelector('.card-title').textContent,
-            contents: Array.from(card.querySelectorAll('.card-content')).map(content => ({
+            contents: Array.from(card.querySelectorAll('.card-content.contents')).map(content => ({
                 subtitle: content.querySelector('.card-subtitle')?.textContent,
                 model1: content.querySelector('.card-num:nth-child(2)')?.textContent,
                 model2: content.querySelector('.card-num:nth-child(3)')?.textContent,
