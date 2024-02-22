@@ -65,19 +65,21 @@
                         <li class="card">
                             <div class="property-card">
                                 <h2 class="card-title">{{ property.title }}</h2>
-                                <div class="card-content subtitle">
-                                    <div class="card-subtitle"><p>property</p></div>
-                                    <div class="card-num"><p>model1</p></div>
-                                    <div class="card-num"><p>model2</p></div>
-                                    <div class="card-num"><p>model3</p></div>
-                                    <div class="color-indicator" style="background-color: transparent;"></div>
-                                </div>
+                                {% if loop.index != 1 %}
+                                    <div class="card-content subtitle">
+                                        <div class="card-subtitle"><p>property</p></div>
+                                        <div class="card-num"><p>model1</p></div>
+                                        <div class="card-num"><p>model2</p></div>
+                                        <div class="card-num"><p>model3</p></div>
+                                        <div class="color-indicator" style="background-color: transparent;"></div>
+                                    </div>
+                                {% endif %}
                                 {% for content in property.contents %}
                                     <div class="card-content">
                                         <div class="card-subtitle">{{ content.subtitle }}</div>
-                                        <div class="card-num">{{ content.num }}</div>
-                                        <div class="card-num"><p>num2</p></div>
-                                        <div class="card-num"><p>num3</p></div>
+                                        <div class="card-num">{{ content.model1 }}</div>
+                                        <div class="card-num">{{ content.model2 }}</div>
+                                        <div class="card-num">{{ content.model3 }}</div>
                                         <div class="color-indicator" style="background-color: {{ content.color }};"></div>
                                     </div>
                                 {% endfor %}

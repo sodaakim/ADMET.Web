@@ -21,142 +21,142 @@ def evaluation():
             # content : Physicochemical Property
             {'title': 'Physicochemical Properties',
              'contents': [
-                {'subtitle': 'Formula',                 'num': prop_values.get('Formula', 'N/A'),                   'color': '#103B59'},
-                {'subtitle': 'Molecular Weight',        'num': prop_values.get('Molecular Weight', 'N/A'),          'color': '#103B59'},
-                {'subtitle': 'Volume',                  'num': prop_values.get('Volume', 'N/A'),                    'color': '#103B59'},
-                {'subtitle': 'Density',                 'num': prop_values.get('Density', 'N/A'),                   'color': '#103B59'},
-                {'subtitle': 'Num. heavy atoms',        'num': prop_values.get('Num. heavy atoms', 'N/A'),          'color': '#103B59'},
-                {'subtitle': 'Num. arom. heavy atoms',  'num': prop_values.get('Num. arom. heavy atoms', 'N/A'),    'color': '#103B59'},
-                {'subtitle': 'formal Charge',           'num': prop_values.get('formal Charge', 'N/A'),             'color': '#103B59'},
-                {'subtitle': 'TPSA',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'logS',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'logP',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'logD',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'DMSO',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'nHA',                     'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'nHD',                     'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'nRot',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'nRing',                   'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'nHet',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'nRig',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'pKa',                     'num': 'num', 'color': '#103B59'}
+                {'subtitle': 'Formula',                 'model1': '   ',    'model2': '   ',    'model3': prop_values.get('Formula', 'N/A'),                   'color': '#103B59'},
+                {'subtitle': 'Molecular Weight',        'model1': '   ',    'model2': '   ',    'model3': prop_values.get('Molecular Weight', 'N/A'),          'color': '#103B59'},
+                {'subtitle': 'Volume',                  'model1': '   ',    'model2': '   ',    'model3': prop_values.get('Volume', 'N/A'),                    'color': '#103B59'},
+                {'subtitle': 'Density',                 'model1': '   ',    'model2': '   ',    'model3': prop_values.get('Density', 'N/A'),                   'color': '#103B59'},
+                {'subtitle': 'Num. heavy atoms',        'model1': '   ',    'model2': '   ',    'model3': prop_values.get('Num. heavy atoms', 'N/A'),          'color': '#103B59'},
+                {'subtitle': 'Num. arom. heavy atoms',  'model1': '   ',    'model2': '   ',    'model3': prop_values.get('Num. arom. heavy atoms', 'N/A'),    'color': '#103B59'},
+                {'subtitle': 'formal Charge',           'model1': '   ',    'model2': '   ',    'model3': prop_values.get('formal Charge', 'N/A'),             'color': '#103B59'},
+                {'subtitle': 'TPSA',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'logS',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'logP',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'logD',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'DMSO',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'nHA',                     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'nHD',                     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'nRot',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'nRing',                   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'nHet',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'nRig',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'pKa',                     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
             ]},
             # content : Medicinal Chemistry
             {'title': 'Medicinal Chemistry',
              'contents': [
-                {'subtitle': 'SAscore',                 'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'NPscore',                 'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Lipinski Rule',           'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Pfizer Rule',             'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Ghose',                   'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'GSK Rule',                'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Veber (GSK) filter',   'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Golden Triangle',         'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'PAINS',                   'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Leadlikeness',            'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Brenk',                   'num': 'num', 'color': '#103B59'}
+                {'subtitle': 'SAscore',                 'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'NPscore',                 'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Lipinski Rule',           'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Pfizer Rule',             'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Ghose',                   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'GSK Rule',                'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Veber (GSK) filter',   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Golden Triangle',         'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'PAINS',                   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Leadlikeness',            'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Brenk',                   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
             ]},
             # content : Distribution
             {'title': 'Distribution',
              'contents': [
-                {'subtitle': 'PPB',                     'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Fu',                      'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Vd',                      'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'BBB Penetration',         'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Log Kp',                  'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Organic anion',           'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'HPP Binding',             'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'GI absorption ',       'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'P-gp substrate ',      'num': 'num', 'color': '#103B59'}
+                {'subtitle': 'PPB',                     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Fu',                      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Vd',                      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'BBB Penetration',         'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Log Kp',                  'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Organic anion',           'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'HPP Binding',             'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'GI absorption ',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'P-gp substrate ',      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
             ]},
             # content : Druglikeness
             {'title': 'Druglikeness',
              'contents': [
-                {'subtitle': 'Egan',                    'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Bioavailability Score',   'num': 'num', 'color': '#103B59'}
+                {'subtitle': 'Egan',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Bioavailability Score',   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
             ]},
             # content : Absorption
             {'title': 'Absorption',
              'contents': [
-                {'subtitle': 'Caco-2 Permeability',     'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'MDCK Permeability',       'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Pgp-inhibitor',           'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'Pgp-substrate',           'num': 'num', 'color': '#103B59'},
-                {'subtitle': 'HIA',                     'num': 'num', 'color': '#103B59'}
+                {'subtitle': 'Caco-2 Permeability',     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'MDCK Permeability',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Pgp-inhibitor',           'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'Pgp-substrate',           'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                {'subtitle': 'HIA',                     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
             ]},
             # content : Excretion
             {'title': 'Excretion',
              'contents': [
-                 {'subtitle': 'Clearance',              'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Half-life',              'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'Clearance',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Half-life',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
             # content : Metabolism
             {'title': 'Metabolism',
              'contents': [
-                 {'subtitle': 'CYP1A2 inhibitor',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP1A2 substrate',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP2C19 inhibitor',      'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP2C19 substrate',      'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP2C9 inhibitor',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP2C9 substrate',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP2D6 inhibitor',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP2D6 substrate',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP3A4 inhibitor',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'CYP3A4 substrate',       'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'CYP1A2 inhibitor',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP1A2 substrate',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP2C19 inhibitor',      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP2C19 substrate',      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP2C9 inhibitor',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP2C9 substrate',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP2D6 inhibitor',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP2D6 substrate',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP3A4 inhibitor',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'CYP3A4 substrate',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
             # content : Toxicity
             {'title': 'Biological Target-Based Toxicity',
              'contents': [
-                 {'subtitle': 'hERG Blockers',          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'DILI',                   'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'AMES Toxicity',          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Carcinogencity',         'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Eye Irritation',         'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Eye Corrosion',          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Hepatotoxicity',         'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Rat Oral Acute Toxicity', 'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Skin Sensitization',     'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'hERG Blockers',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'DILI',                       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'AMES Toxicity',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Carcinogencity',             'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Eye Irritation',             'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Eye Corrosion',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Hepatotoxicity',             'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Rat Oral Acute Toxicity',    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Skin Sensitization',         'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
             # content : Cytotoxicity
             {'title': 'Cytotoxicity',
              'contents': [
-                 {'subtitle': 'HepG2',                  'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NIH 3T3',                'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'HepG2',                      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NIH 3T3',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
             # content : Environmental Toxicity
             {'title': 'Environmental Toxicity',
              'contents': [
-                 {'subtitle': 'Bioconcentration Factors',   'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Biodegration factors',       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'LD50',                       'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'Bioconcentration Factors',   'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Biodegration factors',       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'LD50',                       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
             # content : Biological Pathway Toxicity
             {'title': 'Biological Pathway Toxicity',
              'contents': [
-                 {'subtitle': 'NR-AR (Androgen receptor)',          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NR-AR-LBD (ligand -binding)',        'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NR-AhR (Aryl hydrocarbon)',          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NR-Aromatase',                       'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NR-ER (Estrogen receptor)',          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NR-ER-LBD',                          'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NR-PPAR-gamma (Peroxisome)',         'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'SR-ARE (Antioxidant response)',      'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'SR-ATAD5 (ATPase family domain)',    'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'SR-HSE (Heat shock factor)',         'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'SR-MMP (Mitochondrial membrane)',    'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'SR-p53',                             'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'NR-AR (Androgen receptor)',          'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NR-AR-LBD (ligand -binding)',        'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NR-AhR (Aryl hydrocarbon)',          'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NR-Aromatase',                       'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NR-ER (Estrogen receptor)',          'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NR-ER-LBD',                          'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NR-PPAR-gamma (Peroxisome)',         'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'SR-ARE (Antioxidant response)',      'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'SR-ATAD5 (ATPase family domain)',    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'SR-HSE (Heat shock factor)',         'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'SR-MMP (Mitochondrial membrane)',    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'SR-p53',                             'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
             # content : Toxicophore Rules
             {'title': 'Toxicophore Rules',
              'contents': [
-                 {'subtitle': 'Acute Toxicity Rule',                'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Genotoxic Carcinogenicity Rule',     'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NonGenotoxic Carcinogenicity Rule',  'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Skin Sensitization Rule',            'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'Aquatic Toxicity Rule',              'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'NonBiodegradable Rule',              'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'SureChEMBL Rule',                    'num': 'num', 'color': '#103B59'},
-                 {'subtitle': 'FAF-Drugs4 Rule',                    'num': 'num', 'color': '#103B59'}
+                 {'subtitle': 'Acute Toxicity Rule',                'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Genotoxic Carcinogenicity Rule',     'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NonGenotoxic Carcinogenicity Rule',  'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Skin Sensitization Rule',            'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'Aquatic Toxicity Rule',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'NonBiodegradable Rule',              'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'SureChEMBL Rule',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'},
+                 {'subtitle': 'FAF-Drugs4 Rule',                    'model1': 'num',    'model2': 'num',    'model3': 'num',    'color': '#103B59'}
              ]},
         ]
 
