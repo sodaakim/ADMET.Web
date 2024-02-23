@@ -27,3 +27,49 @@
     padding: 1em;
 }
 
+/*table*/
+table {
+    width: 100%; /* 테이블의 너비를 부모 요소에 맞춤 */
+    border-collapse: collapse; /* 테두리 겹침 방지 */
+    margin-bottom: 2em;
+}
+
+.table {
+    padding: 0 1em;
+}
+
+th, td {
+    border: 1px solid #ccc; /* 셀 테두리 */
+    padding: 8px; /* 셀 내부 여백 */
+    text-align: left; /* 텍스트 정렬 */
+    font-size: 16px; /* 글꼴 크기 */
+}
+
+th {
+    background-color: #f2f2f2; /* 테이블 헤더 배경색 */
+    color: #333; /* 테이블 헤더 글꼴 색상 */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* 짝수 행 배경색 */
+}
+
+tr:hover {
+    background-color: #e8e8e8; /* 행에 마우스를 올렸을 때의 배경색 */
+}
+
+
+.pagination {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.pagination button {
+    padding: 2px 5px;
+    margin: 0 5px;
+}
+
+.pagination span {
+    margin: 0 2px;
+    font-weight: bold;
+}

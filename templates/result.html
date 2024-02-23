@@ -17,6 +17,7 @@
 <!--result (result_propertyCard.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_propertyCard.css') }}">
 <!--result (result_propertyCard.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_cards.css') }}">
 <!--script property checkbox--> <script src="static/js/propertyCheckbox.js"></script>
+<!--script property pagenation--> <script src="static/js/pagenation.js"></script>
 {% endblock %}
 
 <!--home (main)-->
@@ -47,10 +48,26 @@
             <div class="result-option-header">
                 <h2>Evaluation Results</h2>
             </div>
-            <div>
-                <h2>contents</h2>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 50%;">
+                        <col style="width: 30%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <tr> <!-- 첫 번째 행 -->
+                        <td>Number of molecules</td>
+                        <td>{{ cards|length }}</td>
+                        <td><div><button class="button analyze">Download txt</button></div></td>
+                    </tr>
+                    <tr> <!-- 두 번째 행 -->
+                        <td>Number of invalid molecules</td>
+                        <td>num</td>
+                        <td><div><button class="button analyze">Download txt</button></div></td>
+                    </tr>
+                </table>
+                <hr class="content-separator">
             </div>
-            <hr class="content-separator">
             <div class="result-option-header download-header">
                 <h2>Download Options</h2>
                 <button class="toggleDownloadOptions toggle-button">+</button>
@@ -98,20 +115,53 @@
                 <div><button class="button analyze">Analyze ADMET</button></div>
             </div>
             <div>
-                <ul class="card-box">
+                <ul class="card-box" id="cardsContainer">
+
                     {% for card in cards %}
-                    <li class="card">
-                        <div class="smiles-card">
-                            <div class="smiles-image">{{ card.img }}</div>
-                            <div class="card-contents">
-                                <h4>smiles</h4>
-                                <h4>{{ card.smiles }}</h4>
-                            </div>
-                        </div>
-                    </li>
+                        {% if loop.index <= 18 %}
+                            <li class="card">
+                                <div class="smiles-card">
+                                    <div class="smiles-image">{{ card.img }}</div>
+                                    <div class="card-contents">
+                                        <h4>smiles</h4>
+                                        <h4>{{ card.smiles }}</h4>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>
+            <div class="pagination">
+                {% if page > 1 %}
+                <a href="{{ url_for('result_route.result', page=page-1) }}" class="button">Previous</a>
+                {% endif %}
+
+                {% set range_start = page - 2 if page - 2 > 0 else 1 %}
+                {% set range_end = range_start + 4 if range_start + 4 <= total_pages else total_pages %}
+
+                {% for i in range(range_start, range_end + 1) %}
+                    <a href="{{ url_for('result_route.result', page=i) }}" class="button {{ 'active' if i == page else '' }}">{{ i }}</a>
+                {% endfor %}
+
+                {% if page < total_pages %}
+                <a href="{{ url_for('result_route.result', page=page+1) }}" class="button">Next</a>
+                {% endif %}
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // 페이지 로드 시 저장된 스크롤 위치로 이동
+                    const savedScrollPos = sessionStorage.getItem('scrollPosition');
+                    if (savedScrollPos) {
+                        window.scrollTo(0, parseInt(savedScrollPos));
+                    }
+
+                    // 사용자가 스크롤할 때마다 현재 스크롤 위치를 저장
+                    window.onscroll = () => {
+                        sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+                    };
+                });
+            </script>
         </div>
     </div>
     </section>

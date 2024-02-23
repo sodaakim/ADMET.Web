@@ -9,8 +9,9 @@ from flask import Blueprint
 # Blueprint 객체 생성
 result_route = Blueprint('result_route', __name__)
 
-@result_route.route('/result')
-def result():
+
+def create_cards():
+    # 실제 애플리케이션에서는 데이터베이스 쿼리 등을 사용하여 카드 데이터를 가져올 것입니다.
     cards = [
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
@@ -22,6 +23,52 @@ def result():
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'ㄴㄴㄴ', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'ㅁㅁㅁㅁ', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'ㄴㅇㄴㅇㄴㅇ', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'ㄴㅇㄴㅇㄴㅇ', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
+
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
@@ -31,137 +78,84 @@ def result():
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'}
     ]
+    return cards
+
+@result_route.route('/result')
+def result():
+    cards = create_cards()
+    per_page = 18
+    page = request.args.get('page', 1, type=int)
+    total_pages = (len(cards) + per_page - 1) // per_page
+
+    # 현재 페이지에 표시할 카드의 서브셋을 계산합니다.
+    start_index = (page - 1) * per_page
+    end_index = start_index + per_page
+    page_cards = cards[start_index:end_index]
 
     cardColors = [
-        '#6B8E23',
-        '#E6E6FA',
-        '#808080',
-        '#C2B280',
-        '#228B22',
-        '#FF6347',
-        '#87CEEB',
-        '#D2691E',
-        '#FF8C00',
-        '#778899',
-        '#808000',
-        '#800020',
-        '#000080',
-        '#FF6F61'
+        '#6B8E23', '#E6E6FA', '#808080', '#C2B280', '#228B22', '#FF6347',
+        '#87CEEB', '#D2691E', '#FF8C00', '#778899', '#808000', '#800020',
+        '#000080', '#FF6F61'
     ]
 
-    properties = [ # property
+    properties = [  # property
         # content : Physicochemical Property
         {'title': 'Physicochemical Properties', 'color': cardColors[0],
-         'contents': [
-            {'subtitle': 'Formula'},
-            {'subtitle': 'Molecular Weight'},
-            {'subtitle': 'Volume'},
-            {'subtitle': 'Density'},
-            {'subtitle': 'Num. heavy atoms'},
-            {'subtitle': 'Num. arom. heavy atoms'},
-            {'subtitle': 'formal Charge'},
-            {'subtitle': 'TPSA'},
-            {'subtitle': 'logS'},
-            {'subtitle': 'logP'},
-            {'subtitle': 'logD'},
-            {'subtitle': 'DMSO'},
-            {'subtitle': 'nHA'},
-            {'subtitle': 'nHD'},
-            {'subtitle': 'nRot'},
-            {'subtitle': 'nRing'},
-            {'subtitle': 'nHet'},
-            {'subtitle': 'nRig'},
-            {'subtitle': 'pKa'}
-        ]},
+         'contents': [{'subtitle': 'Formula'},          {'subtitle': 'Molecular Weight'},   {'subtitle': 'Volume'},
+                      {'subtitle': 'Density'},          {'subtitle': 'Num. heavy atoms'},   {'subtitle': 'Num. arom. heavy atoms'},
+                      {'subtitle': 'formal Charge'},    {'subtitle': 'TPSA'},               {'subtitle': 'logS'},
+                      {'subtitle': 'logP'},             {'subtitle': 'logD'},               {'subtitle': 'DMSO'},
+                      {'subtitle': 'nHA'},              {'subtitle': 'nHD'},                {'subtitle': 'nRot'},
+                      {'subtitle': 'nRing'},            {'subtitle': 'nHet'},               {'subtitle': 'nRig'},
+                      {'subtitle': 'pKa'} ]},
+
         # content : Medicinal Chemistry
         {'title': 'Medicinal Chemistry', 'color': cardColors[1],
-         'contents': [
-            {'subtitle': 'SAscore'},
-            {'subtitle': 'NPscore'},
-            {'subtitle': 'Lipinski Rule'},
-            {'subtitle': 'Pfizer Rule'},
-            {'subtitle': 'Ghose'},
-            {'subtitle': 'GSK Rule'},
-            {'subtitle': 'Veber (GSK) filter'},
-            {'subtitle': 'Golden Triangle'},
-            {'subtitle': 'PAINS'},
-            {'subtitle': 'Leadlikeness'},
-            {'subtitle': 'Brenk'}
-        ]},
+         'contents': [{'subtitle': 'SAscore'},                  {'subtitle': 'NPscore'},    {'subtitle': 'Lipinski Rule'},
+                      {'subtitle': 'Pfizer Rule'},              {'subtitle': 'Ghose'},      {'subtitle': 'GSK Rule'},
+                      {'subtitle': 'Veber (GSK) filter'},    {'subtitle': 'Golden Triangle'}, {'subtitle': 'PAINS'},
+                      {'subtitle': 'Leadlikeness'},             {'subtitle': 'Brenk'} ]},
+
         # content : Distribution
         {'title': 'Distribution', 'color': cardColors[2],
-         'contents': [
-            {'subtitle': 'PPB'},
-            {'subtitle': 'Fu'},
-            {'subtitle': 'Vd'},
-            {'subtitle': 'BBB Penetration'},
-            {'subtitle': 'Log Kp'},
-            {'subtitle': 'Organic anion'},
-            {'subtitle': 'HPP Binding'},
-            {'subtitle': 'GI absorption '},
-            {'subtitle': 'P-gp substrate '}
-        ]},
+         'contents': [{'subtitle': 'PPB'},              {'subtitle': 'Fu'},     {'subtitle': 'Vd'},
+                      {'subtitle': 'BBB Penetration'},  {'subtitle': 'Log Kp'}, {'subtitle': 'Organic anion'},
+                      {'subtitle': 'HPP Binding'},      {'subtitle': 'GI absorption '}, {'subtitle': 'P-gp substrate '} ]},
+
         # content : Druglikeness
         {'title': 'Druglikeness', 'color': cardColors[3],
-         'contents': [
-            {'subtitle': 'Egan'},
-            {'subtitle': 'Bioavailability Score'}
-        ]},
+         'contents': [{'subtitle': 'Egan'},   {'subtitle': 'Bioavailability Score'} ]},
+
         # content : Absorption
         {'title': 'Absorption', 'color': cardColors[4],
-         'contents': [
-            {'subtitle': 'Caco-2 Permeability'},
-            {'subtitle': 'MDCK Permeability'},
-            {'subtitle': 'Pgp-inhibitor'},
-            {'subtitle': 'Pgp-substrate',},
-            {'subtitle': 'HIA'}
-        ]},
+         'contents': [{'subtitle': 'Caco-2 Permeability'},  {'subtitle': 'MDCK Permeability'},  {'subtitle': 'Pgp-inhibitor'},
+                      {'subtitle': 'Pgp-substrate', },      {'subtitle': 'HIA'} ]},
+
         # content : Excretion
         {'title': 'Excretion', 'color': cardColors[5],
-         'contents': [
-             {'subtitle': 'Clearance'},
-             {'subtitle': 'Half-life'}
-         ]},
+         'contents': [{'subtitle': 'Clearance'},    {'subtitle': 'Half-life'} ]},
+
         # content : Metabolism
         {'title': 'Metabolism', 'color': cardColors[6],
-         'contents': [
-             {'subtitle': 'CYP1A2 inhibitor'},
-             {'subtitle': 'CYP1A2 substrate'},
-             {'subtitle': 'CYP2C19 inhibitor'},
-             {'subtitle': 'CYP2C19 substrate'},
-             {'subtitle': 'CYP2C9 inhibitor'},
-             {'subtitle': 'CYP2C9 substrate'},
-             {'subtitle': 'CYP2D6 inhibitor'},
-             {'subtitle': 'CYP2D6 substrate'},
-             {'subtitle': 'CYP3A4 inhibitor'},
-             {'subtitle': 'CYP3A4 substrate'}
-         ]},
+         'contents': [{'subtitle': 'CYP1A2 inhibitor'},     {'subtitle': 'CYP1A2 substrate'},   {'subtitle': 'CYP2C19 inhibitor'},
+                      {'subtitle': 'CYP2C19 substrate'},    {'subtitle': 'CYP2C9 inhibitor'},   {'subtitle': 'CYP2C9 substrate'},
+                      {'subtitle': 'CYP2D6 inhibitor'},     {'subtitle': 'CYP2D6 substrate'},   {'subtitle': 'CYP3A4 inhibitor'},
+                      {'subtitle': 'CYP3A4 substrate'} ]},
+
         # content : Toxicity
         {'title': 'Toxicity', 'color': cardColors[7],
-         'contents': [
-             {'subtitle': 'hERG Blockers'},
-             {'subtitle': 'DILI'},
-             {'subtitle': 'AMES Toxicity'},
-             {'subtitle': 'Carcinogencity'},
-             {'subtitle': 'Eye Irritation'},
-             {'subtitle': 'Eye Corrosion'},
-             {'subtitle': 'Hepatotoxicity'},
-             {'subtitle': 'Rat Oral Acute Toxicity'},
-             {'subtitle': 'Skin Sensitization'}
-         ]},
+         'contents': [{'subtitle': 'hERG Blockers'},        {'subtitle': 'DILI'},           {'subtitle': 'AMES Toxicity'},
+                      {'subtitle': 'Carcinogencity'},       {'subtitle': 'Eye Irritation'}, {'subtitle': 'Eye Corrosion'},
+                      {'subtitle': 'Hepatotoxicity'},       {'subtitle': 'Rat Oral Acute Toxicity'},    {'subtitle': 'Skin Sensitization'} ]},
+
         # content : Cytotoxicity
         {'title': 'Cytotoxicity', 'color': cardColors[9],
-         'contents': [
-             {'subtitle': 'HepG2'},
-             {'subtitle': 'NIH 3T3'}
-         ]},
+         'contents': [{'subtitle': 'HepG2'},    {'subtitle': 'NIH 3T3'} ]},
+
         # content : Environmental Toxicity
         {'title': 'Environmental Toxicity', 'color': cardColors[10],
-         'contents': [
-             {'subtitle': 'Bioconcentration Factors'},
-             {'subtitle': 'Biodegration factors'},
-             {'subtitle': 'LD50'}
-         ]},
+         'contents': [{'subtitle': 'Bioconcentration Factors'}, {'subtitle': 'Biodegration factors'},   {'subtitle': 'LD50'} ]},
+
         # content : Biological Pathway Toxicity
         {'title': 'Biological Pathway Toxicity', 'color': cardColors[11],
          'contents': [
@@ -191,4 +185,4 @@ def result():
              {'subtitle': 'FAF-Drugs4 Rule'}
          ]},
     ]
-    return render_template('result.html', properties=properties, cards=cards)
+    return render_template('result.html', cards=page_cards, page=page, total_pages=total_pages, properties=properties)
