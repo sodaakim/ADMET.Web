@@ -28,17 +28,17 @@
     color: #2c3b73;
 }
 
-/* example button */
-.example2 {
+/* example-analyze button */
+.example-analyze {
     background-color: #A1A1A1;
     color: white;
 }
 
-.example2:hover {
+.example-analyze:hover {
     background-color: #A1A1A1;
 }
 
-.example2:active {
+.example-analyze:active {
     background-color: white;
     color: #A1A1A1;
 }
@@ -63,7 +63,7 @@
 
 /* analyze button */
 .result {
-    margin: 1em 0 1em 1em;
+    margin: 2em 0 1em 1em;
     background-color: #091F44;
     color: white;
 }
@@ -109,4 +109,32 @@
 .csv:active {
     background-color: white;
     color: #091F44;
+}
+
+.download-txt {
+
+}
+
+.download-result {
+
+}
+
+.page {
+
+}
+
+.detail {
+
+}
+
+.send {
+
+}
+
+.file {
+
+}
+
+.pdf {
+
 }

@@ -46,7 +46,8 @@
     <div class="evaluation-section">
         <div class="result-option-box">
             <div class="result-option-header">
-                <h2>Evaluation Results</h2>
+                <h2 class="download-title">Evaluation Results</h2>
+                <div><button class="button download-result">Download Results</button></div>
             </div>
             <div class="table">
                 <table>
@@ -57,13 +58,13 @@
                     </colgroup>
                     <tr> <!-- 첫 번째 행 -->
                         <td>Number of molecules</td>
-                        <td>{{ cards|length }}</td>
-                        <td><div><button class="button analyze">Download txt</button></div></td>
+                        <td>{{ origin_cards|length }}</td>
+                        <td><div><button class="button download-txt">Download txt</button></div></td>
                     </tr>
                     <tr> <!-- 두 번째 행 -->
                         <td>Number of invalid molecules</td>
                         <td>num</td>
-                        <td><div><button class="button analyze">Download txt</button></div></td>
+                        <td><div><button class="button download-txt">Download txt</button></div></td>
                     </tr>
                 </table>
                 <hr class="content-separator">
@@ -111,7 +112,7 @@
 
         <div class="molecules-box">
             <div class="molecules-header">
-                <div><h2><p>{{ cards|length }}</p>molecules Analyzed</h2></div>
+                <div><h2><p>{{ origin_cards|length }}</p>molecules Analyzed</h2></div>
                 <div><button class="button analyze">Analyze ADMET</button></div>
             </div>
             <div>
@@ -126,6 +127,7 @@
                                         <h4>smiles</h4>
                                         <h4>{{ card.smiles }}</h4>
                                     </div>
+                                    <div><button class="button detail">Detail</button></div>
                                 </div>
                             </li>
                         {% endif %}
@@ -134,18 +136,18 @@
             </div>
             <div class="pagination">
                 {% if page > 1 %}
-                <a href="{{ url_for('result_route.result', page=page-1) }}" class="button">Previous</a>
+                <a href="{{ url_for('result_route.result', page=page-1) }}" class="button page">Previous</a>
                 {% endif %}
 
                 {% set range_start = page - 2 if page - 2 > 0 else 1 %}
                 {% set range_end = range_start + 4 if range_start + 4 <= total_pages else total_pages %}
 
                 {% for i in range(range_start, range_end + 1) %}
-                    <a href="{{ url_for('result_route.result', page=i) }}" class="button {{ 'active' if i == page else '' }}">{{ i }}</a>
+                    <a href="{{ url_for('result_route.result', page=i) }}" class="button page {{ 'active' if i == page else '' }}">{{ i }}</a>
                 {% endfor %}
 
                 {% if page < total_pages %}
-                <a href="{{ url_for('result_route.result', page=page+1) }}" class="button">Next</a>
+                <a href="{{ url_for('result_route.result', page=page+1) }}" class="button page">Next</a>
                 {% endif %}
             </div>
             <script>

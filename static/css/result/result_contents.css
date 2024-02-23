@@ -21,10 +21,24 @@
     justify-content: left;
 }
 
+.result-option-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .result-option-header h2{
     font-weight: 800;
     text-align: left;
     padding: 1em;
+}
+
+.download-title {
+    flex-grow: 1;
+}
+
+.button.analyze {
+    margin-left: auto;
 }
 
 /*table*/
