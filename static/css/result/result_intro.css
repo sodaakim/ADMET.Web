@@ -1,9 +1,19 @@
+@keyframes wave {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #intro-section {
-    display: flex;
     position: relative;
     text-align: center;
-    padding: 3em 8em;
-    background: #495A81;
+    padding: 4em 8em;
+    background: linear-gradient(to right, #495A81, #3b5998, #566486);
+    background-size: 200% auto;
+    animation: wave 1.5s forwards;
 }
 
 .background {

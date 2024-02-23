@@ -1,0 +1,135 @@
+/* General Styles for the Sign-Up Section */
+#signup {
+    display: flex;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#signup h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-box {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+    height: 35em;
+    margin: 3em;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.text {
+    font-size: 40px;
+}
+
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    color: #3b5998;
+}
+
+
+@keyframes wave {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#signup-section {
+    position: relative;
+    text-align: center;
+    padding: 1em;
+    background: linear-gradient(to right, #86a8e7, #6A77AD, #6A77AD);
+    background-size: 200% auto;
+    height: 55em;
+    animation: wave 1.5s forwards;
+}
+
+.signup-image {
+    background-color: white; /* 원하는 배경색으로 설정하세요 */
+    border-radius: 10px; /* 원하는 곡률 반경으로 설정하세요 */
+    padding: 20px; /* 내부 여백을 추가하여 이미지와 경계 사이에 공간을 만듭니다 */
+    display: flex; /* 이미지를 중앙에 위치시키기 위해 flexbox를 사용합니다 */
+    flex-basis: 50%;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.signup-image img {
+    border-radius: 10px; /* 이미지의 둥근 경계를 설정합니다. div와 같은 값을 사용합니다 */
+    max-width: 100%; /* 이미지가 div를 벗어나지 않도록 합니다 */
+    height: auto; /* 이미지 비율을 유지합니다 */
+}
+
+.signup-box {
+    margin: 2em 0;
+    display: flex;
+    background-color: white;
+    text-align: center;
+    background-size: 200% auto;
+    align-items: center;
+    justify-content: center; /* 가로 중앙 정렬 */
+    width: 60em;
+    height: 45em;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signup-form {
+    width: 500px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px; /* Adjust as needed for the rounded curves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#signup-form input[type="email"],
+#signup-form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#signup-form input[type="email"]:focus,
+#signup-form input[type="password"]:focus {
+    border-color: #6A77AD;
+    outline: none;
+}
+
+/* Styles for the Submit Button */
+#signup-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6A77AD;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#signup-form button:hover {
+    background-color: #6A77AD;
+}

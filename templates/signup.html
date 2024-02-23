@@ -1,34 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Homepage</title>
-    <link rel="stylesheet" href="static/css/signup.css">
-    <link rel="stylesheet" href="static/css/home.css">
-</head>
-<body>
-    <header>
-        <div class="logo"><a href="/">ADMET Prediction Tool</a></div>
-        <nav>
-            <ul>
-                <li><a href="/">Service Introduction</a></li>
-                <li><a href="/analyze">Analyze</a></li>
-                <li><a href="#lab">Lab Introduction</a></li>
-                <li><a href="/signupform">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div>
-        <section id="signup">
-            <h2>Sign Up</h2>
-            <form id="signup-form">
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <input type="password" id="password" placeholder="Enter your password" required>
-                <button type="submit">Sign Up</button>
-            </form>
-        </section>
-    </div>
-    <footer>
-        <p>© 2024 Homepage. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+<!--sign up 입력 페이지-->
+
+<!--extends (root.html) for base-->
+{% extends 'root.html' %}
+
+<!--(home.html) Title-->
+{% block title %}Signup{% endblock %}
+
+<!--(style) and (js codes)-->
+{% block script %}
+<!--base (base)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+<link rel="stylesheet" href="static/css/signup/signup.css">
+
+{% endblock %}
+
+<!--home (main)-->
+{% block main %}
+<main>
+    <section id="signup-section">
+        <div class="signup-container">
+            <div class="image-box">
+                <h2 class="white text">Welcome to ADMET LAB</h2>
+                <h2 class="white">가입하면 어떤거 할수있는지 적자</h2>
+                <div class="signup-image">
+                    <!-- Image goes here -->
+                    <img src="path-to-your-image.jpg" alt="Signup Image">
+                </div>
+            </div>
+            <div class="signup-box">
+                <div class="signup-form">
+                    <h2>Sign Up</h2>
+                    <form id="signup-form" method="post" action="your-server-endpoint">
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
