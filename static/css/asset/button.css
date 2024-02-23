@@ -80,12 +80,12 @@
 
 /* convert */
 .convert {
-    background-color: #617484;
+    background-color: #6A77AD;
     color: white;
 }
 
 .convert:hover {
-    background-color: #072235;
+    background-color: #091F44;
 }
 
 .convert:active {

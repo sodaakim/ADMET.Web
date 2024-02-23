@@ -86,21 +86,21 @@
                         </div>
 
                         <script>
-                            document.querySelector('.button.file').addEventListener('click', function() {
-                                document.getElementById('hiddenFileInput').click();
-                            });
+                        document.querySelector('.button.file').addEventListener('click', function() {
+                            document.getElementById('hiddenFileInput').click();
+                        });
 
-                            document.getElementById('hiddenFileInput').addEventListener('change', function(event) {
-                                const file = event.target.files[0];
-                                if (!file) { return; }
-                                const reader = new FileReader();
-                                reader.onload = function(event) {
-                                    const content = event.target.result;
-                                    console.log(content);
-                                };
-                                reader.readAsText(file);
-                                document.getElementById('fileNameDisplay').textContent = `Selected file: ${file.name}`;
-                            });
+                        document.getElementById('hiddenFileInput').addEventListener('change', function(event) {
+                            const file = event.target.files[0];
+                            if (!file) { return; }
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                const content = event.target.result;
+                                document.getElementById('smilesInput').value = content;
+                            };
+                            reader.readAsText(file);
+                            document.getElementById('fileNameDisplay').textContent = `Selected file: ${file.name}`;
+                        });
                         </script>
 
                         <div class="button3">
@@ -116,6 +116,7 @@
                 <div><h2>Select Smiles Cards</h2></div>
                 <div><button class="button result">Analyze ADMET</button></div>
             </div>
+        <!--
             <hr>
             <div class="smiles-contents">
                 <div class="left">
@@ -167,6 +168,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
     </section>

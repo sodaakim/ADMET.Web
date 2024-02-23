@@ -54,7 +54,7 @@
     display: block;
     width: 7em;
     height: 7em;
-    background-color: #566486;
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
     border-radius: 20px;
     padding: 1em;

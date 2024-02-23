@@ -15,6 +15,7 @@
 <!--result (result_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_contents.css') }}">
 <!--result (result_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_smiles.css') }}">
 <!--result (result_propertyCard.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_propertyCard.css') }}">
+<!--result (result_propertyCard.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_cards.css') }}">
 <!--script property checkbox--> <script src="static/js/propertyCheckbox.js"></script>
 {% endblock %}
 
@@ -50,8 +51,9 @@
                 <h2>contents</h2>
             </div>
             <hr class="content-separator">
-            <div class="result-option-header">
+            <div class="result-option-header download-header">
                 <h2>Download Options</h2>
+                <button class="toggleDownloadOptions toggle-button">+</button>
             </div>
             <div class="download-options" id="propertyFeaturesContainer">
             {% for property in properties %}
@@ -62,7 +64,7 @@
                             {{ property.title }}
                         </div>
                         <div class="select-all-wrapper">
-                            <input type="checkbox" id="selectAll-{{ property.title | replace(' ', '-') }}" class="select-all-checkbox">
+                            <input type="checkbox" id="selectAll-{{ property.title | replace(' ', '-') }}" class="select-all-checkbox" checked>
                             <label for="selectAll-{{ property.title | replace(' ', '-') }}">Select All</label>
                         </div>
                     </div>
@@ -92,8 +94,23 @@
 
         <div class="molecules-box">
             <div class="molecules-header">
-                <div><h2><p>86</p>molecules Analyzed</h2></div>
+                <div><h2><p>{{ cards|length }}</p>molecules Analyzed</h2></div>
                 <div><button class="button analyze">Analyze ADMET</button></div>
+            </div>
+            <div>
+                <ul class="card-box">
+                    {% for card in cards %}
+                    <li class="card">
+                        <div class="smiles-card">
+                            <div class="smiles-image">{{ card.img }}</div>
+                            <div class="card-contents">
+                                <h4>smiles</h4>
+                                <h4>{{ card.smiles }}</h4>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

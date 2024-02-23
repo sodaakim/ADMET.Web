@@ -56,7 +56,9 @@
 ::placeholder {
     color: #888;
 }
-
+.smilesInput:focus {
+    outline: 2px solid #6A77AD; /* 포커스 시 빨간색 테두리 적용 */
+}
 @media (max-width: 1500px) {
     .smilesInput {
         width: 100%;

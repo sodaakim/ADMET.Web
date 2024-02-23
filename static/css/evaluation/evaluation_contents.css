@@ -8,6 +8,8 @@
     display: block;
     background: white;
     padding: 1em 2em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
 
 .result-header {
