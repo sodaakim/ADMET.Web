@@ -27,3 +27,14 @@ function adjustContainerHeight() {
     const moleculeContents = document.querySelector('.molecule-contents');
     moleculeContents.style.height = `${halfHeight}px`;
 }
+
+
+document.querySelector('.tooltip').addEventListener('mouseover', function(event) {
+  var tooltipText = this.querySelector('.tooltiptext');
+  tooltipText.style.visibility = 'visible';
+});
+
+document.querySelector('.tooltip').addEventListener('mouseout', function(event) {
+  var tooltipText = this.querySelector('.tooltiptext');
+  tooltipText.style.visibility = 'hidden';
+});

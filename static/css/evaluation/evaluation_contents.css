@@ -159,3 +159,37 @@ ul {
         width: 100%; /* 카드를 전체 너비로 확장 */
     }
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 180px;
+    max-width: 200px; /* 최대 너비를 설정하여 내용이 너무 길어지는 것을 방지 */
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    text-align: left; /* 글자 왼쪽 정렬 */
+    border-radius: 6px;
+    border: 1px solid #3D5FB7;
+    padding: 5px;
+    box-sizing: border-box;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%; /* 왼쪽 가장자리에서 50% 떨어진 위치에 배치 */
+    transform: translateX(-50%); /* 박스의 너비를 기준으로 왼쪽으로 50% 이동시켜 가운데 정렬 */
+    white-space: normal; /* 글자 자동 줄바꿈 활성화 */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
