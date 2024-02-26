@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('exampleButton').addEventListener('click', function() {
+        document.getElementById('smilesInput').value = 'C1=CC=CC=C1O'; // Example SMILES
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
     /*
     function hideLoadingOverlay() {
         document.getElementById('loadingOverlay').style.display = 'none';

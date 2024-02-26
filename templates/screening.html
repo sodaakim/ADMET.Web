@@ -17,7 +17,6 @@
 <!--analze (kekule)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/kekule.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
 <script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.js?modules=chemWidget,algorithm"></script>
-<script src="static/js/script.js"></script>
 <script src="static/js/screening/upload_file.js"></script>
 
 {% endblock %}
@@ -68,7 +67,7 @@
                         document.getElementById('convertToSmiles').addEventListener('click', function() {
                             var chemObj = editor.getChemObj();
                             var smiles = Kekule.IO.saveFormatData(chemObj, 'smi');
-                            document.getElementById('smilesInput').value = smiles;
+                            document.getElementById('smilesInput').value += smiles + "\n";
                             if (!smiles) {
                                 alert("No structure to convert. Please draw a molecule first.");
                             }

@@ -37,10 +37,6 @@
     flex-grow: 1;
 }
 
-.button.analyze {
-    margin-left: auto;
-}
-
 /*table*/
 table {
     width: 100%; /* 테이블의 너비를 부모 요소에 맞춤 */

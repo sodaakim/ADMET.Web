@@ -47,7 +47,7 @@
         <div class="result-option-box">
             <div class="result-option-header">
                 <h2 class="download-title">Evaluation Results</h2>
-                <div><button class="button download-result">Download Results</button></div>
+                <div><button class="button download-result">Download Results (csv)</button></div>
             </div>
             <div class="table">
                 <table>
@@ -113,7 +113,6 @@
         <div class="molecules-box">
             <div class="molecules-header">
                 <div><h2><p>{{ origin_cards|length }}</p>molecules Analyzed</h2></div>
-                <div><button class="button analyze">Analyze ADMET</button></div>
             </div>
             <div>
                 <ul class="card-box" id="cardsContainer">
@@ -134,9 +133,9 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div class="pagination">
+            <div class="page-index">
                 {% if page > 1 %}
-                <a href="{{ url_for('result_route.result', page=page-1) }}" class="button page">Previous</a>
+                <a href="{{ url_for('result_route.result', page=page-1) }}" class="button page-pre">Previous</a>
                 {% endif %}
 
                 {% set range_start = page - 2 if page - 2 > 0 else 1 %}
@@ -147,7 +146,7 @@
                 {% endfor %}
 
                 {% if page < total_pages %}
-                <a href="{{ url_for('result_route.result', page=page+1) }}" class="button page">Next</a>
+                <a href="{{ url_for('result_route.result', page=page+1) }}" class="button page-next">Next</a>
                 {% endif %}
             </div>
             <script>
