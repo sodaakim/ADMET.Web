@@ -1,0 +1,197 @@
+.evaluation-section {
+    text-align: center;
+    padding: 2em;
+    background: #E3E5EA;
+}
+
+.result-container {
+    display: block;
+    background: white;
+    padding: 1em 2em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+.result-header {
+    display: flex;
+}
+
+.result-header h2 {
+    font-weight: 800;
+    text-align: left;
+    padding: 1em;
+    width: 100%;
+}
+
+.box-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.result-box {
+    flex: 1;
+    /* height: 110em; /*검은색 선 박스 높이*/
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: #FFFFFF;
+    padding: 1em;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+}
+
+.molecule-title {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 1em;
+    grid-template-rows: minmax(12em, auto);
+    align-items: start;
+}
+
+.molecule-image {
+    background: #FFFFFF;
+    height: 100%;
+    margin-left: 1.5em;
+    display: flex;
+    align-items: center; /* 세로 방향 중앙 정렬 */
+    justify-content: left; /* 가로 방향 왼쪽 정렬 */
+}
+
+.molecule-image img {
+    max-height: 100%; /* 이미지가 컨테이너의 높이를 넘지 않도록 제한 */
+    max-width: 100%; /* 이미지가 컨테이너의 너비를 넘지 않도록 제한 */
+    object-fit: contain; /* 비율을 유지하면서 최대 크기에 맞춤 */
+}
+
+.molecule-smiles {
+    margin: 1em 3em;
+    justify-self: start;
+    text-align: left;
+}
+
+.smiles {
+    font-size: 1.2em;
+}
+
+ul {
+  list-style: none;
+}
+
+.molecule-contents {
+    background: #D9DBE2;
+    border-radius: 15px;
+    padding: 0 0.5em;
+    /* height: 100% */
+}
+
+.molecule-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: start;
+    /* max-height: 95em; /*카드들 높이*/
+}
+
+.card {
+    width: 50%; /*쪼개기*/
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+
+.property-card {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 13px;
+    padding: 1em;
+}
+
+
+.card-title {
+    padding: 0 0.2em;
+    color: #006BA7;
+    font-size: 1.2em;
+}
+
+.subtitle {
+    color: #e4bad4;
+    font-weight: bold;
+}
+
+.card-content {
+    display: grid;
+    grid-template-columns: 47% 11% 11% 13% 10%;
+    align-items: center;
+    padding: 0.25em 2em;
+    gap: 1em;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.color-indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    justify-self: right;
+    margin-right: 1.6em;
+}
+
+@media (max-width: 768px) {
+    .molecule-title {
+        grid-template-columns: 1fr; /* 화면이 작을 때 이미지와 SMILES 정보를 세로로 배열 */
+        gap: 1em;
+    }
+
+    .molecule-image,
+    .molecule-smiles {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center; /* 화면이 작을 때 중앙 정렬 */
+    }
+
+    .molecule-contents {
+        width: 100%; /* 너비를 부모 컨테이너에 맞춤 */
+        padding: 0 1em; /* 좌우 패딩 조정 */
+    }
+
+    .card {
+        width: 100%; /* 카드를 전체 너비로 확장 */
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 180px;
+    max-width: 200px; /* 최대 너비를 설정하여 내용이 너무 길어지는 것을 방지 */
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    text-align: left; /* 글자 왼쪽 정렬 */
+    border-radius: 6px;
+    border: 1px solid #3D5FB7;
+    padding: 5px;
+    box-sizing: border-box;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%; /* 왼쪽 가장자리에서 50% 떨어진 위치에 배치 */
+    transform: translateX(-50%); /* 박스의 너비를 기준으로 왼쪽으로 50% 이동시켜 가운데 정렬 */
+    white-space: normal; /* 글자 자동 줄바꿈 활성화 */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+

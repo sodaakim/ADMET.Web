@@ -18,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
 <script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.js?modules=chemWidget,algorithm"></script>
 <script src="static/js/screening/upload_file.js"></script>
+<script src="static/js/screening/screening_listener.js"></script>
 
 {% endblock %}
 
@@ -55,7 +56,7 @@
     <div class="analyze-section">
         <div class="analyze-box">
             <div class="analyze-header">
-                <h2>Add SMILES Cards</h2>
+                <h2>Input SMILES</h2>
             </div>
             <div class="input-and-controls">
                 <div id="editor" style="width: 500px; height: 500px;"></div>
@@ -75,40 +76,6 @@
                         });
                     </script>
                     <textarea id="smilesInput" class="smilesInput" placeholder="Enter SMILES (e.g., C1=CC=CC=C1O)"></textarea>
-                    <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        document.querySelector('.button.analyze').addEventListener('click', function() {
-                            let smilesInput = document.getElementById('smilesInput').value;
-                            if (!smilesInput.trim()) {
-                                alert("Please enter one or more SMILES strings.");
-                                return;
-                            }
-                            // 줄바꿈으로 구분하여 SMILES 배열 생성
-                            let smilesArray = smilesInput.split('\n').filter(smile => smile.trim() !== '');
-
-                            // 여기서 서버에 SMILES 배열을 전송하는 로직을 구현합니다.
-                            // 예: fetch API 사용
-                            fetch('/analyze', {
-                                method: 'POST',
-                                headers: {
-                                    'Accept': 'application/json',
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({ smilesList: smilesArray }) // 서버에 SMILES 배열 전송
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                // 성공적으로 처리된 후 result.html로 리디렉션할 수 있습니다.
-                                // 예: window.location.href = '/result?data=' + encodeURIComponent(JSON.stringify(data));
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                alert('There was an error processing your request.');
-                            });
-                        });
-                    });
-                    </script>
-
                     <div class="buttons">
                         <div class="button1">
                             <button id="exampleButton" class="button example-analyze">Example</button>
@@ -159,7 +126,7 @@
                     </colgroup>
                     <tr> <!-- 첫 번째 행 -->
                         <td>Number of molecules</td>
-                        <td>{{ origin_cards|length }}</td>
+                        <td id="Valid_molecules">{{ origin_cards|length }}</td>
                         <td><div><button class="button download-txt">Download txt</button></div></td>
                     </tr>
                     <tr> <!-- 두 번째 행 -->

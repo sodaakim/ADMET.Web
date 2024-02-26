@@ -1,0 +1,101 @@
+<!--결과 페이지 (smiles 하나)-->
+
+<!--extends (root.html) for base-->
+{% extends 'root.html' %}
+
+<!--(home.html) Title-->
+{% block title %}ADMET Lab{% endblock %}
+
+<!--(style) and (js codes)-->
+{% block script %}
+<!--icon              --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<!--base (base.css)       --> <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+<!--asset (button.css)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
+<!--evaluation (intro.css)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation_result/evaluation_result_intro.css') }}">
+<!--evaluation (evaluation_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation_result/evaluation_result_contents.css') }}">
+<!-- <script src="static/js/evaluation/evaluation_card.js"></script>-->
+    <script src="static/js/evaluation/evaluation_card.js"></script>
+    <script src="static/js/evaluation/download_pdf.js"></script>
+    <script src="static/js/evaluation/download_csv.js"></script>
+{% endblock %}
+
+<!--home (main)-->
+{% block main %}
+<main>
+    <section id="intro-section">
+        <div class="intro-content">
+            <h1 class="white title">Evaluation Results</h1>
+            <h3 class="white">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools </h3>
+            <hr>
+            {% for step in steps %}
+            <div class="step-container">
+                <div class="step">
+                    <i class="fas fa-user"></i>
+                    <h2 class="white">{{ step.title }}</h2>
+                    <h4 class="white">{{ step.description }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section class="evaluation-section">
+    <div class="evaluation-section">
+        <div class="result-container">
+            <div class="result-header">
+                <h2>Molecule Name</h2>
+                <div class="box-right">
+                    <button id="download-csv" class="button csv">Download as CSV</button>
+                    <button id="download-pdf" class="button pdf">Download as PDF</button>
+                </div>
+            </div>
+            <div class="result-box">
+                <div class="molecule-title">
+                    <div class="molecule-image">
+                        <img class="molecule" src="molecule_image_url" alt="molecule">
+                    </div>
+                    <div class="molecule-smiles">
+                        <h2>Smiles</h2>
+                        <h3 class="smiles">CC(C)OC(=O)C1=CC=CC=C1C(=O)N</h3>
+
+                    </div>
+                </div>
+                <div class="molecule-contents">
+                    <ul class="molecule-card">
+                    {% for property in properties %}
+                        <li class="card">
+                            <div class="property-card">
+                                <h2 class="card-title">{{ property.title }}</h2>
+                                {% if loop.index != 1 %}
+                                    <div class="card-content subtitle">
+                                        <div class="card-subtitle"><p>property</p></div>
+                                        <div class="card-num"><p>model1</p></div>
+                                        <div class="card-num"><p>model2</p></div>
+                                        <div class="card-num"><p>model3</p></div>
+                                        <div class="color-indicator" style="background-color: transparent;"></div>
+                                    </div>
+                                {% endif %}
+                                {% for content in property.contents %}
+                                    <div class="card-content contents">
+                                        <div class="card-subtitle">{{ content.subtitle }}</div>
+                                        <div class="card-num">{{ content.model1 }}</div>
+                                        <div class="card-num">{{ content.model2 }}</div>
+                                        <div class="card-num">{{ content.model3 }}</div>
+                                        <div class="color-indicator tooltip" id="tooltipText" style="background-color: {{ content.color }};">
+                                            <span class="tooltiptext">{{ content.tooltipText }}</span>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</main>
+{% endblock %}

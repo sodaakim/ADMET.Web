@@ -11,7 +11,39 @@ screening_route = Blueprint('screening_route', __name__)
 
 @screening_route.route('/screening')
 def screening():
-    steps = [
+
+    return render_template('screening.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+steps = [
         {'title': 'Step 1', 'description': 'Input Smiles to TextArea'},
         {'title': 'Step 2', 'description': 'Click "Send" Button before analyze'},
         {'title': 'Step 3', 'description': 'Click "Analyze Smiles" Button'}
@@ -32,4 +64,4 @@ def screening():
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'}
     ]
-    return render_template('screening.html', steps=steps, cardsA=cardsA, cardsI=cardsI)
+'''

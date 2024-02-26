@@ -1,0 +1,53 @@
+@keyframes wave {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#intro-section {
+    position: relative;
+    text-align: center;
+    padding: 4em 8em;
+    background: linear-gradient(to right, #495A81, #3b5998, #566486);
+    background-size: 200% auto;
+    animation: wave 1.5s forwards;
+}
+
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.intro-content {
+    margin-right: auto;
+    max-width: 50em;
+    text-align: left;
+}
+
+.intro-content .title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.intro-content hr{
+    border: 0.5px solid white;
+    margin: 1em 0;
+
+}
+
+.line {
+    background: #27375C;
+    width: 100%;
+    height: 0.5em;
+}

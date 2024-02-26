@@ -37,6 +37,9 @@ app.register_blueprint(screening_route)
 from download_pdf import download_pdf_route
 app.register_blueprint(download_pdf_route)
 
+from evaluation_result import evaluation_result_route
+app.register_blueprint(evaluation_result_route)
+
 # endregion
 
 """

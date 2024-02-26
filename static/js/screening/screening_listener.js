@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('exampleButton').addEventListener('click', function() {
-        document.getElementById('smilesInput').value = 'C1=CC=CC=C1O'; // Example SMILES
+    document.querySelector('.button.send').addEventListener('click', function() {
+        let smilesInput = document.getElementById('smilesInput').value;
+        if (!smilesInput.trim()) {
+            alert("Please input SMILES strings.");
+            return;
+        }
+        // 줄바꿈으로 구분하여 SMILES 배열 생성
+        let smilesArray = smilesInput.split('\n').filter(smile => smile.trim() !== '');
+
+        //Valid smiles를 판단하고 개수를 출력합니다
+        document.getElementById('Valid_molecules').textContent = smilesArray.length;
     });
 });
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    /*
-    function hideLoadingOverlay() {
-        document.getElementById('loadingOverlay').style.display = 'none';
-    }
-    // 페이지 로드와 포커스를 얻을 때 로딩 오버레이 숨기기
-    hideLoadingOverlay();
-    window.addEventListener('focus', hideLoadingOverlay);*/
-
-    document.querySelector('.button.analyze').addEventListener('click', function() {
+    document.querySelector('.button.result').addEventListener('click', function() {
         let smiles = document.getElementById('smilesInput').value;
 
         if (!smiles) {
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 분석 시작 시 로딩 오버레이 표시
         document.getElementById('loadingOverlay').style.display = 'flex';
         // 서버 요청을 시작하는 Promise
-        let fetchPromise = fetch('/analyze', {
+        let fetchPromise = fetch('/result', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -91,25 +92,4 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log("Image URL not found in URL");
     }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.button.result').addEventListener('click', function() {
-        let smiles = document.getElementById('smilesInput').value;
-
-        // SMILES 문자열이 입력되지 않았을 경우 경고를 표시하고 실행 중단
-        if (!smiles) {
-            alert("Please enter a SMILES string.");
-            return; // 여기서 함수 실행을 중단합니다.
-        }
-
-        // SMILES 문자열이 정상적으로 입력되었다면, 실행 로직 시작
-        document.getElementById('loadingOverlay').style.display = 'flex';
-        // 서버 요청 로직 또는 대체 로직 추가
-        setTimeout(function() {
-            // 서버로부터 응답을 받은 후 /evaluation 페이지로 이동
-            window.location.href = '/result';
-        }, 2000); // 예: 2초 후에 페이지 전환
-    });
 });
