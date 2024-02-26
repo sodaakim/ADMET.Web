@@ -12,9 +12,9 @@ screening_route = Blueprint('screening_route', __name__)
 @screening_route.route('/screening')
 def screening():
     steps = [
-        {'title': 'Step 4', 'description': 'paste admet1'},
-        {'title': 'Step 5', 'description': 'paste admet2'},
-        {'title': 'Step 6', 'description': 'paste admsdsdsdsdsd'}
+        {'title': 'Step 1', 'description': 'Input Smiles to TextArea'},
+        {'title': 'Step 2', 'description': 'Click "Send" Button before analyze'},
+        {'title': 'Step 3', 'description': 'Click "Analyze Smiles" Button'}
     ]
     cardsA = [
         {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},

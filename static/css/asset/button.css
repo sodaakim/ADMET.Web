@@ -51,18 +51,18 @@
 /* analyze : analyze.html과 home.html의 analyze 스타일 */
 .analyze {
     margin: 1em 0 1em 1em;
-    background-color: #091F44;
+    background-color: #202141;
     color: white;
 }
 
 .analyze:hover {
-    background-color: #072235;
+    background-color: #202141;
 }
 
 .analyze:active {
     background-color: white;
-    color: #091F44;
-    border: solid #091F44;
+    color: #202141;
+    border: solid #202141;
 }
 
 /* -------------------------------------------------------------------- */

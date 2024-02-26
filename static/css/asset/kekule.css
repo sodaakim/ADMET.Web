@@ -1,14 +1,19 @@
 /* Widget General Styles */
 .K-Widget {
     border: none;
-    background-color: #fff;
+    background-color: #ceced9;
     transform: scale(0.9);
 }
+
+.kekule-widget-content {
+  background-color: #ceced9; /* 새 배경색 */
+}
+
 
 /* Button Styles */
 .K-Button {
     padding: .5em .5em;
-    background-color: #e7e7e7;
+    background-color: #ceced9;
     color: #333;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -16,7 +21,7 @@
 }
 
 .K-Button:hover {
-    background-color: #091F44;
+    background-color: white;
     color: white;
     border-color: #091F44;
 }
