@@ -43,9 +43,8 @@ def result():
     page_cards = cards[start_index:end_index]
 
     cardColors = [
-        '#6B8E23', '#E6E6FA', '#808080', '#C2B280', '#228B22', '#FF6347',
-        '#87CEEB', '#D2691E', '#FF8C00', '#778899', '#808000', '#800020',
-        '#000080', '#FF6F61'
+        '#778899', '#6892b2', '#8f8ec5', '#366d98', '#a38893', '#88a388',
+        '#800020', '#4a6862', '#778899', '#88a398', '#808000', '#c0c080'
     ]
 
     properties = [  # property
@@ -99,15 +98,15 @@ def result():
                       {'subtitle': 'Hepatotoxicity'},       {'subtitle': 'Rat Oral Acute Toxicity'},    {'subtitle': 'Skin Sensitization'} ]},
 
         # content : Cytotoxicity
-        {'title': 'Cytotoxicity', 'color': cardColors[9],
+        {'title': 'Cytotoxicity', 'color': cardColors[8],
          'contents': [{'subtitle': 'HepG2'},    {'subtitle': 'NIH 3T3'} ]},
 
         # content : Environmental Toxicity
-        {'title': 'Environmental Toxicity', 'color': cardColors[10],
+        {'title': 'Environmental Toxicity', 'color': cardColors[9],
          'contents': [{'subtitle': 'Bioconcentration Factors'}, {'subtitle': 'Biodegration factors'},   {'subtitle': 'LD50'} ]},
 
         # content : Biological Pathway Toxicity
-        {'title': 'Biological Pathway Toxicity', 'color': cardColors[11],
+        {'title': 'Biological Pathway Toxicity', 'color': cardColors[10],
          'contents': [
              {'subtitle': 'NR-AR (Androgen receptor)'},
              {'subtitle': 'NR-AR-LBD (ligand -binding)'},
@@ -123,7 +122,7 @@ def result():
              {'subtitle': 'SR-p53'}
          ]},
         # content : Toxicophore Rules
-        {'title': 'Toxicophore Rules', 'color': cardColors[12],
+        {'title': 'Toxicophore Rules', 'color': cardColors[11],
          'contents': [
              {'subtitle': 'Acute Toxicity Rule'},
              {'subtitle': 'Genotoxic Carcinogenicity Rule'},

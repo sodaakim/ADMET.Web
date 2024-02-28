@@ -71,25 +71,34 @@
     <h2>Properties</h2>
 
     {% for property in properties %}
+    {% set outer_loop_index = loop.index %}
     <table>
         <thead>
             <tr>
-                <th colspan="5">{{ property.title }}</th> <!-- colspan 추가 -->
+                <th colspan="5">{{ property.title }}</th>
             </tr>
             <tr>
                 <th>Property</th>
-                <th>Model 1</th>
-                <th>Model 2</th>
-                <th>Model 3</th>
+                {% if outer_loop_index != 1 and outer_loop_index != 2 and outer_loop_index != 12 %}
+                <th>FPADMET</th>
+                <th>OPERA</th>
+                {% endif %}
+                <th>SSBIO</th>
                 <th>Color</th>
             </tr>
         </thead>
         <tbody>
             {% for content in property.contents %}
             <tr>
+                {% if outer_loop_index == 1 or outer_loop_index == 2 or outer_loop_index == 12 %}
+                <td style="width: 80%;">{{ content.subtitle }}</td>
+                {% else %}
                 <td style="width: 50%;">{{ content.subtitle }}</td>
+                {% endif %}
+                {% if outer_loop_index != 1 and outer_loop_index != 2 and outer_loop_index != 12 %}
                 <td style="width: 15%;">{{ content.model1 }}</td>
                 <td style="width: 15%;">{{ content.model2 }}</td>
+                {% endif %}
                 <td style="width: 15%;">{{ content.model3 }}</td>
                 <td style="width: 5%;"><div class="color-indicator" style="background-color: {{ content.color }}"></div></td>
             </tr>
@@ -97,6 +106,8 @@
         </tbody>
     </table>
     {% endfor %}
+
+
 
 </body>
 </html>

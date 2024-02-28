@@ -80,7 +80,7 @@ ul {
 }
 
 .molecule-contents {
-    background: #D9DBE2;
+    background: #ebedef;
     border-radius: 15px;
     padding: 0 0.5em;
     /* height: 100% */
@@ -107,28 +107,30 @@ ul {
     background: white;
     border-radius: 13px;
     padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 
 .card-title {
     padding: 0 0.2em;
-    color: #006BA7;
+    color: #03070a;
     font-size: 1.2em;
-}
-
-.subtitle {
-    color: #e4bad4;
-    font-weight: bold;
 }
 
 .card-content {
     display: grid;
-    grid-template-columns: 47% 11% 11% 13% 10%;
+    grid-template-columns: 47% 13% 11% 11% 10%;
     align-items: center;
     padding: 0.25em 2em;
     gap: 1em;
     text-align: left;
     font-size: 1.1em;
+}
+
+.subtitle {
+    color: #778899;
+    font-weight: bold;
+    padding-top: 0.6em;
+    font-size: 1em;
 }
 
 .color-indicator {
