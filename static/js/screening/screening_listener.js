@@ -1,38 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let smilesArray;
+
+    // "Send" 버튼 이벤트 리스너
     document.querySelector('.button.send').addEventListener('click', function() {
         let smilesInput = document.getElementById('smilesInput').value;
         if (!smilesInput.trim()) {
             alert("Please input SMILES strings.");
             return;
         }
-        // 줄바꿈으로 구분하여 SMILES 배열 생성
-        let smilesArray = smilesInput.split('\n').filter(smile => smile.trim() !== '');
 
-        //Valid smiles를 판단하고 개수를 출력합니다
+        // 줄바꿈으로 구분하여 SMILES 배열 생성
+        smilesArray = smilesInput.split('\n').filter(smile => smile.trim() !== '');
+
+        // 유효한 SMILES 문자열의 개수를 출력
         document.getElementById('Valid_molecules').textContent = smilesArray.length;
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', function() {
+    // "Result" 버튼 이벤트 리스너
     document.querySelector('.button.result').addEventListener('click', function() {
-        let smiles = document.getElementById('smilesInput').value;
-
-        if (!smiles) {
+        if (!smilesArray || smilesArray.length === 0) {
             alert("Please enter a SMILES string.");
             return;
         }
 
         // 분석 시작 시 로딩 오버레이 표시
         document.getElementById('loadingOverlay').style.display = 'flex';
-        // 서버 요청을 시작하는 Promise
+
         let fetchPromise = fetch('/result', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ smiles: smiles })
+            body: JSON.stringify({ smiles_list: smilesArray })
         });
 
         // 최소 3초 대기를 보장하는 Promise
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return response.json();
         }).then(data => {
-            if (data.image_url) {
-                // 이미지 URL과 SMILES 문자열을 /evaluation 페이지로 리디렉션
-                window.location.href = `/evaluation?image_url=${encodeURIComponent(data.image_url)}&smiles=${encodeURIComponent(smiles)}`;
-                //window.location.href = `/evaluation?smiles=${encodeURIComponent(smiles)}`;
+            // 서버로부터의 응답에 따라 적절한 리디렉션 수행
+            if (data && data.length > 0 && data[0].image_url) {
+                // 예시: 첫 번째 SMILES 문자열에 대한 결과 페이지로 리디렉션
+                window.location.href = `/evaluation?image_url=${encodeURIComponent(data[0].image_url)}&smiles=${encodeURIComponent(smilesArray[0])}`;
             } else {
                 alert('There was an error processing the SMILES string.');
             }
@@ -56,13 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error:', error);
             alert('There was an error processing your request.');
         }).finally(() => {
-            // 모든 작업이 끝난 후 로딩 오버레이 숨김
+            // 로딩 오버레이 숨김
             document.getElementById('loadingOverlay').style.display = 'none';
         });
     });
 });
 
 
+/*
 document.addEventListener('DOMContentLoaded', function() {
     // URL에서 쿼리 매개변수를 파싱하는 함수
     function getQueryVariable(variable) {
@@ -92,4 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log("Image URL not found in URL");
     }
-});
+});*/

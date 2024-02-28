@@ -13,6 +13,7 @@
 <!--asset (button.css)    --> <link rel="stylesheet" href="{{ url_for('static', filename='css/asset/button.css') }}">
 <!--evaluation (intro.css)   --> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_intro.css') }}">
 <!--evaluation (evaluation_contents.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation/evaluation_contents.css') }}">
+<!--analyze script --> <script src="static/js/analyze/analyze_listener.js"></script>
 <!-- <script src="static/js/evaluation/evaluation_card.js"></script>-->
     <script src="static/js/evaluation/evaluation_card.js"></script>
     <script src="static/js/evaluation/download_pdf.js"></script>
@@ -71,9 +72,9 @@
                                 {% if loop.index != 1 %}
                                     <div class="card-content subtitle">
                                         <div class="card-subtitle"><p>property</p></div>
-                                        <div class="card-num"><p>model1</p></div>
-                                        <div class="card-num"><p>model2</p></div>
-                                        <div class="card-num"><p>model3</p></div>
+                                        <div class="card-num"><p>FDADMET</p></div>
+                                        <div class="card-num"><p>OPERA</p></div>
+                                        <div class="card-num"><p>SSBIO</p></div>
                                         <div class="color-indicator" style="background-color: transparent;"></div>
                                     </div>
                                 {% endif %}

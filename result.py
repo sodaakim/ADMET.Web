@@ -10,20 +10,29 @@ from flask import Blueprint
 result_route = Blueprint('result_route', __name__)
 
 
-def create_cards():
-    # 실제 애플리케이션에서는 데이터베이스 쿼리 등을 사용하여 카드 데이터를 가져올 것입니다.
-    cards = [
-        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
-        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
-        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
-        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'},
-        {'img': 'url', 'smiles': 'CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N'}
-    ]
-    return cards
+def create_cards(analysis_results):
+    # 세션에서 분석 결과를 가져옵니다.
+    if 'results' in session:
+        results = session['results']
+        cards = []
+        for result in results:
+            # 각 결과에 대한 카드를 생성합니다.
+            # 예시에서는 'image_url'과 'smiles' 키가 각 결과에 포함되어 있다고 가정합니다.
+            card = {
+                'img': result.get('image_url', 'default_image_url'),  # 결과에 이미지 URL이 없는 경우 대체 이미지 URL 사용
+                'smiles': result.get('smiles', 'N/A')  # 결과에 SMILES 문자열이 없는 경우 'N/A' 사용
+            }
+            cards.append(card)
+        return cards
+    else:
+        # 세션에 결과가 없는 경우 빈 리스트 반환
+        return []
 
 @result_route.route('/result')
 def result():
-    cards = create_cards()
+    analysis_results = session.get('analysis_results', [])
+
+    cards = create_cards(analysis_results)
     per_page = 18
     page = request.args.get('page', 1, type=int)
     total_pages = (len(cards) + per_page - 1) // per_page
