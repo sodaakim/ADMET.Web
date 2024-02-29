@@ -18,54 +18,43 @@ def custom_round(value):
         # 정수 부분이 10 미만이면 소수점 셋째자리에서 반올림
         return round(value, 3)
 
-@screening_route.route('/screening', methods=['GET', 'POST'])
-def screening():
-    if request.method == 'POST':
-        smiles_list = request.json['smiles_list']  # 여러 SMILES 문자열을 포함하는 리스트
-        results = []  # 결과를 저장할 리스트
 
-        for smiles in smiles_list:
-            mol = Chem.MolFromSmiles(smiles)
-            if mol:
-                timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-                filename = f"molecule_{timestamp}.png"
-                image_path = os.path.join('static', 'images', filename)
-                img = Draw.MolToImage(mol)
-                img.save(image_path)
-                image_url = url_for('static', filename=f'images/{filename}')
-
-                # 분자 속성 계산과 저장 로직을 여기에 추가...
-                properties = {
-                    'Formula': rdMolDescriptors.CalcMolFormula(mol),
-                    'Molecular Weight': custom_round(Descriptors.MolWt(mol)),
-                    'Image URL': image_url,
-                    # 다른 속성들도 계산하여 추가...
-                }
-
-                results.append(properties)
-            else:
-                results.append({'error': 'Invalid SMILES string', 'smiles': smiles})
-
-        # 세션에 결과 저장
-        session['results'] = results
-
-        return render_template('screening.html'), jsonify({'message': 'Properties calculated and saved', 'results': results}), 200
+@screening_route.route('/screening', methods=['GET'])
+def show_screening_page():
+    # GET 요청 처리: screening 페이지를 로드합니다.
+    return render_template('screening.html')
 
 
+@screening_route.route('/screening', methods=['POST'])
+def process_screening():
+    # POST 요청 처리: SMILES 문자열로부터 분자의 속성 계산
+    smiles_list = request.json['smiles_list']
+    results = []
+    for smiles in smiles_list:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            filename = f"molecule_{timestamp}.png"
+            image_path = os.path.join('static', 'images', filename)
+            img = Draw.MolToImage(mol)
+            img.save(image_path)
+            image_url = url_for('static', filename=f'images/{filename}')
 
+            # 분자 속성 계산과 저장 로직을 여기에 추가...
+            properties = {
+                'Formula': rdMolDescriptors.CalcMolFormula(mol),
+                'Molecular Weight': custom_round(Descriptors.MolWt(mol)),
+                'Image URL': image_url,
+                # 다른 속성들도 계산하여 추가...
+            }
 
+            results.append(properties)
+        else:
+            results.append({'error': 'Invalid SMILES string', 'smiles': smiles})
 
-
-
-
-
-
-
-
-
-
-
-
+    # 세션에 결과 저장 및 JSON 응답 반환
+    session['results'] = results
+    return jsonify({'message': 'Properties calculated and saved', 'results': results})
 
 
 

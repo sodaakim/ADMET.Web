@@ -18,6 +18,7 @@
 <!--result (result_propertyCard.css)--> <link rel="stylesheet" href="{{ url_for('static', filename='css/result/result_cards.css') }}">
 <!--script property checkbox--> <script src="static/js/result/propertyCheckbox.js"></script>
 <!--script property pagenation--> <script src="static/js/result/pagenation.js"></script>
+<script src="static/js/screening/screening_listener.js"></script>
 {% endblock %}
 
 <!--home (main)-->
@@ -40,7 +41,7 @@
         </div>
     </section>
 
-    <div class="line"></div>
+    <!--<div class="line"></div>-->
 
     <section>
     <div class="evaluation-section">
@@ -63,7 +64,7 @@
                     </tr>
                     <tr> <!-- 두 번째 행 -->
                         <td>Number of invalid molecules</td>
-                        <td>num</td>
+                        <td> - </td>
                         <td><div><button class="button download-txt">Download txt</button></div></td>
                     </tr>
                 </table>
