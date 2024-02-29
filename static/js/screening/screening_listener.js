@@ -27,42 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loadingOverlay').style.display = 'flex';
 
         // 서버에 분석을 요청
-        fetch('/screening', { // '/screening' 엔드포인트로 POST 요청 보냄
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ smiles_list: smilesArray })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            // 응답이 성공적이면, 사용자를 결과 페이지로 리디렉션
-            window.location.href = '/result'; // 쿼리 파라미터 '?page=1'은 필요에 따라 추가
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error processing your request.');
-        })
-        .finally(() => {
-            // 로딩 오버레이 숨김
-            document.getElementById('loadingOverlay').style.display = 'none';
-        });
-    });
-
-    /*
-    document.querySelector('.button.result').addEventListener('click', function() {
-        if (!smilesArray || smilesArray.length === 0) {
-            alert("Please enter SMILES strings and click Send first.");
-            return;
-        }
-
-        // 분석 시작 시 로딩 오버레이 표시
-        document.getElementById('loadingOverlay').style.display = 'flex';
-
-        // 서버에 분석을 요청
         let fetchPromise = fetch('/screening', { // '/screening' 엔드포인트로 POST 요청 보냄
             method: 'POST',
             headers: {
@@ -71,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify({ smiles_list: smilesArray })
         });
+
         let timeoutPromise = new Promise(resolve => setTimeout(resolve, 3000));
 
         Promise.all([fetchPromise, timeoutPromise]).then(async ([response]) => {
@@ -88,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 로딩 오버레이 숨김
             document.getElementById('loadingOverlay').style.display = 'none';
         });
-    });*/
+    });
 
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('detail')) {

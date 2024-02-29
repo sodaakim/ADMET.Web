@@ -5,6 +5,7 @@ from rdkit.Chem import Descriptors, rdMolDescriptors
 from rdkit.Chem import Draw
 import os
 from flask import Blueprint
+import hashlib
 
 # Blueprint 객체 생성
 analyze_route = Blueprint('analyze_route', __name__)
@@ -24,8 +25,8 @@ def analyze():
         smiles = request.json['smiles']
         mol = Chem.MolFromSmiles(smiles)
         if mol:
-            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-            filename = f"molecule_{timestamp}.png"
+            smiles_hash = hashlib.md5(smiles.encode()).hexdigest()
+            filename = f"molecule_{smiles_hash}.png"
             image_path = os.path.join('static', 'images', filename)
             img = Draw.MolToImage(mol)
             img.save(image_path)

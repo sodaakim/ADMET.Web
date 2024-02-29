@@ -5,6 +5,7 @@ from rdkit.Chem import Descriptors, rdMolDescriptors
 from rdkit.Chem import Draw
 import os
 from flask import Blueprint
+import hashlib
 
 # Blueprint 객체 생성
 screening_route = Blueprint('screening_route', __name__)
@@ -33,8 +34,8 @@ def process_screening():
     for smiles in smiles_list:
         mol = Chem.MolFromSmiles(smiles)
         if mol:
-            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-            filename = f"molecule_{timestamp}.png"
+            smiles_hash = hashlib.md5(smiles.encode()).hexdigest()
+            filename = f"molecule_{smiles_hash}.png"
             image_path = os.path.join('static', 'images', filename)
             img = Draw.MolToImage(mol)
             img.save(image_path)
@@ -52,15 +53,6 @@ def process_screening():
 
     session['smiles_data'] = results
     return jsonify({'message': 'Properties calculated and saved', 'results': results})
-
-
-
-
-
-
-
-
-
 
 
 
