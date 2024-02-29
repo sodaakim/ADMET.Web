@@ -29,20 +29,28 @@
     border-radius: 10px;
     padding: 0.5em;
     background: #f4f4f6;
+    width: 100%; /* 카드의 전체 너비를 사용 */
 }
 
+
 .smiles-image {
+    display: flex; /* 이미지를 flex 아이템으로 설정 */
+    justify-content: center; /* 가운데 정렬 */
     background: white;
-    padding: 1em;
-    margin-right: 2em;
-    min-height: 3em;
-    min-width: 6em;
+    padding: 0.5em;
+    margin-bottom: 0.4em;
+    height: 5em;
     width: auto;
-    flex: 0 0 auto;
+}
+
+.smiles-image img {
+  max-width: 100%; /* 이미지가 컨테이너를 넘지 않도록 최대 너비 설정 */
+  max-height: 100%; /* 이미지가 컨테이너를 넘지 않도록 최대 높이 설정 */
 }
 
 .card-contents {
     text-align: left;
+    padding-left: 1em;
     padding-right: 2em;
     flex: 1;
     max-width: calc(100% - 8em); /* 최대 너비 설정, 이미지 및 여백 공간 고려 */
@@ -53,4 +61,8 @@
 .card-contents h4 {
     margin-top: 0.6em;
     word-break: break-all; /* 단어 내에서도 줄바꿈 허용 */
+}
+
+.button.detail {
+  margin-right: 1em; /* 버튼 위의 여백 추가 */
 }

@@ -8,6 +8,29 @@ download_csv_route = Blueprint('download_csv_route', __name__)
 
 @download_csv_route.route('/download-csv', methods=['POST'])
 def download_csv():
+    '''
+    # 세션에서 분석 결과를 가져옵니다.
+    if 'results' in session:
+        results = session['results']
+        # CSV 데이터 생성
+        csv_data = [["SMILES", "Formula", "Molecular Weight", "Image URL"]]
+        for result in results:
+            csv_data.append([result.get('SMILES', 'N/A'), result.get('Formula', 'N/A'),
+                             result.get('Molecular Weight', 'N/A'), result.get('Image URL', 'N/A')])
+
+        # CSV 파일로 변환
+        si = io.StringIO()
+        cw = csv.writer(si)
+        cw.writerows(csv_data)
+        output = make_response(si.getvalue())
+        output.headers["Content-Disposition"] = "attachment; filename=analysis_results.csv"
+        output.headers["Content-type"] = "text/csv"
+        return output
+    else:
+        return "No results available", 404
+        '''
+
+
     # 예제 데이터
     molecule_name = "Example Molecule"
     smiles_notation = "CC(C)OC(=O)C1=CC=CC=C1C(=O)N"

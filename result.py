@@ -9,29 +9,21 @@ from flask import Blueprint
 # Blueprint 객체 생성
 result_route = Blueprint('result_route', __name__)
 
-
 def create_cards(analysis_results):
-    # 세션에서 분석 결과를 가져옵니다.
-    if 'results' in session:
-        results = session['results']
-        cards = []
-        for result in results:
-            # 각 결과에 대한 카드를 생성합니다.
-            # 예시에서는 'image_url'과 'smiles' 키가 각 결과에 포함되어 있다고 가정합니다.
-            card = {
-                'img': result.get('image_url', 'default_image_url'),  # 결과에 이미지 URL이 없는 경우 대체 이미지 URL 사용
-                'smiles': result.get('smiles', 'N/A')  # 결과에 SMILES 문자열이 없는 경우 'N/A' 사용
-            }
-            cards.append(card)
-        return cards
-    else:
-        # 세션에 결과가 없는 경우 빈 리스트 반환
-        return []
+    cards = []
+    for result in analysis_results:
+        card = {
+            'img': result.get('Image URL', 'default_image_url'),
+            'smiles': result.get('SMILES', 'N/A')
+        }
+        cards.append(card)
+    return cards
 
 @result_route.route('/result')
 def result():
-    analysis_results = session.get('analysis_results', [])
+    analysis_results = session.get('smiles_data', [])
 
+    # smiles 카드 생성
     cards = create_cards(analysis_results)
     per_page = 18
     page = request.args.get('page', 1, type=int)
@@ -42,6 +34,7 @@ def result():
     end_index = start_index + per_page
     page_cards = cards[start_index:end_index]
 
+    # region card information array
     cardColors = [
         '#778899', '#6892b2', '#8f8ec5', '#366d98', '#a38893', '#88a388',
         '#800020', '#4a6862', '#778899', '#88a398', '#808000', '#c0c080'
@@ -134,4 +127,6 @@ def result():
              {'subtitle': 'FAF-Drugs4 Rule'}
          ]},
     ]
+    # endregion information
+
     return render_template('result.html', origin_cards=cards, cards=page_cards, page=page, total_pages=total_pages, properties=properties)
