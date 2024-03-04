@@ -15,6 +15,7 @@ evaluation_route = Blueprint('evaluation_route', __name__)
 @evaluation_route.route('/evaluation')
 def evaluation():
     smiles = request.args.get('smiles')
+    image_url = session['image']
     cardColors = [
         '#778899', '#6892b2', '#8f8ec5', '#366d98', '#a38893', '#88a388',
         '#800020', '#4a6862', '#778899', '#88a398', '#808000', '#c0c080'
@@ -164,9 +165,6 @@ def evaluation():
              ]},
         ]
 
-        # 쿼리 파라미터에서 이미지 URL과 SMILES 문자열을 추출
-        image_url = request.args.get('image_url')
-        smiles = request.args.get('smiles')
 
         return render_template('evaluation.html', properties=properties, image_url=image_url, smiles=smiles)
     else:

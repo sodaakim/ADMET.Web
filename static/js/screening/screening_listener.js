@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('exampleButton').addEventListener('click', function() {
+        document.getElementById('smilesInput').value = 'C1=CC=CC=C1O\nCC\nCCC'; // Example SMILES
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
     let smilesArray;
 
     // "Send" 버튼 이벤트 리스너
@@ -43,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error('Network response was not ok');
             }
             // 응답이 성공적이면, 사용자를 결과 페이지로 리디렉션
-            window.location.href = '/result'; // 쿼리 파라미터 '?page=1'은 필요에 따라 추가
+            window.location.href = '/result';
         })
         .catch(error => {
             console.error('Error:', error);
@@ -54,16 +61,21 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('loadingOverlay').style.display = 'none';
         });
     });
+});
 
-    document.addEventListener('click', function(event) {
+
+document.addEventListener('DOMContentLoaded', function() {
+    // .card-box 내부에서 발생하는 클릭 이벤트를 캐치
+    document.querySelector('.card-box').addEventListener('click', function(event) {
+        // 클릭된 요소가 'Detail' 버튼인지 확인
         if (event.target.classList.contains('detail')) {
-            // Detail 버튼이 클릭된 경우
             const cardElement = event.target.closest('.card');
             if (cardElement) {
-                const smiles = cardElement.querySelector('.card-contents h4:nth-of-type(2)').textContent;
-                alert(`Detail for SMILES: ${smiles}`);
-                // 여기서 상세 정보를 표시하는 로직을 구현할 수 있음
-                // 예: 상세 페이지로 이동하거나, 모달 창을 표시하는 등
+                // .card-contents 내의 첫 번째 h4 태그에서 SMILES 문자열을 추출
+                const smiles = cardElement.querySelector('.card-contents h4').textContent;
+
+                // 상세 정보 페이지로 리디렉션합니다.
+                window.location.href = `/evaluation-result?smiles=${encodeURIComponent(smiles)}`;
             }
         }
     });

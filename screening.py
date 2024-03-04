@@ -41,9 +41,37 @@ def process_screening():
             img.save(image_path)
             image_url = url_for('static', filename=f'images/{filename}')
 
+            # 분자 속성 계산
+            # Physicochemical Property
+            mol_formula = rdMolDescriptors.CalcMolFormula(mol)
+            mol_weight = custom_round(Descriptors.MolWt(mol))
+            mol_volume = custom_round(Descriptors.MolMR(mol))  # Volume의 대략적 추정
+            density = custom_round(mol_weight / mol_volume) if mol_volume else 0  # Density 계산
+            num_heavy_atoms = rdMolDescriptors.CalcNumHeavyAtoms(mol)
+            num_aromatic_heavy_atoms = len([atom for atom in mol.GetAtoms() if atom.GetIsAromatic()])
+            formal_charge = Chem.GetFormalCharge(mol)
+            tpsa = rdMolDescriptors.CalcTPSA(mol)
+            logp = custom_round(Descriptors.MolLogP(mol))
+            num_h_acceptors = rdMolDescriptors.CalcNumHBA(mol)
+            num_h_donors = rdMolDescriptors.CalcNumHBD(mol)
+            num_rotatable_bonds = rdMolDescriptors.CalcNumRotatableBonds(mol)
+
             properties = {
-                'Formula': rdMolDescriptors.CalcMolFormula(mol),
-                'Molecular Weight': custom_round(Descriptors.MolWt(mol)),
+                'Formula': mol_formula,
+                'Molecular Weight': mol_weight,
+                'Volume': mol_volume,
+                'Density': density,
+                'Num. heavy atoms': num_heavy_atoms,
+                'Num. arom. heavy atoms': num_aromatic_heavy_atoms,
+                'formal Charge': formal_charge,
+                'TPSA': custom_round(tpsa),
+
+                'logP': custom_round(logp),
+
+                'Num. H-bond acceptors': num_h_acceptors,
+                'Num. H-bond donors': num_h_donors,
+                'Num. rotatable bonds': num_rotatable_bonds,
+
                 'Image URL': image_url,
                 'SMILES': smiles
             }

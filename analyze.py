@@ -64,8 +64,8 @@ def analyze():
                 'Num. H-bond donors': num_h_donors,
                 'Num. rotatable bonds': num_rotatable_bonds
             }
-
-            return jsonify({'image_url': image_url, 'message': 'Properties calculated and saved'}), 200
+            session['image'] = image_url
+            return jsonify({'smiles': smiles, 'message': 'Properties calculated and saved'}), 200
         else:
             return jsonify({'error': 'Invalid SMILES string'}), 400
     else:
