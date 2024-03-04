@@ -23,6 +23,29 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('Valid_molecules').textContent = smilesArray.length;
     });
 
+    // "Download txt" 버튼 이벤트 리스너
+    document.querySelector('.button.download-txt.valid').addEventListener('click', function() {
+        if (!smilesArray || smilesArray.length === 0) {
+            alert("No SMILES strings to download.");
+            return;
+        }
+
+        // SMILES 문자열을 줄바꿈 문자로 결합하여 파일 내용 생성
+        let fileContent = smilesArray.join('\n');
+
+        // 텍스트 파일 생성 및 다운로드
+        let blob = new Blob([fileContent], {type: 'text/plain'});
+        let url = URL.createObjectURL(blob);
+
+        // 다운로드 링크 생성 및 클릭 이벤트 트리거
+        let downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'smiles.txt'; // 다운로드될 파일명
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    });
+
     // "Result" 버튼 이벤트 리스너
     document.querySelector('.button.result').addEventListener('click', function() {
         if (!smilesArray || smilesArray.length === 0) {
