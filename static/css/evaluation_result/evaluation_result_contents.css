@@ -107,17 +107,18 @@ ul {
     background: white;
     border-radius: 13px;
     padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
 .card-title {
     padding: 0 0.2em;
-    color: #006BA7;
+    color: #03070a;
     font-size: 1.2em;
 }
 
 .subtitle {
-    color: #e4bad4;
+    color: #778899;
     font-weight: bold;
 }
 

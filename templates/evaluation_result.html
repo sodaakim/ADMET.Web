@@ -65,9 +65,9 @@
                     <ul class="molecule-card">
                     {% for property in properties %}
                         <li class="card">
-                            <div class="property-card">
+                            <div class="property-card color-tag" style="border-top: 5px solid {{ property.color }}">
                                 <h2 class="card-title">{{ property.title }}</h2>
-                                {% if loop.index != 1 %}
+                                {% if loop.index != 1 and loop.index != 2 and loop.index != 12 %}
                                     <div class="card-content subtitle">
                                         <div class="card-subtitle"><p>property</p></div>
                                         <div class="card-num"><p>model1</p></div>

@@ -116,6 +116,13 @@ ul {
     font-size: 1.2em;
 }
 
+.subtitle {
+    color: #778899;
+    font-weight: bold;
+    padding-top: 0.6em;
+    font-size: 1em;
+}
+
 .card-content {
     display: grid;
     grid-template-columns: 47% 13% 11% 11% 10%;
@@ -124,13 +131,6 @@ ul {
     gap: 1em;
     text-align: left;
     font-size: 1.1em;
-}
-
-.subtitle {
-    color: #778899;
-    font-weight: bold;
-    padding-top: 0.6em;
-    font-size: 1em;
 }
 
 .color-indicator {
