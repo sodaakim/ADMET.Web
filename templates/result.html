@@ -19,6 +19,7 @@
 <!--script property checkbox--> <script src="static/js/result/propertyCheckbox.js"></script>
 <!--script property pagenation--> <script src="static/js/result/pagenation.js"></script>
 <script src="static/js/screening/screening_listener.js"></script>
+    <script src="static/js/result/download_result_csv.js"></script>
 {% endblock %}
 
 <!--home (main)-->
@@ -48,7 +49,8 @@
         <div class="result-option-box">
             <div class="result-option-header">
                 <h2 class="download-title">Evaluation Results</h2>
-                <div><button class="button download-result">Download Results (csv)</button></div>
+                <div><button id="download-result" class="button download-result">Download Results (csv)</button></div>
+                <script type="text/javascript"> const analysisResults = {{ analysis_results | tojson | safe }}; </script>
             </div>
             <div class="table">
                 <table>

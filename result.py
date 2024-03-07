@@ -129,4 +129,4 @@ def result():
     ]
     # endregion information
 
-    return render_template('result.html', origin_cards=cards, cards=page_cards, page=page, total_pages=total_pages, properties=properties)
+    return render_template('result.html', analysis_results=analysis_results, origin_cards=cards, cards=page_cards, page=page, total_pages=total_pages, properties=properties)

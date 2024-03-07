@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("download-pdf").addEventListener("click", function() {
-        // 페이지 내용을 JSON으로 변환
         const dataToSend = extractPageData_pdf();
 
         // 서버로 JSON 데이터 전송
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => response.blob())
         .then(blob => {
-            // PDF 파일로 다운로드
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function extractPageData_pdf() {
-    // 페이지에서 데이터 추출 로직 구현
     return {
         molecule_name: document.querySelector('.result-header h2').textContent,
         molecule_image_url: document.querySelector('.molecule-image img').src,
