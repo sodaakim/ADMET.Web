@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+let smilesArray;
+
 document.addEventListener('DOMContentLoaded', function() {
-    let smilesArray;
 
     // "Send" 버튼 이벤트 리스너
     document.querySelector('.button.send').addEventListener('click', function() {
@@ -16,34 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // 줄바꿈으로 구분하여 SMILES 배열 생성
         smilesArray = smilesInput.split('\n').filter(smile => smile.trim() !== '');
+        localStorage.setItem('smilesArray', JSON.stringify(smilesArray));
 
         // 유효한 SMILES 문자열의 개수를 출력
         document.getElementById('Valid_molecules').textContent = smilesArray.length;
-    });
-
-    // "Download txt" 버튼 이벤트 리스너
-    document.querySelector('.button.download-txt.valid').addEventListener('click', function() {
-        if (!smilesArray || smilesArray.length === 0) {
-            alert("No SMILES strings to download.");
-            return;
-        }
-
-        // SMILES 문자열을 줄바꿈 문자로 결합하여 파일 내용 생성
-        let fileContent = smilesArray.join('\n');
-
-        // 텍스트 파일 생성 및 다운로드
-        let blob = new Blob([fileContent], {type: 'text/plain'});
-        let url = URL.createObjectURL(blob);
-
-        // 다운로드 링크 생성 및 클릭 이벤트 트리거
-        let downloadLink = document.createElement('a');
-        downloadLink.href = url;
-        downloadLink.download = 'smiles.txt'; // 다운로드될 파일명
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
     });
 
     // "Result" 버튼 이벤트 리스너
@@ -84,6 +62,36 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('loadingOverlay').style.display = 'none';
         });
     });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // "Download txt" 버튼 이벤트 리스너
+    document.querySelector('.button.download-txt.valid').addEventListener('click', function() {
+        // 로컬 스토리지에서 SMILES 배열 로드
+        let smilesArray = JSON.parse(localStorage.getItem('smilesArray'));
+
+        if (!smilesArray || smilesArray.length === 0) {
+            alert("No SMILES strings to download.");
+            return;
+        }
+
+        // SMILES 문자열을 줄바꿈 문자로 결합하여 파일 내용 생성
+        let fileContent = smilesArray.join('\n');
+
+        // 텍스트 파일 생성 및 다운로드
+        let blob = new Blob([fileContent], {type: 'text/plain'});
+        let url = URL.createObjectURL(blob);
+
+        // 다운로드 링크 생성 및 클릭 이벤트 트리거
+        let downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'valid_smiles.txt'; // 다운로드될 파일명
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    });
+
 });
 
 
