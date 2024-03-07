@@ -13,7 +13,6 @@ function downloadCSV() {
         }
     });
 
-    // 데이터 행 추가
     analysisResults.forEach((result) => {
         csvContent += `\n${result['Molecule Name']},${result['SMILES']}`;
         propertiesTitles.forEach((title) => {

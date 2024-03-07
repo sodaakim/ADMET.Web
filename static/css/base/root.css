@@ -58,6 +58,30 @@ nav {
     padding: 0.5em 0;
 }
 
+.dropdown a {
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+    text-decoration: none;
+    padding: 0 10px;
+    transition: color 0.3s;
+}
+
+
+.dropdown a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.2s ease, left 0.2s ease;;
+}
+
+.dropdown a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
 .signup {
     font-size: 1em;
     list-style: none;

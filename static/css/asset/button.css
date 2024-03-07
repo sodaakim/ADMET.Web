@@ -22,6 +22,7 @@
 
 .example-home:hover {
     background-color: #3d4f91;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .example-home:active {
@@ -39,6 +40,7 @@
 
 .example-analyze:hover {
     background-color: #dddde4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .example-analyze:active {
@@ -57,6 +59,7 @@
 
 .analyze:hover {
     background-color: #202141;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .analyze:active {
@@ -77,6 +80,7 @@
 
 .result:hover {
     background-color: #a05e74;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .result:active {
@@ -94,6 +98,7 @@
 
 .convert:hover {
     background-color: #6b7392;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .convert:active {
@@ -114,6 +119,7 @@
 
 .csv:hover {
     background-color: #091F44;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .csv:active {
@@ -134,6 +140,7 @@
 
 .pdf:hover {
     background-color: #091F44;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .pdf:active {
@@ -154,6 +161,7 @@
 
 .download-txt:hover {
     background-color: #dddde4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .download-txt:active {
@@ -174,6 +182,7 @@
 
 .download-result:hover {
     background-color: #072235;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .download-result:active {
@@ -195,6 +204,7 @@
 
 .page:hover {
     background-color: #ceced9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .page:active {
@@ -216,6 +226,7 @@
 
 .page-pre:hover {
     background-color: #ceced9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .page-pre:active {
@@ -237,6 +248,7 @@
 
 .page-next:hover {
     background-color: #ceced9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .page-next:active {
@@ -257,6 +269,7 @@
 
 .detail:hover {
     background-color: #dddde4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .detail:active {
@@ -278,6 +291,7 @@
 
 .send:hover {
     background-color: #50546e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .send:active {
@@ -298,6 +312,7 @@
 
 .file:hover {
     background-color: #787a87;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .file:active {
