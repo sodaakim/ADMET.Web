@@ -39,7 +39,7 @@
 }
 
 .example-analyze:hover {
-    background-color: #dddde4;
+    background-color: #e6e6eb;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .analyze:hover {
-    background-color: #202141;
+    background-color: #303261;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -79,7 +79,7 @@
 
 
 .result:hover {
-    background-color: #a05e74;
+    background-color: #c2748e;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -97,7 +97,7 @@
 }
 
 .convert:hover {
-    background-color: #6b7392;
+    background-color: #868cb8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -118,7 +118,7 @@
 }
 
 .csv:hover {
-    background-color: #091F44;
+    background-color: #284880;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -139,7 +139,7 @@
 }
 
 .pdf:hover {
-    background-color: #091F44;
+    background-color: #284880;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -160,7 +160,7 @@
 }
 
 .download-txt:hover {
-    background-color: #dddde4;
+    background-color: #e6e6eb;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -181,7 +181,7 @@
 }
 
 .download-result:hover {
-    background-color: #072235;
+    background-color: #284880;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -203,7 +203,7 @@
 }
 
 .page:hover {
-    background-color: #ceced9;
+    background-color: #e6e6eb;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -225,7 +225,7 @@
 }
 
 .page-pre:hover {
-    background-color: #ceced9;
+    background-color: #e6e6eb;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -247,7 +247,7 @@
 }
 
 .page-next:hover {
-    background-color: #ceced9;
+    background-color: #e6e6eb;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -268,7 +268,7 @@
 }
 
 .detail:hover {
-    background-color: #dddde4;
+    background-color: #e6e6eb;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -290,7 +290,7 @@
 }
 
 .send:hover {
-    background-color: #50546e;
+    background-color: #63688a;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -311,7 +311,7 @@
 }
 
 .file:hover {
-    background-color: #787a87;
+    background-color: #9092a3;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 

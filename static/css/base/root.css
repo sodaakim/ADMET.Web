@@ -83,6 +83,8 @@ nav {
 }
 
 .signup {
+    position: relative;
+    padding: 0.5em 0;
     font-size: 1em;
     list-style: none;
     margin-right: 5em;
