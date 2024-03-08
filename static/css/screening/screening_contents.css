@@ -22,7 +22,8 @@
 
 .input-and-controls {
     display: grid;
-    grid-template-columns: 35% 60% auto;
+    grid-template-columns: 35% 60% 5%;
+    max-width: 90em;
     height: 500px;
     justify-items: start;
 }
