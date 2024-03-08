@@ -31,7 +31,8 @@
     padding: 0.5em;
     background: #fff;
     width: 100%;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #c5ccdb;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .smiles-image {
@@ -42,7 +43,7 @@
     margin-bottom: 0.4em;
     height: 10em;
     width: auto;
-    border: 1px solid #c5ccdb;
+    border: 1px solid #dfe3eb;
     border-radius: 10px;
 }
 

@@ -40,7 +40,7 @@
 
 .example-analyze:hover {
     background-color: #e6e6eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .example-analyze:active {
@@ -59,7 +59,7 @@
 
 .analyze:hover {
     background-color: #303261;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .analyze:active {
@@ -81,7 +81,7 @@
 
 .result:hover {
     background-color: #c2748e;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .result:active {
@@ -99,7 +99,7 @@
 
 .convert:hover {
     background-color: #868cb8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .convert:active {
@@ -162,7 +162,7 @@
 
 .download-txt:hover {
     background-color: #e6e6eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .download-txt:active {
@@ -205,7 +205,7 @@
 
 .page:hover {
     background-color: #e6e6eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page:active {
@@ -227,7 +227,7 @@
 
 .page-pre:hover {
     background-color: #e6e6eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-pre:active {
@@ -249,7 +249,7 @@
 
 .page-next:hover {
     background-color: #e6e6eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-next:active {
@@ -261,7 +261,7 @@
 /* -------------------------------------------------------------------- */
 /* detail : result.html의 detail 버튼 스타일 */
 .detail {
-    background-color: #dddde4;
+    background-color: #e8e8ed;
     height: 3em;
     width: 5em;
     color: #787a87;
@@ -269,14 +269,14 @@
 }
 
 .detail:hover {
-    background-color: #e6e6eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: #f0f0f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .detail:active {
     background-color: white;
     color: #787a87;
-    border: solid #dddde4;
+    border: solid #e8e8ed;
 }
 
 
@@ -313,7 +313,7 @@
 
 .file:hover {
     background-color: #9092a3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .file:active {
