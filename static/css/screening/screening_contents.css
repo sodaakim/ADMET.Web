@@ -37,7 +37,7 @@
 .input {
     display: grid;
     grid-template-rows: 13% 70% 13%;
-    max-width: 60em;
+    max-width: 80em;
     width: 100%;
 }
 
@@ -70,10 +70,10 @@
     display: block;
     flex-grow: 1;
     margin-left: 1em;
-    width: 100%;
+    width: 95%;
     height: auto;
     border-radius: 5px;
-    border: 1px solid #000000;
+    border: 1px solid #d9d9d9;
     padding: 1em;
     line-height: 1.5;
     resize: none;
