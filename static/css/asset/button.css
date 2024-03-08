@@ -1,6 +1,6 @@
 /* 기본 버튼 스타일 */
 .button {
-    border: solid transparent;
+    border: 1px solid transparent;
     border-radius: 8px;
     display: inline-block;
     flex-direction: row;
