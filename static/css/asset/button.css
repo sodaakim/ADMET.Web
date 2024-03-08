@@ -28,7 +28,7 @@
 .example-home:active {
     background-color: white;
     color: #2c3b73;
-    border: solid #2c3b73;
+    border: 1px solid #2c3b73;
 }
 
 /* -------------------------------------------------------------------- */
@@ -46,7 +46,7 @@
 .example-analyze:active {
     background-color: white;
     color: #787a87;
-    border: solid #9b9ba3;
+    border: 1px solid #9b9ba3;
 }
 
 /* -------------------------------------------------------------------- */
@@ -65,7 +65,7 @@
 .analyze:active {
     background-color: white;
     color: #202141;
-    border: solid #202141;
+    border: 1px solid #202141;
 }
 
 /* -------------------------------------------------------------------- */
@@ -87,7 +87,7 @@
 .result:active {
     background-color: white;
     color: #a05e74;
-    border: solid #a05e74;
+    border: 1px solid #a05e74;
 }
 
 /* -------------------------------------------------------------------- */
@@ -105,7 +105,7 @@
 .convert:active {
     background-color: white;
     color: #6b7392;
-    border: solid #6b7392;
+    border: 1px solid #6b7392;
 }
 
 /* -------------------------------------------------------------------- */
@@ -126,7 +126,7 @@
 .csv:active {
     background-color: white;
     color: #091F44;
-    border: solid #091F44;
+    border: 1px solid #091F44;
 }
 
 /* -------------------------------------------------------------------- */
@@ -147,7 +147,7 @@
 .pdf:active {
     background-color: white;
     color: #091F44;
-    border: solid #091F44;
+    border: 1px solid #091F44;
 }
 
 /* -------------------------------------------------------------------- */
@@ -168,7 +168,7 @@
 .download-txt:active {
     background-color: white;
     color: #787a87;
-    border: solid #dddde4;
+    border: 1px solid #dddde4;
 }
 
 /* -------------------------------------------------------------------- */
@@ -189,7 +189,7 @@
 .download-result:active {
     background-color: white;
     color: #091F44;
-    border: solid #091F44;
+    border: 1px solid #091F44;
 }
 
 /* -------------------------------------------------------------------- */
@@ -211,7 +211,7 @@
 .page:active {
     background-color: white;
     color: #787a87;
-    border: solid #ceced9;
+    border: 1px solid #ceced9;
 }
 
 /* -------------------------------------------------------------------- */
@@ -233,7 +233,7 @@
 .page-pre:active {
     background-color: white;
     color: #787a87;
-    border: solid #ceced9;
+    border: 1px solid #ceced9;
 }
 
 /* -------------------------------------------------------------------- */
@@ -255,7 +255,7 @@
 .page-next:active {
     background-color: white;
     color: #787a87;
-    border: solid #ceced9;
+    border: 1px solid #ceced9;
 }
 
 /* -------------------------------------------------------------------- */
@@ -276,7 +276,7 @@
 .detail:active {
     background-color: white;
     color: #787a87;
-    border: solid #e8e8ed;
+    border: 1px solid #e8e8ed;
 }
 
 
@@ -298,7 +298,7 @@
 .send:active {
     background-color: white;
     color: #50546e;
-    border: solid #50546e;
+    border: 1px solid #50546e;
 }
 
 /* -------------------------------------------------------------------- */
@@ -319,6 +319,6 @@
 .file:active {
     background-color: white;
     color: #787a87;
-    border: solid #787a87;
+    border: 1px solid #787a87;
 }
 
