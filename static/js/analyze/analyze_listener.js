@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('exampleButton').addEventListener('click', function() {
-        document.getElementById('smilesInput').value = 'C1=CC=CC=C1O'; // Example SMILES
+        document.getElementById('smilesInput').value = 'OOS(=O)(=O)O'; // Example SMILES
     });
 });
 

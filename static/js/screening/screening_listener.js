@@ -1,6 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('exampleButton').addEventListener('click', function() {
-        document.getElementById('smilesInput').value = 'C1=CC=CC=C1O\nCC\nCCC'; // Example SMILES
+        document.getElementById('smilesInput').value =
+                                                                'OOS(=O)(=O)O'
+                                                                +'\n'+'NOS(=O)(=O)O'
+                                                                +'\n'+'COCC(CO)O'
+                                                                +'\n'+'COC(=O)C=C.C=C'
+                                                                +'\n'+'CN=C1CN(C(=C2C=C(C=CC2=N1)Cl)C3=CC=CC=C3)O'
+                                                                +'\n'+'CN(C)CCN(C)C'
+                                                                +'\n'+'CN(C)C1=CC=CC(=C1)C2=CC(=O)C3=C(N2)C=CC(=C3)OC'
+                                                                +'\n'+'CCSCCO'
+                                                                +'\n'+'CCOC(=O)Cl'
+                                                                +'\n'+'CCCN1C(=O)C2=CC=CC=C2N=C1SCC3=NC4=C(C(=C(S4)C)C)C(=O)N3'
+                                                                +'\n'+'CCCCNC1=CC=C(C=C1)C(=O)O'
+                                                                +'\n'+'CCCC[C@@H](C(C)C)OCC'
+                                                                +'\n'+'CCC(CC)C(=O)OC(C)C'
+                                                                +'\n'+'CCC(C)CCC(=O)OCC'
+                                                                +'\n'+'CC(F)(Cl)Cl'
+                                                                +'\n'+'CC(C)CC(=O)OCC(C)C'
+                                                                +'\n'+'CC(C)(C)OCC(C)(C=C)O'
+                                                                +'\n'+'CC(=O)OCCOC'
+                                                                +'\n'+'CC(=O)OC=C.C=C'
+                                                                +'\n'+'CC(=CCCC(OC)OC)C'
+                                                                +'\n'+'C1=CC2=C3C(=C1)C=CC4=CC=CC(=C43)C=C2'
+                                                                +'\n'+'C1=CC2=C3C(=C1)C=C4C=CC5=C4C3=C(C=C2)C=C5'
+                                                                +'\n'+'C1=CC=C2C(=C1)N=C(O2)SCCS(=O)(=O)C3=NC4=CC=CC=C4S3'
+                                                                +'\n'+'C1=CC=C2C(=C1)C(=O)C3=C(C2=O)C(=C(C=C3)O)O'
+                                                                +'\n'+'C1=CC=C(C=C1)COC2=CC3=CC=CC=C3C=C2'
+                                                                +'\n'+'C1=CC=C(C=C1)CN2C=C(C3=CC=CC=C32)CO'
+                                                                +'\n'+'C[N+](C)(C)CCO'
+                                                                +'\n'+'C(CSCC(CS)SCCS)S'
+                                                                +'\n'+'C(C(Cl)(Cl)Cl)(Cl)(Cl)Cl'
+                                                                +'\n'+'C(C(CBr)Br)Cl'+'\n'; // Example SMILES
     });
 });
 

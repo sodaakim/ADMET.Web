@@ -5,6 +5,7 @@ from rdkit.Chem import Descriptors, rdMolDescriptors
 from rdkit.Chem import Draw
 import os
 from flask import Blueprint
+from rdkit.Chem.Draw import rdMolDraw2D
 import hashlib
 
 # Blueprint 객체 생성
@@ -26,11 +27,26 @@ def analyze():
         mol = Chem.MolFromSmiles(smiles)
         if mol:
             smiles_hash = hashlib.md5(smiles.encode()).hexdigest()
-            filename = f"molecule_{smiles_hash}.png"
+            filename = f"molecule_{smiles_hash}.svg"
             image_path = os.path.join('static', 'images', filename)
-            img = Draw.MolToImage(mol)
-            img.save(image_path)
+            drawer = rdMolDraw2D.MolDraw2DSVG(400, 400)
+            # 그리기 옵션 설정
+            opts = drawer.drawOptions()
+
+            opts.useBWAtomPalette()  # 흑백으로 원자 표시
+            opts.atomLabelFontSize = 15  # 원자 라벨의 글꼴 크기
+            opts.bondLineWidth = 2.0  # 본드 선의 두께
+            opts.padding = 0.2  # 이미지 가장자리의 패딩
+            opts.multipleBondOffset = 0.15  # 다중 결합의 오프셋
+            opts.highlightColour = (0.8, 0.8, 0.2)  # 하이라이트 색상 (RGB)
+
+            drawer.DrawMolecule(mol)
+            drawer.FinishDrawing()
+            svg = drawer.GetDrawingText().replace('svg:', '')
+            with open(image_path, 'w') as svg_file:
+                svg_file.write(svg)
             image_url = url_for('static', filename=f'images/{filename}')
+
 
             # 분자 속성 계산 후 세션에 저장
             session['properties'] = {

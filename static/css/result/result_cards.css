@@ -1,24 +1,25 @@
 .card-box {
-  list-style: none;
-  padding: 1em;
-  border: 1px solid;
-  height: auto; /* 높이를 자동으로 설정하여 내용물에 맞게 조정 */
-  border-radius: 10px;
-  margin: 0.5em 1.5em;
-  overflow: auto; /* 스크롤 대신 내용물에 맞게 늘어나도록 변경 */
-  display: flex;
-  flex-direction: row; /* 가로 방향으로 내용물 정렬 */
-  flex-wrap: wrap; /* 내용물이 넘칠 경우 줄바꿈 */
-  align-content: flex-start;
-  justify-content: space-between; /* 카드 사이에 균등한 간격을 두도록 설정 */
+    list-style: none;
+    padding: 1em;
+    border: 1px solid;
+    height: auto;
+    border-radius: 10px;
+    margin: 0.5em 1.5em;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
 }
 
 .card {
-  display: flex;
-  align-items: center;
-  padding: 0.3em 0;
-  margin: 0 0.1em; /* 모든 방향으로 마진을 적용 */
-  flex: 0 0 calc(33% - 1em); /* 마진을 고려한 실제 너비 계산 */
+    display: flex;
+    align-items: flex-start;
+    padding: 0.3em 0;
+    margin: 0 0.1em;
+    flex: 0 0 calc(33% - 1em);
+    height: auto;
 }
 
 .smiles-card {
@@ -28,24 +29,27 @@
     justify-content: flex-start;
     border-radius: 10px;
     padding: 0.5em;
-    background: #f4f4f6;
-    width: 100%; /* 카드의 전체 너비를 사용 */
+    background: #fafafc;
+    width: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
 .smiles-image {
-    display: flex; /* 이미지를 flex 아이템으로 설정 */
-    justify-content: center; /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
     background: white;
-    padding: 0.5em;
+    padding: 0.2em;
     margin-bottom: 0.4em;
-    height: 5em;
+    height: 10em;
     width: auto;
+    border: 1px solid #c5ccdb;
+    border-radius: 10px;
 }
 
 .smiles-image img {
-  max-width: 100%; /* 이미지가 컨테이너를 넘지 않도록 최대 너비 설정 */
-  max-height: 100%; /* 이미지가 컨테이너를 넘지 않도록 최대 높이 설정 */
+    min-width: 120%;
+    max-height: 100%;
 }
 
 .card-contents {
@@ -53,16 +57,16 @@
     padding-left: 1em;
     padding-right: 2em;
     flex: 1;
-    max-width: calc(100% - 8em); /* 최대 너비 설정, 이미지 및 여백 공간 고려 */
-    white-space: normal; /* 기본 줄바꿈 행동 */
-    word-wrap: break-word; /* 단어가 너무 길면 줄바꿈 */
+    max-width: calc(100% - 8em);
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .card-contents h4 {
     margin-top: 0.6em;
-    word-break: break-all; /* 단어 내에서도 줄바꿈 허용 */
+    word-break: break-all;
 }
 
 .button.detail {
-  margin-right: 1em; /* 버튼 위의 여백 추가 */
+    margin-right: 1em;
 }
