@@ -46,3 +46,9 @@
 .card.cardA {
     margin-right: 15em;
 }
+
+.diagram {
+    position: relative;
+    right: 0;
+    margin: 0 2em;
+}
