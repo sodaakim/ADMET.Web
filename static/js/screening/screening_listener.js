@@ -9,6 +9,7 @@ let smilesArray;
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    /*
     // "Send" 버튼 이벤트 리스너
     document.querySelector('.button.send').addEventListener('click', function() {
         let smilesInput = document.getElementById('smilesInput').value;
@@ -22,10 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 유효한 SMILES 문자열의 개수를 출력
         document.getElementById('Valid_molecules').textContent = smilesArray.length;
-    });
+    }); */
 
     // "Result" 버튼 이벤트 리스너
     document.querySelector('.button.result').addEventListener('click', function() {
+
+        let smilesInput = document.getElementById('smilesInput').value;
+        if (!smilesInput.trim()) {
+            alert("Please input SMILES strings.");
+            return;
+        }
+
+        smilesArray = smilesInput.split('\n').filter(smile => smile.trim() !== '');
+        localStorage.setItem('smilesArray', JSON.stringify(smilesArray));
+
+        // 유효한 SMILES 문자열의 개수를 출력
+        // document.getElementById('Valid_molecules').textContent = smilesArray.length;
+
+
         if (!smilesArray || smilesArray.length === 0) {
             alert("Please enter SMILES strings and click Send first.");
             return;

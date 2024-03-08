@@ -71,10 +71,11 @@
 /* -------------------------------------------------------------------- */
 /* result : screening.html의 Analyze ADMET 버튼 스타일 */
 .result {
-    margin: 2em 0 1em 1em;
+    /* margin: 2em 0 1em 1em; */
     background-color: #a05e74;
     color: white;
     height: 3em;
+    margin: 0;
 }
 
 
