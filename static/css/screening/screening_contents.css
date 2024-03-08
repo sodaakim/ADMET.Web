@@ -22,7 +22,7 @@
 
 .input-and-controls {
     display: grid;
-    grid-template-columns: 35% 60%;
+    grid-template-columns: 35% 60% auto;
     height: 500px;
     justify-items: start;
 }
@@ -32,6 +32,7 @@
     height: 100%;
     max-width: 500px;
 }
+
 .input {
     display: grid;
     grid-template-rows: 13% 70% 13%;
