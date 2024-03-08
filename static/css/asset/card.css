@@ -1,35 +1,36 @@
-/* 카드 */
+/* 카드
+
+<div class="card cardA">
+    <div class="card-image cardA">
+        <img src="{{ card.image_path }}" alt="...">
+    </div>
+    <div class="card-content cardA">
+        <div class="card-icon cardA">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="card-body cardA">
+            <h2>{{ card.title }}</h2>
+            <h3>{{ card.description }}</h3>
+        </div>
+    </div>
+</div>
+
+*/
+
+/* common ------------------------------------ */
+
 .card {
     display: grid;
-    grid-template-columns: 15em 1fr;
-    padding: 1em 2em;
-    margin: 2em 0;
-    max-width: 100%;
-    background-color: #F3F3F4;
+    grid-template-columns: 15em 1fr; /* 이미지와 카드 컨텐츠 나누기 */
+    padding: 2em 3em;
+    margin: 1em 0;
+    background-color: #fafafa;
     border: solid 1px #e1e1e1;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.cardA {
-    display: flex;
-    padding: 1.5em 3em;
-    margin: 0 2em 2em 0;
-    width: 35em;
-}
-
-.cardB {
-    border: none;
-}
-
-
-/* 카드 컨텐츠 */
-.card-content {
-    min-width: 0;
-    overflow: hidden;
-}
-
-/* 이미지 */
+/* ------------------------ */
 .card-image {
     width: 12em;
     height: auto;
@@ -42,32 +43,24 @@
     object-fit: cover;
 }
 
-/* 이미지 숨김 처리 */
-.card-image.cardA,
-.card-image.cardA img {
-    display: none;
-}
+/* ------------------------ */
 
-.card-header {
+.card-content {
     display: flex;
+    text-align: left;
+    align-items: flex-start;
+    justify-items: flex-start;
+    overflow: hidden;
 }
 
-.card-header i {
-    margin-right: 1em;
-    margin-top: 1.5em;
-    align-items: flex-start;
+.card-icon i {
+    margin: 1.2em;
 }
 
 .card-body {
-    padding: 0 0 0 1.9em;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.card-content {
-    min-width: 0;
-    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 @media (max-width: 1300px) {
@@ -79,3 +72,32 @@
         display: none;
     }
 }
+
+/* cardA : 이미지 없는 카드 */
+/* cardA ------------------------------------ */
+
+.card.cardA {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    width: 40em;
+    display: flex;
+}
+
+.card-image.cardA,
+.card-image.cardA img {
+    display: none;
+}
+
+/* cardB : 이미지 있는 카드, 컨텐츠 카드 */
+/* cardB ------------------------------------ */
+
+.card.cardB {
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+

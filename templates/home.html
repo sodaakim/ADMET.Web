@@ -45,12 +45,13 @@
                 <div class="card-image cardA">
                     <img src="{{ card.image_path }}" alt="ADMET Diagram">
                 </div>
-                <div class="card-content">
-                    <div class="card-header">
+                <div class="card-content cardA">
+                    <!--
+                    <div class="card-icon cardA">
                         <i class="fas fa-user"></i>
+                    </div>-->
+                    <div class="card-body cardA">
                         <h2>{{ card.title }}</h2>
-                    </div>
-                    <div class="card-body">
                         <h3>{{ card.description }}</h3>
                     </div>
                 </div>
@@ -61,7 +62,7 @@
         <div class="container B">
             <div class="box">
                 <div class="box-header">
-                    <i class="fas fa-user"></i>
+                    <!--<i class="fas fa-user"></i>-->
                     <h2>Title</h2>
                 </div>
                 {% for card in cards[1:] %}
@@ -69,12 +70,12 @@
                     <div class="card-image cardB">
                         <img src="{{ card.image_path }}" alt="ADMET Diagram">
                     </div>
-                    <div class="card-content">
-                        <div class="card-header">
+                    <div class="card-content cardB">
+                        <div class="card-icon cardB">
                             <i class="fas fa-user"></i>
-                            <h2>{{ card.title }}</h2>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body cardB">
+                            <h2>{{ card.title }}</h2>
                             <h3>{{ card.description }}</h3>
                         </div>
                     </div>
