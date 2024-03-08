@@ -6,7 +6,7 @@
 }
 
 .kekule-widget-content {
-  background-color: #ceced9; /* 새 배경색 */
+  background-color: #ceced9;
 }
 
 
@@ -26,17 +26,8 @@
     border-color: #091F44;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .K-Widget {
-        width: 100%;
-        padding: 5px;
-    }
-}
-
 /* Custom Icons */
 .K-Icon {
-    background-image: url('path/to/your/icon.png');
     background-size: contain;
     width: 16px;
     height: 16px;
