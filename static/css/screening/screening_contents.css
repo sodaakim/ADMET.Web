@@ -34,6 +34,8 @@
 .input {
     display: grid;
     grid-template-rows: 13% 70% 13%;
+    align-items: flex-start;
+    justify-items: left;
     max-width: 60em;
     width: 100%;
 }
