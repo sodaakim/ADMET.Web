@@ -33,12 +33,11 @@ def analyze():
             # 그리기 옵션 설정
             opts = drawer.drawOptions()
 
-            opts.useBWAtomPalette()  # 흑백으로 원자 표시
-            opts.atomLabelFontSize = 15  # 원자 라벨의 글꼴 크기
-            opts.bondLineWidth = 2.0  # 본드 선의 두께
-            opts.padding = 0.2  # 이미지 가장자리의 패딩
-            opts.multipleBondOffset = 0.15  # 다중 결합의 오프셋
-            opts.highlightColour = (0.8, 0.8, 0.2)  # 하이라이트 색상 (RGB)
+            opts.atomLabelFontSize = 15
+            opts.bondLineWidth = 3.0
+            opts.padding = 0
+            opts.multipleBondOffset = 0.15
+            opts.highlightColour = (0.8, 0.8, 0.2)
 
             drawer.DrawMolecule(mol)
             drawer.FinishDrawing()
@@ -46,7 +45,6 @@ def analyze():
             with open(image_path, 'w') as svg_file:
                 svg_file.write(svg)
             image_url = url_for('static', filename=f'images/{filename}')
-
 
             # 분자 속성 계산 후 세션에 저장
             session['properties'] = {
