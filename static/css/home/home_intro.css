@@ -1,3 +1,4 @@
+
 @keyframes wave {
   0% {
     background-position: 100% 50%;
@@ -18,31 +19,48 @@
 
 
 .background {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.1;
-    z-index: -1;
+    z-index: 0;
+}
+
+.image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 70%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .intro-content {
     margin-right: auto;
     max-width: 50em;
     text-align: left;
+    z-index: 2;
 }
+
 
 .intro-content .title {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 1em;
+    z-index: 2;
+}
+
+.intro-content .subtitle {
+    z-index: 2;
 }
 
 .intro-content hr{
     border: 0.5px solid white;
     margin: 1em 0;
-
+    z-index: 2;
 }
 
 .intro-content .input {
@@ -57,5 +75,5 @@
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
+    z-index: 2;
 }
-
