@@ -1,0 +1,37 @@
+
+/* line section ----------------------------- */
+.line {
+    width: 100%;
+    height: 0.3em;
+    background-color: #f7f7f7;
+}
+
+.section-box {
+    width: 100%;
+    height: 90px;
+    background-color: #e3e4e6;
+    position: relative;
+    display: flex;
+    gap: 2em;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.counting-box {
+    display: flex;
+    gap: 1em;
+}
+
+.line-text {
+    display: block;
+    color: black;
+    font-size: 32px;
+    width: 100%;
+}
+
+.counting1, .counting2, .counting3 {
+    width: 60px;
+    text-align: right;
+}

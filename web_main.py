@@ -52,18 +52,35 @@ def home():
 @app.route('/')
 def home():
     cards = [
-        {'title': 'Advanced Model for Accurate ADMET', 'subtitle': 'Sub 0',
-         'description': 'Based on the studies conducted in papers, we have developed a model capable of accurately predicting ADMET properties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.',
-         'image_path': 'img/path0.jpg'},
-        {'title': 'Re-engineered modules and batch evaluation support', 'subtitle': 'Sub 1',
-         'description': 'Based on the studies conducted in papers, we have developed a model capable of accurately predicting ADMET properties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.',
-         'image_path': 'img/path1.jpg'},
-        {'title': 'Robust and accurate MGA models', 'subtitle': 'Sub 2',
-         'description': 'Bproperties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.',
-         'image_path': 'img/path2.jpg'},
-        {'title': 'Practical explanation and guidance', 'subtitle': 'Sub 2',
-         'description': 'Bproperties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.',
-         'image_path': 'img/path2.jpg'},
+        {'title': 'Webserver Advantages',
+         'subtitle': 'Sub 0',
+         'icon': 'fas fa-poll',
+         'description': 'Our webserver boasts its capability to predict ADMET profiles quickly and accurately using advanced algorithms and simulation tools as its primary advantage. This feature significantly accelerates the drug development process and reduces unnecessary costs. Additionally, the user-friendly interface and high prediction accuracy ensure that researchers can obtain reliable data on potential drug candidates.',
+         'image_path': 'static/resources/service_manual.png'},
+
+        {'title': 'Expanded ADMET Profiles',
+         'subtitle': 'Sub 1',
+         'icon': 'fas fa-poll',
+         'description': 'The webserver offers an extended ADMET profile covering 88 related characteristics across 7 different categories. This surpasses competitive sites in terms of the number of properties and improved performance. Users can leverage this comprehensive dataset to set their own criteria for promising and desirable molecules.',
+         'image_path': 'static/resources/service_manual.png'},
+
+        {'title': 'Enhanced User Experience',
+         'subtitle': 'Sub 2',
+         'icon': 'fas fa-poll',
+         'description': 'Functional modules have been redesigned and optimized to enhance the user experience. Notably, the server supports batch uploading and downloading, allowing users to adjust download options to their preference.',
+         'image_path': 'static/resources/screening.png'},
+
+        {'title': 'Reinforced Prediction Models',
+         'subtitle': 'Sub 3',
+         'icon': 'fas fa-poll',
+         'description': 'The simultaneous development of classification and regression predictors, along with the application of deep learning, makes multitask learning seamless, leading to performance enhancement across many modeled endpoints. This advancement enables users to gain an accurate overall ADMET profile for input molecules.',
+         'image_path': 'static/resources/service_manual.png'},
+
+        {'title': 'Intuitive Usage',
+         'subtitle': 'Sub 4',
+         'icon': 'fas fa-poll',
+         'description': 'The usage of our webserver is remarkably intuitive. Users simply need to input the SMILES string and click the \'Start Analysis\' button to receive detailed predictive results for the drug\'s ADMET profile. These results include the drug\'s absorption rate, tissue distribution, metabolic pathways, excretion methods, and potential toxicity effects, ensuring a comprehensive understanding of the candidate molecule\'s properties.',
+         'image_path': 'static/resources/screening.png'},
     ]
     return render_template('home.html', cards=cards)
 

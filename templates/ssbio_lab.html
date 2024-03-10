@@ -26,54 +26,13 @@
             <h3 class="white subtitle">The aim of our research is to decipher the underlying mechanisms of complex systems of living organisms and to utilize those systems to create novel synthetic systems to facilitate the advance of biotechnology.
                 In order to unveil the mysteries of complex biological systems, we develop computational models, algorithms, and methodologies to decipher massive data acquired through high-throughput technologies in aid of a variety of integrated databases. Based on the unveiled mysteries, we develop synthetic biological components (RNA, DNA, proteins) and systems (genetic, protein, and metabolic networks) to create novel living organisms to be capable of performing any tasks we program: sustainable biomolecular production, environmental remediation, novel biotechnological methodologies, etc.
                 We are working in diverse fields including synthetic biology, systems biology, computational biology, bioinformatics, neuroscience, metabolic engineering, chemical engineering, and so on.
-
 </h3>
         </div>
     </section>
 
     <section id="info-section">
-        <div class="container A">
-            {% for card in cards[0:1] %}
-            <div class="card cardA">
-                <div class="card-image cardA">
-                    <img src="{{ card.image_path }}" alt="ADMET Diagram">
-                </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <i class="fas fa-user"></i>
-                        <h2>{{ card.title }}</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3>{{ card.description }}</h3>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="container B">
-            <div class="box">
-                <div class="box-header">
-                    <i class="fas fa-user"></i>
-                    <h2>Title</h2>
-                </div>
-                {% for card in cards[1:] %}
-                <div class="card cardB">
-                    <div class="card-image cardB">
-                        <img src="{{ card.image_path }}" alt="ADMET Diagram">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <i class="fas fa-user"></i>
-                            <h2>{{ card.title }}</h2>
-                        </div>
-                        <div class="card-body">
-                            <h3>{{ card.description }}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+
     </section>
+
 </main>
 {% endblock %}

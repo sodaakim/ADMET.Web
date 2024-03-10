@@ -1,11 +1,11 @@
 
 @keyframes wave {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #intro-section {
@@ -15,8 +15,8 @@
     background: linear-gradient(to right, #86a8e7, #6A77AD, #6A77AD);
     background-size: 200% auto;
     animation: wave 1.5s forwards;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); */
 }
-
 
 .background {
     position: relative;
@@ -37,6 +37,15 @@
     height: 100%;
     z-index: 1;
     pointer-events: none;
+}
+
+.image.human {
+    position: absolute;
+    align-self: center;
+    margin: 4.2em 6em;
+    width: 350px;
+    height: 350px;
+    z-index: 2;
 }
 
 .intro-content {
