@@ -72,6 +72,4 @@ flask run
 - 연구자 : 김소희
 - 이메일 : [sohuikim2020@naver.com](mailto:sohuikim2020@naver.com)
 - 연구 기관 : 중앙대학교 융합공학부 바이오메디컬공학 생명정보학 연구실
-
-Department of Biomedical Engineering, 
-School of integrative engineering Chung-Ang University
+- Department of Biomedical Engineering, School of integrative engineering Chung-Ang University
