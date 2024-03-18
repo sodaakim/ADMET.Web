@@ -1,7 +1,6 @@
 # ADMET 분석 서비스용 웹서버
 ![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/2164aab4-cdfa-4edd-baa0-cc64d69e3cef)
 
-
 ADMET 모델은 분자의 물리화학적 성질, 독성 등을 분석할 수 있어 신약 개발 과정에서 중요한 도구로 활용되며, 편리한 연구를 위해 Flask와 MySQL로 웹서비스를 개발하고 있습니다.
 
 SMILES로 표기된 화합물을 입력하면 Property 86개에 대한 분석 결과를 제공합니다.
@@ -13,7 +12,25 @@ This tool supports researchers in identifying and optimizing potential risk fact
 ## 기능 사항
 - **SMILES 입력**
 
-- 
+단일 SMILES 입력(Analyze)과 다중 SMILES 입력(Screening)이 가능합니다.
+ 
+![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/6137bc7c-5497-4304-8952-0d55485a27f7)
+
+- **Property 분석**
+
+86개의 ADMET Property에 대해 분석합니다.
+
+ADMET 분석을 위한 모델은, 본 연구소에서 개발한 모델 뿐만 아니라 FDADMET와 OPERA의 분석 모델이 포함되어있습니다.
+
+![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/be3f2475-f177-4d1e-97ac-e903a9141293)
+
+- **결과 다운로드**
+
+PDF와 CSV로 결과를 다운로드 할 수 있습니다.
+
+다운로드 옵션에서 Property를 선택해 원하는 사항만 다운로드 할 수 있습니다.
+
+![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/d98f2051-4c3b-4c66-b8c7-4566dac5490d)
 
 
 ## 개발 과정 하이라이트
