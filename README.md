@@ -37,7 +37,7 @@ pip install -r requirements.txt
 flask run
 ```
 
-### 연구소 정보
+## 연구소 정보
 중앙대학교 융합공학부 바이오메디컬공학 생명정보학 연구실
 
 Department of Biomedical Engineering
