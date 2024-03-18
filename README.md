@@ -1,18 +1,5 @@
 # ADMET 분석 서비스용 웹서버
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 236.88 115.44">
-  <defs>
-    <style>
-    </style>
-    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
-      <feOffset dx="0" dy="0"/>
-      <feGaussianBlur result="blur" stdDeviation="1.42"/>
-      <feFlood flood-color="#231815" flood-opacity=".4"/>
-      <feComposite in2="blur" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-</svg>![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/2164aab4-cdfa-4edd-baa0-cc64d69e3cef)
+![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/2164aab4-cdfa-4edd-baa0-cc64d69e3cef)
 
 
 ADMET 모델은 분자의 물리화학적 성질, 독성 등을 분석할 수 있어 신약 개발 과정에서 중요한 도구로 활용되며, 편리한 연구를 위해 Flask와 MySQL로 웹서비스를 개발하고 있습니다.
