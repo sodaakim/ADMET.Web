@@ -80,7 +80,6 @@ School of integrative engineering Chung-Ang University
 
 - **Homepage** : http://ssbio.cau.ac.kr
 
-- **Email** : blisszen@cau.ac.kr
 
 ### 개발자 정보
 - **이름** : 김소희
