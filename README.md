@@ -33,6 +33,11 @@ PDF와 CSV로 결과를 다운로드 할 수 있습니다.
 
 ![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/2e489392-ebe5-4808-ad27-dc38284d942a)
 
+![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/dce705eb-962b-4fcc-a1b9-5c8619f639c8)
+
+![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/edcec7f7-a4b2-4d6e-84dd-ff90bed319d3)
+
+
 ## 개발 과정 하이라이트
 - **사용자 친화적 디자인** : 연구자의 경험을 반영하여 최적화된 UI/UX.
 - **모듈화** : Flask Blueprint를 활용한 클린 아키텍처 구현.
