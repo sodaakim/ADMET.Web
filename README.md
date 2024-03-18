@@ -37,7 +37,7 @@ pip install -r requirements.txt
 flask run
 ```
 
-## 연구소 정보
+### 연구소 정보
 중앙대학교 융합공학부 바이오메디컬공학 생명정보학 연구실
 
 Department of Biomedical Engineering
@@ -48,10 +48,11 @@ School of integrative engineering Chung-Ang University
 
 ### Contact Us
 
-Homepage : http://ssbio.cau.ac.kr
+**Homepage** : http://ssbio.cau.ac.kr
 
-Email : blisszen@cau.ac.kr
+**Email** : blisszen@cau.ac.kr
 
-## 개발자 정보
-- **이름**: 김소희
-- **이메일**: sohuikim2020@naver.com
+### 개발자 정보
+**이름** : 김소희
+
+**이메일** : sohuikim2020@naver.com
