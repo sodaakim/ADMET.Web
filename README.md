@@ -34,7 +34,6 @@ PDF와 CSV로 결과를 다운로드 할 수 있습니다.
 ![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/2e489392-ebe5-4808-ad27-dc38284d942a)
 
 ![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/dce705eb-962b-4fcc-a1b9-5c8619f639c8)
-
 ![image](https://github.com/sodaakim/ADMET.Web/assets/83997634/0eca17a0-3609-4c85-840d-6ac2537842d1)
 
 
