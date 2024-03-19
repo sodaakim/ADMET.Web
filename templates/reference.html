@@ -20,16 +20,126 @@
 {% block main %}
 <main>
     <section id="intro-section">
-        <img class="background" src="public/bg.svg" alt="BG SVG">
         <div class="intro-content">
             <h1 class="white title">Reference</h1>
-            <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools necessary for analyzing complex pharmacokinetics and pharmacodynamics data, thereby accelerating the drug development process and reducing costs.</h3>
+            <h4>본 페이지는 일부 내용 수정이 필요합니다.</h4>
         </div>
     </section>
 
-    <section id="info-section">
 
+    <section id="info-section">
+        <div id="nav-container">
+            <ul class="navbar">
+                <li><a href="#section1">Data Models</a></li>
+                <li><a href="#section2">Common Parameters</a></li>
+                <li><a href="#section3">Status Codes</a></li>
+                <li><a href="#section4">Error Codes</a></li>
+                <li><a href="#section5">Authentication</a></li>
+                <li><a href="#section6">Rate Limiting</a></li>
+                <li><a href="#section7">API Versioning</a></li>
+                <li><a href="#section8">Security Considerations</a></li>
+            </ul>
+        </div>
+        <div class="manual">
+            <section id="section1">
+                <div class="section-box">
+                    <h2>Data Models</h2>
+                    <hr>
+                    <p>Explanation of the data structures returned by the API, including properties and types of each field. This section helps developers understand the format and content of the responses.</p>
+                    <div class="card-container">
+                        {% for card in data_models %}
+                        <div class="card cardC">
+                            <div class="card-image cardC">
+                                <img src="{{ card.image_url }}" alt="{{ card.title }} image" class="card-image">
+                            </div>
+                            <div class="card-content cardC">
+                                <div class="card-body cardC">
+                                    <h3 style="font-weight: bold">{{ card.title }}</h3>
+                                    <h4>{{ card.description }}</h4>
+                                    <a href="{{ card.link }}" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section id="section2">
+                <div class="section-box">
+                    <h2>Common Parameters</h2>
+                    <hr>
+                    <p>Details on common request parameters that can be used with multiple endpoints, such as filters, query options, and pagination controls.</p>
+                    <div class="card-container">
+                        {% for card in parameters %}
+                        <div class="card cardC">
+                            <div class="card-image cardC">
+                                <img src="{{ card.image_url }}" alt="{{ card.title }} image" class="card-image">
+                            </div>
+                            <div class="card-content cardC">
+                                <div class="card-body cardC">
+                                    <h3 style="font-weight: bold">{{ card.title }}</h3>
+                                    <h4>{{ card.description }}</h4>
+                                    <a href="{{ card.link }}" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section id="section3">
+                <div class="section-box">
+                    <h2>Status Codes</h2>
+                    <hr>
+                    <p>Comprehensive list of HTTP status codes returned by the API, with explanations for each. This includes successful responses, client errors, and server errors.</p>
+                </div>
+            </section>
+
+            <section id="section4">
+                <div class="section-box">
+                    <h2>Error Codes</h2>
+                    <hr>
+                    <p>Detailed information on possible error codes that can be returned by the API, with troubleshooting tips and suggestions for resolution.</p>
+                </div>
+            </section>
+
+            <section id="section5">
+                <div class="section-box">
+                    <h2>Authentication</h2>
+                    <hr>
+                    <p>Guidelines on how to authenticate with the API, including the types of authentication supported and instructions for obtaining and using API keys.</p>
+                </div>
+            </section>
+
+            <section id="section6">
+                <div class="section-box">
+                    <h2>Rate Limiting</h2>
+                    <hr>
+                    <p>Explanation of the rate limits applied to the API, how they are calculated, and best practices for handling rate limiting responses.</p>
+                </div>
+            </section>
+
+            <section id="section7">
+                <div class="section-box">
+                    <h2>API Versioning</h2>
+                    <hr>
+                    <p>Information on the API versioning strategy, including how to specify the version in requests and how changes are communicated to users.</p>
+                </div>
+            </section>
+
+            <section id="section8">
+                <div class="section-box">
+                    <h2>Security Considerations</h2>
+                    <hr>
+                    <p>Important security practices for using the API, including tips on securing API keys, using HTTPS, and other best practices to ensure data security.</p>
+                </div>
+            </section>
+        </div>
     </section>
+
+
 
 </main>
 {% endblock %}

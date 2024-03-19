@@ -20,15 +20,95 @@
 {% block main %}
 <main>
     <section id="intro-section">
-        <img class="background" src="public/bg.svg" alt="BG SVG">
         <div class="intro-content">
             <h1 class="white title">API Manual</h1>
-            <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools necessary for analyzing complex pharmacokinetics and pharmacodynamics data, thereby accelerating the drug development process and reducing costs.</h3>
+            <h4>본 페이지는 일부 내용 수정이 필요합니다.</h4>
         </div>
     </section>
 
     <section id="info-section">
+        <div id="nav-container">
+            <ul class="navbar">
+                <li><a href="#section1">API Introduction</a></li>
+                <li><a href="#section2">Getting Started</a></li>
+                <li><a href="#section3">Authentication</a></li>
+                <li><a href="#section4">Endpoints</a></li>
+                <li><a href="#section5">Rate Limits</a></li>
+                <li><a href="#section6">Examples</a></li>
+                <li><a href="#section7">Error Codes</a></li>
+            </ul>
+        </div>
+        <div class="manual">
+            <section id="section1">
+                <div class="section-box">
+                    <h2>API Introduction</h2>
+                    <hr>
+                    <p>This section provides an overview of our API, including its purpose and capabilities. Our API is designed to offer programmatic access to our platform, allowing developers to integrate our data and services into their applications.</p>
+                </div>
+            </section>
 
+            <section id="section2">
+                <div class="section-box">
+                    <h2>Getting Started</h2>
+                    <hr>
+                    <p>Before you begin, you'll need to sign up for an API key. This key will authenticate your requests. Visit our developer portal to sign up and receive your API key.</p>
+                </div>
+            </section>
+
+            <section id="section3">
+                <div class="section-box">
+                    <h2>Authentication</h2>
+                    <hr>
+                    <p>All API requests must be accompanied by your API key. Include your key in the request header as 'Authorization: Bearer YOUR_API_KEY'.</p>
+                </div>
+            </section>
+
+            <section id="section4">
+                <div class="section-box">
+                    <h2>Endpoints</h2>
+                    <hr>
+                    <p>Our API provides several endpoints to access different types of data and perform various operations. Here is a list of available endpoints and their functions:</p>
+                    <ul>
+                        <li><strong>/analyze</strong> - Analyze SMILES strings and return ADMET characteristics.</li>
+                        <li><strong>/screening</strong> - Screen multiple SMILES strings in a single request.</li>
+                        <li><strong>/results</strong> - Retrieve results of previous analyses.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section5">
+                <div class="section-box">
+                    <h2>Rate Limits</h2>
+                    <hr>
+                    <p>To ensure fair usage, our API enforces rate limits. Standard users are limited to 100 requests per hour. Please contact us if you need higher limits for your application.</p>
+                </div>
+            </section>
+
+            <section id="section6">
+                <div class="section-box">
+                    <h2>Examples</h2>
+                    <hr>
+                    <p>Here are some example requests to help you get started:</p>
+                    <ul>
+                        <li><strong>Analyze Request:</strong> <code>curl -H "Authorization: Bearer YOUR_API_KEY" -X POST -d "smiles=Cc1ccccc1" https://api.yourservice.com/analyze</code></li>
+                        <li><strong>Screening Request:</strong> <code>curl -H "Authorization: Bearer YOUR_API_KEY" -X POST -d "smiles=Cc1ccccc1\nCCO" https://api.yourservice.com/screening</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section7">
+                <div class="section-box">
+                    <h2>Error Codes</h2>
+                    <hr>
+                    <p>Understanding error codes can help you troubleshoot issues. Here are some common codes:</p>
+                    <ul>
+                        <li><strong>400 Bad Request</strong> - The request was unacceptable, often due to missing a required parameter.</li>
+                        <li><strong>401 Unauthorized</strong> - No valid API key provided.</li>
+                        <li><strong>429 Too Many Requests</strong> - Request rejected due to rate limit being exceeded.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </section>
 </main>
 {% endblock %}

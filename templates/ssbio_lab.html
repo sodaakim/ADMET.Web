@@ -23,16 +23,74 @@
         <img class="background" src="public/bg.svg" alt="BG SVG">
         <div class="intro-content">
             <h1 class="white title">ssbio Lab</h1>
-            <h3 class="white subtitle">The aim of our research is to decipher the underlying mechanisms of complex systems of living organisms and to utilize those systems to create novel synthetic systems to facilitate the advance of biotechnology.
-                In order to unveil the mysteries of complex biological systems, we develop computational models, algorithms, and methodologies to decipher massive data acquired through high-throughput technologies in aid of a variety of integrated databases. Based on the unveiled mysteries, we develop synthetic biological components (RNA, DNA, proteins) and systems (genetic, protein, and metabolic networks) to create novel living organisms to be capable of performing any tasks we program: sustainable biomolecular production, environmental remediation, novel biotechnological methodologies, etc.
-                We are working in diverse fields including synthetic biology, systems biology, computational biology, bioinformatics, neuroscience, metabolic engineering, chemical engineering, and so on.
-</h3>
+            <h4>본 페이지는 일부 내용 수정이 필요합니다.</h4>
         </div>
     </section>
 
+
+
+
     <section id="info-section">
+        <div id="nav-container">
+            <ul class="navbar">
+                <li><a href="#section1">About Our Lab</a></li>
+                <li><a href="#section2">Main Research Themes</a></li>
+            </ul>
+        </div>
+        <div class="manual">
+            <div class="section-box">
+                <h2>Welcome to ssbio Lab</h2>
+                    <hr>
+                    <p>Welcome to the XYZ Research Lab. We are dedicated to advancing the field of computational biology through innovative research on data models, algorithms, and systems biology. Our lab, led by Professor John Doe, focuses on developing computational methods to understand complex biological data.</p>
+                    <a href="http://ssbio.cau.ac.kr" target="_blank">ssbioalab</a>
+            </div>
+            <section id="section1">
+                <div class="section-box">
+                    <h2>About Our Lab</h2>
+                    <hr>
+                    <p>Welcome to the XYZ Research Lab. We are dedicated to advancing the field of computational biology through innovative research on data models, algorithms, and systems biology. Our lab, led by Professor John Doe, focuses on developing computational methods to understand complex biological data.</p>
+                    <div class="card-container">
+                        {% for project in lab_projects %}
+                        <div class="card cardC">
+                            <div class="card-image cardC">
+                                <img src="{{ project.image_url }}" alt="{{ project.title }} Image">
+                            </div>
+                            <div class="card-content cardC">
+                                <div class="card-body cardC">
+                                    <h3>{{ project.title }}</h3>
+                                    <h4>{{ project.description }}</h4>
+                                    <a href="{{ project.link }}" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
 
+            <section id="section2">
+                <div class="section-box">
+                    <h2>Main Research Themes</h2>
+                    <hr>
+                    <div class="card-container">
+                        {% for theme in research_themes %}
+                        <div class="card cardC">
+                            <div class="card-image cardC">
+                                <img src="{{ theme.image_url }}" alt="{{ theme.title }} Image">
+                            </div>
+                            <div class="card-content cardC">
+                                <div class="card-body cardC">
+                                    <h3>{{ theme.title }}</h3>
+                                    <h4>{{ theme.description }}</h4>
+                                    <a href="{{ theme.link }}" target="_blank">Discover More</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
     </section>
-
 </main>
 {% endblock %}

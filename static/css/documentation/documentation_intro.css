@@ -10,7 +10,7 @@
 #intro-section {
     position: relative;
     text-align: center;
-    padding: 3em 8em 3em 8em;
+    padding: 3em 8em 1em 8em;
     background: linear-gradient(to right, #86a8e7, #6A77AD, #6A77AD);
     background-size: 200% auto;
     animation: wave 1.5s forwards;

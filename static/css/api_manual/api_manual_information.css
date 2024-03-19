@@ -2,8 +2,71 @@
     position: relative;
     text-align: center;
     padding: 4em 7em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    gap: 4em;
 }
 
 .container {
     margin: 1em;
+}
+
+/*--- nav box -------------------------------*/
+
+#nav-container {
+    height: 2000px;
+}
+
+.navbar {
+    position: sticky;
+    top: 20px;
+    width: 250px;
+    list-style: none;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    z-index: 20;
+    text-align: left;
+    padding: 10px;
+}
+
+.navbar li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.navbar li a:hover, .navbar li a:focus {
+    background-color: #eaeaea;
+    color: #000;
+}
+
+.navbar li.active a {
+    color: #fff;
+    background-color: #333;
+    font-weight: bold;
+}
+
+/*--- section box -------------------------------*/
+
+.section-box {
+    width:60em;
+}
+
+.section-box {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+.manual p, .manual ul, .manual ol {
+    text-align: left;
+    padding: 20px 30px;
 }

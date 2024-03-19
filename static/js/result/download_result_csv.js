@@ -4,17 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function downloadCSV() {
-    let csvContent = "data:text/csv;charset=utf-8,Molecule Name,SMILES";
+    let csvContent = "data:text/csv;charset=utf-8,SMILES";
 
-    const propertiesTitles = Object.keys(analysisResults[0]);
+    const propertiesTitles = Object.keys(analysisResults[0]).filter(title => title !== "Molecule Name" && title !== "Image URL");
     propertiesTitles.forEach((title) => {
         if (title !== 'SMILES') {
             csvContent += `,${title}`;
         }
     });
 
+    // 각 결과에 대한 데이터 행 추가
     analysisResults.forEach((result) => {
-        csvContent += `\n${result['Molecule Name']},${result['SMILES']}`;
+        csvContent += `\n${result['SMILES']}`;
         propertiesTitles.forEach((title) => {
             if (title !== 'SMILES') {
                 csvContent += `,${result[title]}`;
@@ -22,6 +23,7 @@ function downloadCSV() {
         });
     });
 
+    // CSV 파일 다운로드
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
@@ -30,4 +32,5 @@ function downloadCSV() {
     link.click();
     document.body.removeChild(link);
 }
+
 

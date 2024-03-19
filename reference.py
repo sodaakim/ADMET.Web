@@ -10,22 +10,27 @@ from flask import Blueprint
 reference_route = Blueprint('reference_route', __name__)
 @reference_route.route('/reference')
 def reference():
-    cards = [
-        {'title': 'Advanced Model for Accurate ADMET', 'subtitle': 'Sub 0', 'description': 'Based on the studies conducted in papers, we have developed a model capable of accurately predicting ADMET properties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path0.jpg'},
-        {'title': 'Re-engineered modules and batch evaluation support', 'subtitle': 'Sub 1', 'description': 'Based on the studies conducted in papers, we have developed a model capable of accurately predicting ADMET properties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path1.jpg'},
-        {'title': 'Robust and accurate MGA models', 'subtitle': 'Sub 2', 'description': 'Bproperties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path2.jpg'},
-        {'title': 'Practical explanation and guidance', 'subtitle': 'Sub 2', 'description': 'Bproperties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path2.jpg'},
+    data_models = [
+        {'title': 'Model Example1', 'image_url': 'image', 'description': 'This model is about..', 'link': 'Link'},
+        {'title': 'Model Example2', 'image_url': 'image', 'description': 'This model is about..', 'link': 'Link'}
     ]
-    return render_template('reference.html', cards=cards)
+
+    parameters = [
+        {'title': 'parameters Example1', 'image_url': 'image', 'description': 'parameters..', 'link': 'Link'},
+        {'title': 'parameters Example2', 'image_url': 'image', 'description': 'parameters..', 'link': 'Link'}
+    ]
+    return render_template('reference.html', data_models=data_models, parameters=parameters)
 
 
 @reference_route.route('/ssbio_lab')
 def ssbio_lab():
-    cards = [
-        {'title': 'Advanced Model for Accurate ADMET', 'subtitle': 'Sub 0', 'description': 'Based on the studies conducted in papers, we have developed a model capable of accurately predicting ADMET properties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path0.jpg'},
-        {'title': 'Re-engineered modules and batch evaluation support', 'subtitle': 'Sub 1', 'description': 'Based on the studies conducted in papers, we have developed a model capable of accurately predicting ADMET properties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path1.jpg'},
-        {'title': 'Robust and accurate MGA models', 'subtitle': 'Sub 2', 'description': 'Bproperties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path2.jpg'},
-        {'title': 'Practical explanation and guidance', 'subtitle': 'Sub 2', 'description': 'Bproperties. Additionally, this model demonstrates excellent performance in predicting various toxicities, proving its robustness and reliability in the field of pharmacological research.', 'image_path': 'img/path2.jpg'},
+    lab_projects = [
+        {'title': 'lab projects Example1', 'image_url': 'image', 'description': 'This model is about..', 'link': 'Link'},
+        {'title': 'lab projects Example2', 'image_url': 'image', 'description': 'This model is about..', 'link': 'Link'}
     ]
-    return render_template('ssbio_lab.html', cards=cards)
+    research_themes = [
+        {'title': 'research themes Example1', 'image_url': 'image', 'description': 'This model is about..', 'link': 'Link'},
+        {'title': 'research themes Example2', 'image_url': 'image', 'description': 'This model is about..', 'link': 'Link'}
+    ]
+    return render_template('ssbio_lab.html', lab_projects=lab_projects, research_themes=research_themes)
 
