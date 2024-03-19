@@ -23,11 +23,113 @@
         <img class="background" src="public/bg.svg" alt="BG SVG">
         <div class="intro-content">
             <h1 class="white title">Service Manual</h1>
-            <h3 class="white subtitle">This tool supports researchers in identifying and optimizing potential risk factors by predicting the absorption, distribution, metabolism, excretion, and toxicity (ADMET) profiles of drug candidate substances. It offers a user-friendly interface, enabling scientists to easily predict the bioavailability, safety, and efficacy of drugs. Additionally, the tool is equipped with advanced algorithms and simulation tools necessary for analyzing complex pharmacokinetics and pharmacodynamics data, thereby accelerating the drug development process and reducing costs.</h3>
         </div>
     </section>
 
     <section id="info-section">
+        <div id="nav-container">
+            <ul class="navbar">
+                <li><a href="#section1">Introduction</a></li>
+                <li><a href="#section2">Service Overview</a></li>
+                <li><a href="#section3">Before You Start</a></li>
+                <li><a href="#section4">Analyze</a></li>
+                <li><a href="#section5">Screening</a></li>
+                <li><a href="#section6">Results</a></li>
+                <li><a href="#section7">FAQ</a></li>
+                <li><a href="#section8">Support and Contact</a></li>
+            </ul>
+        </div>
+        <div class="manual">
+            <section id="section1">
+                <div class="section-box">
+                    <h2>Introduction</h2>
+                    <hr>
+                    <p>This manual is designed for users of the ADMET web service. ADMET is a web-based platform that assists in predicting the absorption, distribution, metabolism, excretion, and toxicity of drugs.</p>
+                </div>
+            </section>
+
+            <section id="section2">
+                <div class="section-box">
+                    <h2>Service Overview</h2>
+                    <hr>
+                    <p>The ADMET service consists of two main functionalities</p>
+                    <ul>
+                        <li><strong>Analyze Page</strong> : Enter a single SMILES string to analyze the ADMET characteristics of the corresponding compound.</li>
+                        <li><strong>Screening Page</strong> : Enter multiple SMILES strings in batch to analyze the ADMET characteristics of several compounds.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section3">
+                <div class="section-box">
+                    <h2>Before You Start</h2>
+                    <hr>
+                    <ul>
+                        <li>You must have the SMILES (Simplified Molecular Input Line Entry System) strings prepared.</li>
+                        <li>If the SMILES structure is incorrect, analysis will not proceed. For screening, analysis will proceed only for possible structures.</li>
+                        <li>An internet connection is required.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section4">
+                <div class="section-box">
+                    <h2>How to Use the Analyze Page</h2>
+                    <hr>
+                    <ol>
+                        <li>Navigate to the Analyze page of the web service.</li>
+                        <li>Enter the SMILES string of the compound you wish to analyze in the 'Enter SMILES' field.</li>
+                        <li>Use the example button to input a sample molecule.</li>
+                        <li>To start the analysis, click the 'Start Analysis' button.</li>
+                        <li>Wait for the processing to complete, then you can check the analysis results on the results page.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="section5">
+                <div class="section-box">
+                    <h2>How to Use the Screening Page</h2>
+                    <hr>
+                    <ol>
+                        <li>Navigate to the Screening page of the web service.</li>
+                        <li>Input the SMILES strings of various compounds, separated by line breaks.</li>
+                        <li>Use the example button to input sample molecules.</li>
+                        <li>You can add files to input SMILES.</li>
+                        <li>To start the analysis, click the 'Start Screening' button.</li>
+                        <li>Wait for the processing to complete, then you can check the analysis results for each compound on the results page.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="section6">
+                <div class="section-box">
+                    <h2>Interpreting Results</h2>
+                    <hr>
+                    <p>Results page displays detailed information and prediction results for each compound's ADMET characteristics. It explains the significance and importance of each indicator.</p>
+                    <ul>
+                        <li>Analyze Results: You can download the results in CSV or PDF format.</li>
+                        <li>Screening Results: You can download the content for all molecules in CSV format. You have the option to select the download option. You can check detailed information for individual molecules using the “detail” button.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section7">
+                <div class="section-box">
+                    <h2>FAQ</h2>
+                    <hr>
+                    <!-- Add FAQ content here -->
+                    <p>Here you can include common questions and answers related to the ADMET web service.</p>
+                </div>
+            </section>
+
+            <section id="section8">
+                <div class="section-box">
+                    <h2>Support and Contact</h2>
+                    <hr>
+                    <p>If you need further assistance or have any questions, you can contact us at : <a href=" http://ssbio.cau.ac.kr">http://ssbio.cau.ac.kr</a></p>
+                </div>
+            </section>
+        </div>
 
     </section>
 
