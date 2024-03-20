@@ -66,7 +66,7 @@
                     </tr>
                     <tr> <!-- 두 번째 행 -->
                         <td>Number of invalid molecules</td>
-                        <td> - </td>
+                        <td> <h4>이곳에 로직을 추가합니다.</h4> </td>
                         <td><div><button class="button download-txt">Download txt</button></div></td>
                     </tr>
                 </table>
@@ -111,7 +111,45 @@
                 </div>
             {% endfor %}
             </div>
+            <script>
+            let selectedProperties = ['SMILES'] ;
+            document.addEventListener('DOMContentLoaded', function() {
+                // 모든 체크박스에 대한 참조를 가져옵니다.
+                const checkboxes = document.querySelectorAll('.property-feature-item input[type="checkbox"]');
+
+                // 체크박스의 상태가 변경될 때마다 selectedProperties 배열을 업데이트하는 이벤트 리스너를 추가합니다.
+                function updateSelectedProperties() {
+                    selectedProperties = ['SMILES']; // SMILES를 기본적으로 포함시킵니다.
+                    document.querySelectorAll('.property-feature-item input[type="checkbox"]:checked').forEach(checkbox => {
+                        selectedProperties.push(checkbox.value);
+                    });
+                }
+
+                document.querySelectorAll('.property-feature-item input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.addEventListener('change', updateSelectedProperties);
+                });
+
+                // "Select All" 체크박스 처리
+                document.querySelectorAll('.select-all-checkbox').forEach(selectAllCheckbox => {
+                    selectAllCheckbox.addEventListener('change', function() {
+                        const card = this.closest('.property-feature-card');
+                        const allCheckboxes = card.querySelectorAll('.property-feature-item input[type="checkbox"]');
+                        allCheckboxes.forEach(cb => cb.checked = this.checked);
+                        updateSelectedProperties(); // 상태 변경 후 selectedProperties 업데이트
+                    });
+                });
+
+                function updateSelectedProperties() {
+                    selectedProperties = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+                }
+
+                // 초기 상태 업데이트
+                updateSelectedProperties();
+            });
+            </script>
+
         </div>
+
 
         <div class="molecules-box">
             <div class="molecules-header">

@@ -53,16 +53,16 @@ def result():
 
         # content : Medicinal Chemistry
         {'title': 'Medicinal Chemistry', 'color': cardColors[1],
-         'contents': [{'subtitle': 'SAscore'},                  {'subtitle': 'NPscore'},    {'subtitle': 'Lipinski Rule'},
-                      {'subtitle': 'Pfizer Rule'},              {'subtitle': 'Ghose'},      {'subtitle': 'GSK Rule'},
-                      {'subtitle': 'Veber (GSK) filter'},    {'subtitle': 'Golden Triangle'}, {'subtitle': 'PAINS'},
+         'contents': [{'subtitle': 'SAscore'},                  {'subtitle': 'NPscore'},            {'subtitle': 'Lipinski Rule'},
+                      {'subtitle': 'Pfizer Rule'},              {'subtitle': 'Ghose'},              {'subtitle': 'GSK Rule'},
+                      {'subtitle': 'Veber(GSK) filter'},        {'subtitle': 'Golden Triangle'},    {'subtitle': 'PAINS'},
                       {'subtitle': 'Leadlikeness'},             {'subtitle': 'Brenk'} ]},
 
         # content : Distribution
         {'title': 'Distribution', 'color': cardColors[2],
          'contents': [{'subtitle': 'PPB'},              {'subtitle': 'Fu'},     {'subtitle': 'Vd'},
                       {'subtitle': 'BBB Penetration'},  {'subtitle': 'Log Kp'}, {'subtitle': 'Organic anion'},
-                      {'subtitle': 'HPP Binding'},      {'subtitle': 'GI absorption '}, {'subtitle': 'P-gp substrate '} ]},
+                      {'subtitle': 'HPP Binding'},      {'subtitle': 'GI absorption'}, {'subtitle': 'P-gp substrate'} ]},
 
         # content : Druglikeness
         {'title': 'Druglikeness', 'color': cardColors[3],
